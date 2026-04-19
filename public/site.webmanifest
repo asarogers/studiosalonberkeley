@@ -1,0 +1,13 @@
+{
+  "name": "Studio Salon",
+  "short_name": "Studio Salon",
+  "description": "Berkeley's loc & natural hair specialists.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF9F9",
+  "theme_color": "#E8A1B3",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/logo.jpeg", "sizes": "512x512", "type": "image/jpeg" }
+  ]
+}

@@ -1,0 +1,27 @@
+# wrangler.toml — Cloudflare Workers configuration for Studio Salon
+# Local deploy:  npm run deploy
+
+name = "studiosalonberkeley"
+main = ".open-next/worker.js"
+compatibility_date = "2026-03-15"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+preview_urls = false
+
+routes = [
+  { pattern = "studiosalonberkeley.com/*",     zone_name = "studiosalonberkeley.com" },
+  { pattern = "www.studiosalonberkeley.com/*", zone_name = "studiosalonberkeley.com" },
+]
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+[vars]
+NEXT_PUBLIC_SITE_URL = "https://studiosalonberkeley.com"
+NEXT_PUBLIC_GA_MEASUREMENT_ID = ""
+
+# Secrets (set via: wrangler secret put SECRET_NAME)
+#   RESEND_API_KEY
+#   RESEND_FROM_EMAIL
+#   CONTACT_FORM_TO_EMAIL

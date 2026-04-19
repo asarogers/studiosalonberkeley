@@ -1,0 +1,427 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS — Tailwind v4 @theme inline
+   Studio Salon — soft millennial pink palette
+   ============================================================ */
+@theme inline {
+  /* --- Brand Colors --- */
+  --color-blush:         #E8A1B3;   /* primary pink */
+  --color-blush-dark:    #B86A7E;   /* hover / accent */
+  --color-blush-light:   #FADADD;   /* light surfaces */
+  --color-blush-pale:    #FCE8EC;   /* faint backgrounds */
+  --color-cream:         #FFF9F9;   /* page background */
+  --color-rose-gold:     #C08081;   /* complementary accent */
+  --color-rose-gold-dark:#9E6062;
+  --color-charcoal:      #2C2C2C;
+  --color-charcoal-light:#5A5A5A;
+  --color-border:        #F0D4DB;
+
+  /* Aliases for Tailwind utilities */
+  --color-primary:       var(--color-blush);
+  --color-primary-dark:  var(--color-blush-dark);
+  --color-primary-light: var(--color-blush-light);
+  --color-accent:        var(--color-rose-gold);
+  --color-accent-dark:   var(--color-rose-gold-dark);
+  --color-background:    var(--color-cream);
+  --color-foreground:    var(--color-charcoal);
+
+  /* --- Typography --- */
+  --font-serif: var(--font-lora), Georgia, "Times New Roman", serif;
+  --font-sans:  var(--font-nunito-sans), system-ui, sans-serif;
+
+  /* --- Spacing & Layout --- */
+  --max-width-xl: 72rem; /* 1152px */
+}
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES (runtime)
+   ============================================================ */
+:root {
+  --font-lora:        "Lora", Georgia, serif;
+  --font-nunito-sans: "Nunito Sans", system-ui, sans-serif;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  background-color: #FFF9F9;
+  color: #2C2C2C;
+  font-family: var(--font-nunito-sans), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+}
+
+/* ============================================================
+   ACCESSIBILITY — Focus styles (WCAG 2.1 AA)
+   ============================================================ */
+:focus-visible {
+  outline: 3px solid #B86A7E;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Skip-to-content link */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #B86A7E;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0 0 4px 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #2C2C2C;
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   TYPOGRAPHY DEFAULTS
+   ============================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-lora), Georgia, serif;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #2C2C2C;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration-skip-ink: auto;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ============================================================
+   CUSTOM UTILITY CLASSES
+   ============================================================ */
+
+/* ---- Buttons ---- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  background-color: #B86A7E;
+  color: #ffffff;
+  font-family: var(--font-nunito-sans), system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  border: 2px solid #B86A7E;
+  border-radius: 9999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 100ms ease, box-shadow 150ms ease;
+  white-space: normal;
+  word-break: break-word;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.btn-primary:hover {
+  background-color: #9E4F63;
+  border-color: #9E4F63;
+  box-shadow: 0 8px 24px rgba(184, 106, 126, 0.35);
+}
+.btn-primary:active {
+  transform: translateY(1px);
+}
+.btn-primary:focus-visible {
+  outline: 3px solid #2C2C2C;
+  outline-offset: 3px;
+}
+.btn-primary:disabled,
+.btn-primary[aria-disabled="true"] {
+  background-color: #E8A1B3;
+  border-color: #E8A1B3;
+  opacity: 0.75;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  background-color: transparent;
+  color: #B86A7E;
+  font-family: var(--font-nunito-sans), system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  border: 2px solid #B86A7E;
+  border-radius: 9999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease, transform 100ms ease;
+  white-space: normal;
+  word-break: break-word;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.btn-secondary:hover {
+  background-color: #B86A7E;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(184, 106, 126, 0.25);
+}
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+.btn-secondary:focus-visible {
+  outline: 3px solid #2C2C2C;
+  outline-offset: 3px;
+}
+
+/* ---- Section Heading ---- */
+.section-heading {
+  font-family: var(--font-lora), Georgia, serif;
+  font-size: clamp(1.75rem, 3.5vw + 1rem, 3rem);
+  font-weight: 700;
+  color: #2C2C2C;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-nunito-sans), system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #B86A7E;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 0.75rem;
+}
+
+.section-subheading {
+  font-family: var(--font-lora), Georgia, serif;
+  font-size: clamp(1.35rem, 2vw + 0.75rem, 2rem);
+  font-weight: 600;
+  color: #2C2C2C;
+  line-height: 1.3;
+}
+
+/* ---- Container ---- */
+.container-xl {
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .container-xl {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-xl {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* ---- Section spacing ---- */
+.section-pad {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .section-pad {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-pad {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* ---- Decorative divider ---- */
+.blush-divider {
+  width: 3.5rem;
+  height: 3px;
+  background: linear-gradient(to right, #B86A7E, #E8A1B3);
+  border-radius: 9999px;
+}
+
+/* ---- Pink gradient backgrounds used by the hero placeholder + callouts ---- */
+.blush-gradient {
+  background: linear-gradient(135deg, #FCE8EC 0%, #FADADD 45%, #E8A1B3 100%);
+}
+.blush-gradient-dark {
+  background: linear-gradient(135deg, #B86A7E 0%, #9E4F63 100%);
+}
+
+/* ---- Parallax section (thelocticiansalon.com vibe) ---- */
+.parallax-section {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+  .parallax-section {
+    background-attachment: scroll;
+  }
+}
+
+/* ============================================================
+   SCROLLBAR (subtle, on-brand)
+   ============================================================ */
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FFF9F9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #F0D4DB;
+    border-radius: 4px;
+    border: 2px solid #FFF9F9;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #B86A7E;
+  }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+  nav, footer, .mobile-sticky-cta {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   BLOG CONTENT — styles for dangerouslySetInnerHTML rendered markdown
+   ============================================================ */
+.blog-content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2C2C2C;
+  scroll-margin-top: 6rem;
+}
+.blog-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2C2C2C;
+  scroll-margin-top: 6rem;
+}
+.blog-content p {
+  margin-bottom: 1.25rem;
+  color: #2C2C2C;
+  line-height: 1.75;
+}
+.blog-content ul {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  color: #2C2C2C;
+}
+.blog-content ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  list-style-type: decimal;
+  color: #2C2C2C;
+}
+.blog-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+.blog-content li::marker {
+  color: #B86A7E;
+}
+.blog-content strong {
+  font-weight: 700;
+  color: #2C2C2C;
+}
+.blog-content a {
+  font-weight: 600;
+  color: #B86A7E;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.blog-content a:hover {
+  color: #9E4F63;
+}
+.blog-content blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #B86A7E;
+  background-color: #FCE8EC;
+  font-style: italic;
+  color: #5A5A5A;
+}
+.blog-content hr {
+  margin: 2rem 0;
+  border-color: #F0D4DB;
+}
