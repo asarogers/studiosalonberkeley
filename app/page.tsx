@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CTABlock from "@/components/CTABlock";
 import HeroVideo from "@/components/HeroVideo";
+import ServiceMenu from "@/components/ServiceMenu";
 import { siteConfig } from "@/lib/siteConfig";
+import { getAllPosts } from "@/lib/blog";
 
 export const dynamic = 'force-static';
 
@@ -17,70 +19,122 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-/* ── Service menu (derived from Booksy) ────────────────────── */
+/* ── Service menu homepage digest (full list at /services) ─── */
 const MENU = [
   {
-    category: "Locs & Natural Hair",
+    category: "Locs & Dreadlocks",
     items: [
-      { name: "Loc Retwist",              price: "$85",    duration: "85 min", slug: "loc-maintenance" },
-      { name: "Loc Maintenance (long)",   price: "$100+",  duration: "95 min", slug: "loc-maintenance" },
-      { name: "Natural Hair Styling",     price: "$125",   duration: "60 min", slug: "natural-hair-styling" },
-      { name: "Two-Strand Twist Style",   price: "$225+",  duration: "4 hr 25 min", slug: "two-strand-twist" },
-      { name: "Silk Press",               price: "$135",   duration: "70 min", slug: "silk-press" },
+      { name: "Retwist",                    price: "$100",   duration: "2 hr",          slug: "loc-maintenance",       image: "/images/gallery/loc-retwist.webp",         video: "/videos/menu/loc-retwist.mp4" },
+      { name: "Loc Maintenance / Touch Up", price: "$165+",  duration: "2 hr 45 min",   slug: "loc-maintenance",       image: "/images/services/loc-maintenance.webp",    video: null },
+      { name: "Starter Dreads",             price: "$120+",  duration: "2 hr 30 min",   slug: "loc-maintenance",       image: "/images/gallery/starter-locs.webp",        video: "/videos/menu/starter-locs.mp4" },
+      { name: "Instant Locs",               price: "$300+",  duration: "8 hr",          slug: "loc-maintenance",       image: "/images/gallery/instant-locs.webp",        video: "/videos/menu/instant-locs.mp4" },
+      { name: "Retwist (Kids 4–12)",        price: "$85",    duration: "1 hr 45 min",   slug: "loc-maintenance",       image: "/images/gallery/kids-braids.webp",         video: "/videos/menu/kids-braids.mp4" },
+      { name: "Dread Detox",                price: "$65",    duration: "1 hr",          slug: "loc-maintenance",       image: "/images/gallery/dread-detox.webp",         video: "/videos/menu/dread-detox.mp4" },
+    ],
+  },
+  {
+    category: "Natural Hair",
+    items: [
+      { name: "Silk Press",                 price: "$135",   duration: "1 hr 10 min",   slug: "silk-press",            image: "/images/gallery/silk-press.webp",          video: "/videos/menu/silk-press.mp4" },
+      { name: "Silk Press (Kids 4–10)",     price: "$85",    duration: "2 hr 30 min",   slug: "silk-press",            image: "/images/gallery/kids-silk-press.webp",     video: "/videos/menu/kids-silk-press.mp4" },
+      { name: "Natural Curl Setting",       price: "$125",   duration: "1 hr",          slug: "natural-hair-styling",  image: "/images/services/natural-hair-styling.webp", video: null },
+      { name: "Two Strand Twist",           price: "$125+",  duration: "2 hr 30 min",   slug: "two-strand-twist",      image: "/images/gallery/two-strand-twist.webp",    video: "/videos/menu/two-strand-twist.mp4" },
+      { name: "Two Strand Twist w/ Hair",   price: "$225+",  duration: "4 hr 25 min",   slug: "two-strand-twist",      image: "/images/gallery/two-strand-twist-hair.webp", video: null },
+      { name: "Wash, Blow Dry & Trim",      price: "$60",    duration: "45 min",        slug: "natural-hair-styling",  image: "/images/gallery/wash-blow-dry.webp",       video: null },
     ],
   },
   {
     category: "Braids",
     items: [
-      { name: "Cornrows",                 price: "$80",    duration: "1 hr 40 min", slug: "braids" },
-      { name: "Cornrows (knotless)",      price: "$200+",  duration: "4 hr",    slug: "braids" },
-      { name: "Kids Braids (4–12)",       price: "$100+",  duration: "90 min",  slug: "braids" },
-      { name: "Feed-In Braids",           price: "$325",   duration: "6 hr 30 min", slug: "braids" },
-      { name: "Tribal Braids",            price: "$185+",  duration: "5 hr 30 min", slug: "braids" },
+      { name: "Large Knotless Braids",      price: "$125",   duration: "2 hr 30 min",   slug: "braids", image: "/images/gallery/large-knotless.webp",      video: "/videos/menu/large-knotless.mp4" },
+      { name: "Medium Knotless",            price: "$185",   duration: "6 hr 30 min",   slug: "braids", image: "/images/gallery/knotless-braids.webp",     video: "/videos/menu/knotless-braids.mp4" },
+      { name: "Small Knotless Singles",     price: "$225",   duration: "8 hr 30 min",   slug: "braids", image: "/images/gallery/small-knotless.webp",      video: "/videos/menu/small-knotless.mp4" },
+      { name: "Tribal Braids",              price: "$185+",  duration: "5 hr 30 min",   slug: "braids", image: "/images/services/braids.webp",             video: null },
+      { name: "Stitch Braids (4–12)",       price: "$85+",   duration: "2 hr 30 min+",  slug: "braids", image: "/images/gallery/feed-in-braids.webp",      video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "Fulani Braids",              price: "$225+",  duration: "5 hr 20 min+",  slug: "braids", image: "/images/gallery/fulani-braids.webp",       video: null },
+      { name: "Cornrows (4–8 braids)",      price: "$45+",   duration: "50 min+",       slug: "braids", image: "/images/gallery/cornrows.webp",            video: null },
+      { name: "French Braids for Kids",     price: "$100+",  duration: "1 hr 30 min",   slug: "braids", image: "/images/gallery/french-braids-kids.webp",  video: "/videos/menu/french-braids-kids.mp4" },
     ],
   },
   {
     category: "Weaves & Extensions",
     items: [
-      { name: "Sew-In Weave",             price: "$180",   duration: "3 hr 15 min", slug: "sew-in-weave" },
-      { name: "Quick Weave",              price: "$125+",  duration: "2 hr", slug: "quick-weave" },
-      { name: "Crochet Braids",           price: "$165",   duration: "2 hr 30 min", slug: "crochet-braids" },
-      { name: "Updos & Ponytails",        price: "$125–$180", duration: "2 hr 30 min", slug: "quick-weave" },
+      { name: "Sew In Weave",               price: "$180",   duration: "3 hr 15 min",   slug: "sew-in-weave",   image: "/images/gallery/sew-in-weave.webp",        video: "/videos/menu/sew-in-weave.mp4" },
+      { name: "Crochet Sew In",             price: "$165",   duration: "2 hr 30 min",   slug: "crochet-braids", image: "/images/gallery/crochet-braids.webp",      video: "/videos/menu/crochet-braids.mp4" },
+      { name: "Full Quick Weave",           price: "$125",   duration: "2 hr",          slug: "quick-weave",    image: "/images/gallery/quick-weave.webp",         video: "/videos/menu/quick-weave.mp4" },
+      { name: "Half Up Half Down Sew In",   price: "$160",   duration: "2 hr 45 min",   slug: "sew-in-weave",   image: "/images/gallery/half-up-half-down.webp",   video: "/videos/menu/half-up-half-down.mp4" },
+      { name: "Bob (Medium Knotless)",      price: "$180",   duration: "4 hr 35 min",   slug: "braids",         image: "/images/gallery/bob-medium.webp", video: "/videos/menu/bob-medium.mp4" },
+      { name: "Bob (Smedium Knotless)",     price: "$220",   duration: "5 hr 30 min",   slug: "braids",         image: "/images/gallery/bob-smedium.webp", video: "/videos/menu/bob-smedium.mp4" },
+    ],
+  },
+  {
+    category: "Ponytails & Updos",
+    items: [
+      { name: "Sleek Ponytail",             price: "$125",   duration: "2 hr",          slug: "natural-hair-styling", image: "/images/gallery/sleek-ponytail.webp",  video: "/videos/menu/sleek-ponytail.mp4" },
+      { name: "Swoop Ponytail",             price: "$125",   duration: "2 hr 30 min",   slug: "natural-hair-styling", image: "/images/gallery/swoop-ponytail.webp",  video: "/videos/menu/swoop-ponytail.mp4" },
+      { name: "Knot Bun",                   price: "$130",   duration: "2 hr 30 min",   slug: "natural-hair-styling", image: "/images/gallery/knot-bun.webp",         video: null },
+      { name: "Bundle Pony",                price: "$130",   duration: "2 hr 30 min",   slug: "natural-hair-styling", image: "/images/gallery/bundle-pony.webp",     video: "/videos/menu/bundle-pony.mp4" },
+      { name: "Braided Ponytail",           price: "$165+",  duration: "3 hr 30 min",   slug: "braids",               image: "/images/gallery/braided-ponytail.webp", video: "/videos/menu/braided-ponytail.mp4" },
     ],
   },
   {
     category: "Color, Cuts & Add-ons",
     items: [
-      { name: "Bleach & Tone",            price: "$40+",   duration: "45 min",  slug: "hair-color" },
-      { name: "Single-Process Color",     price: "$85",    duration: "90 min",  slug: "hair-color" },
-      { name: "Highlights",               price: "$85+",   duration: "2 hr 35 min", slug: "hair-color" },
-      { name: "Women's Haircut",          price: "$30+",   duration: "40 min",  slug: "womens-haircut" },
-      { name: "Men's Braids",             price: "$100+",  duration: "70 min",  slug: "mens-hair-barbering" },
-      { name: "Chemical Relaxer",         price: "$140",   duration: "2 hr 15 min", slug: "chemical-relaxer" },
-      { name: "Eyebrow Wax",              price: "$20",    duration: "30 min",  slug: "eyebrow-waxing" },
+      { name: "Highlights",                 price: "$85+",   duration: "2 hr 35 min",   slug: "hair-color",           image: "/images/gallery/highlights.webp",      video: "/videos/menu/highlights.mp4" },
+      { name: "Hair Dye",                   price: "$85",    duration: "1 hr 30 min",   slug: "hair-color",           image: "/images/gallery/hair-dye.webp",        video: "/videos/menu/hair-dye.mp4" },
+      { name: "Dye Tips / Ends",            price: "$40+",   duration: "45 min",        slug: "hair-color",           image: "/images/gallery/dye-tips.webp",        video: "/videos/menu/dye-tips.mp4" },
+      { name: "Women's Haircut",            price: "$30+",   duration: "40 min",        slug: "womens-haircut",       image: "/images/gallery/pixie-cut.webp",       video: "/videos/menu/pixie-cut.mp4" },
+      { name: "Men Haircut + Beard",        price: "$50",    duration: "1 hr",          slug: "mens-hair-barbering",  image: "/images/services/mens-hair-barbering.webp", video: null },
+      { name: "Men's Natural Hair Singles", price: "$135",   duration: "3 hr 15 min",   slug: "mens-hair-barbering",  image: "/images/gallery/natural-singles.webp", video: "/videos/menu/natural-singles.mp4" },
+      { name: "Chemical Relaxer",           price: "$140",   duration: "2 hr 15 min",   slug: "chemical-relaxer",     image: "/images/services/chemical-relaxer.webp", video: null },
+      { name: "Eyebrow Wax",                price: "$20",    duration: "30 min",        slug: "eyebrow-waxing",       image: "/images/gallery/eyebrow-wax.webp",     video: "/videos/menu/eyebrow-wax.mp4" },
     ],
   },
 ];
 
-/* ── Reviews (pulled from Booksy listing) ──────────────────── */
+/* ── Reviews (from Booksy — confirmed clients) ─────────────── */
 const REVIEWS = [
   {
-    author: "Toccara B.",
+    author: "Dorothy",
+    service: "Loc Maintenance / Touch Up",
+    date: "Apr 2026",
     rating: 5,
-    source: "Booksy",
-    text: "Britnee is absolutely amazing. She took her time with my locs and the result speaks for itself. The salon has such a welcoming vibe — I'm never going anywhere else.",
+    text: "I have to shout out the OWNER of Studio Salon because babyyy, the vibe starts from the top and you can feel it the moment you walk in. Britt is no joke — she's talented, warm, and clearly loves what she does.",
   },
   {
-    author: "Maya G.",
+    author: "DeAndre",
+    service: "6 Braids",
+    date: "Feb 2026",
     rating: 5,
-    source: "Booksy",
-    text: "First knotless braids appointment and I couldn't be happier. Clean parts, no tension on my edges, finished in the time quoted. Coming back for sure.",
+    text: "If you want your hair done right, this is the place to go. My stylist was professional, efficient, and the results are stunning. I've received so many compliments.",
   },
   {
-    author: "Jordan T.",
+    author: "Aaron",
+    service: "Men's Haircut + Beard Line Up",
+    date: "Aug 2025",
     rating: 5,
-    source: "Booksy",
-    text: "Best silk press I've had in years. Britnee listens to what you actually want and has the skill to deliver. Sacramento St is easy to get to from Oakland.",
+    text: "Yo, Britnee's work is straight-up top-notch, and she brings such a dope vibe to the table! Her services are legit amazing, and I'd totally recommend her to anyone.",
+  },
+  {
+    author: "Chris",
+    service: "Pixie Haircut",
+    date: "Nov 2025",
+    rating: 5,
+    text: "I love my hair! I feel like I made a new friend.",
+  },
+  {
+    author: "Daquan",
+    service: "Beard Line Up",
+    date: "Jan 2026",
+    rating: 5,
+    text: "Good quality haircut in and out as well. Will return back.",
+  },
+  {
+    author: "Confirmed Client",
+    service: "Hair Color & Style",
+    date: "Jul 2025",
+    rating: 5,
+    text: "Did a really great job on my hair. The wash was very relaxing and refreshing. Will be returning. Thank you Britnee.",
   },
 ];
 
@@ -224,86 +278,161 @@ export default function HomePage() {
             </div>
 
             {/* Hero media */}
-            <div className="w-full lg:max-w-[48%] aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl flex-shrink-0">
+            <div className="w-full lg:max-w-[48%] aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl flex-shrink-0">
               <HeroVideo />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── 2. FEATURED SERVICES — 3 flagship services w/ price ─── */}
-      <section
-        aria-labelledby="featured-heading"
+            <section
+        aria-labelledby="gallery-heading"
         className="bg-[#FCE8EC] section-pad"
       >
         <div className="container-xl">
           <div className="text-center mb-10 max-w-2xl mx-auto">
-            <span className="section-eyebrow">What We&rsquo;re Known For</span>
+            <span className="section-eyebrow">The Work</span>
             <div className="blush-divider mx-auto mb-6" />
-            <h2 id="featured-heading" className="section-heading mb-4">
-              Three services clients drive across the East Bay for
+            <h2 id="gallery-heading" className="section-heading mb-4">
+              Real clients, real work
             </h2>
             <p className="text-[#5A5A5A]" style={{ fontFamily: "var(--font-sans)" }}>
-              We do more — but these are the appointments that fill the book first.
+              Follow{" "}
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#B86A7E] hover:text-[#9E4F63] underline underline-offset-2 font-semibold"
+              >
+                @studiosalonberkeley
+              </a>{" "}
+              for fresh work from the chair.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {[
-              {
-                title: "Loc Maintenance & Retwist",
-                price: "from $85",
-                duration: "85–95 min",
-                blurb: "The foundation of a healthy loc journey. Britnee retwists with a focus on scalp health and root longevity — not tight, not crumby, not rushed.",
-                slug: "loc-maintenance",
-              },
-              {
-                title: "Knotless & Feed-In Braids",
-                price: "$150–$325",
-                duration: "4–6.5 hr",
-                blurb: "Protective style without the pain. Clean parts, balanced tension, and a finish that lasts 4–6 weeks with good aftercare.",
-                slug: "braids",
-              },
-              {
-                title: "Silk Press",
-                price: "$135",
-                duration: "70 min",
-                blurb: "A proper press, not a shortcut. Wash, blow-dry, and iron finish that sits and swings without sacrificing your natural texture.",
-                slug: "silk-press",
-              },
-            ].map((svc) => (
-              <article
-                key={svc.title}
-                className="bg-white rounded-3xl p-7 shadow-sm hover:shadow-lg transition-shadow border border-[#F0D4DB] flex flex-col"
+              { caption: "Starter locs",     src: "/images/gallery/starter-locs.webp",     video: "/videos/gallery/starter-locs.mp4" },
+              { caption: "Knotless braids",  src: "/images/gallery/knotless-braids.webp",  video: "/videos/gallery/knotless-braids.mp4" },
+              { caption: "Silk press",       src: "/images/gallery/silk-press.webp",       video: "/videos/gallery/silk-press.mp4" },
+              { caption: "Feed-in braids",   src: "/images/gallery/feed-in-braids.webp",   video: "/videos/gallery/feed-in-braids.mp4" },
+              { caption: "Loc retwist",      src: "/images/gallery/loc-retwist.webp",      video: "/videos/gallery/loc-retwist.mp4" },
+              { caption: "Crochet braids",   src: "/images/gallery/crochet-braids.webp",   video: "/videos/gallery/crochet-braids.mp4" },
+              { caption: "Sew-in weave",     src: "/images/gallery/sew-in-weave.webp",     video: "/videos/gallery/sew-in-weave.mp4" },
+              { caption: "Two-strand twist", src: "/images/gallery/two-strand-twist.webp", video: "/videos/gallery/two-strand-twist.mp4" },
+            ].map(({ caption, src, video }) => (
+              <div
+                key={caption}
+                className="relative aspect-square rounded-2xl overflow-hidden blush-gradient group cursor-pointer"
+                aria-label={`Real salon work — ${caption}`}
               >
-                <div className="mb-4 flex items-center justify-between">
-                  <span className="blush-gradient px-3 py-1 rounded-full text-xs font-bold text-[#9E4F63] uppercase tracking-wider"
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <video
+                  src={video}
+                  poster={src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label={`${caption} by Britnee at Studio Salon Berkeley`}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Caption overlay */}
+                <div className="absolute inset-0 flex items-end p-4 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none">
+                  <span className="text-white font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
                     style={{ fontFamily: "var(--font-sans)" }}>
-                    {svc.price}
-                  </span>
-                  <span className="text-xs text-[#5A5A5A]" style={{ fontFamily: "var(--font-sans)" }}>
-                    {svc.duration}
+                    {caption}
                   </span>
                 </div>
-                <h3 className="font-[family-name:var(--font-serif)] text-[1.35rem] font-bold text-[#2C2C2C] mb-3 leading-tight">
-                  {svc.title}
-                </h3>
-                <p className="text-[#5A5A5A] text-base leading-relaxed mb-5 flex-1"
+                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-xs text-[#5A5A5A]/70 mt-6 italic"
+            style={{ fontFamily: "var(--font-sans)" }}>
+            Videos from{" "}
+            <a
+              href="https://www.tiktok.com/@britneethebarber2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#B86A7E] hover:text-[#9E4F63] underline underline-offset-2 font-semibold"
+            >
+              @britneethebarber2
+            </a>{" "}
+            on TikTok — more work posted weekly.
+          </p>
+        </div>
+      </section>
+
+            <section
+        aria-labelledby="reviews-heading"
+        className="bg-[#FFF9F9] section-pad"
+      >
+        <div className="container-xl">
+          <div className="text-center mb-12 max-w-2xl mx-auto">
+            <span className="section-eyebrow">What Clients Say</span>
+            <div className="blush-divider mx-auto mb-6" />
+            <h2 id="reviews-heading" className="section-heading mb-4">
+              {siteConfig.rating.value.toFixed(1)} stars from real Booksy reviews
+            </h2>
+            <div className="flex items-center justify-center gap-2 text-[#5A5A5A]" style={{ fontFamily: "var(--font-sans)" }}>
+              <span className="inline-flex gap-0.5">
+                {[...Array(5)].map((_, i) => <Star key={i} />)}
+              </span>
+              <span className="font-bold text-[#2C2C2C]">{siteConfig.rating.value.toFixed(1)}</span>
+              <span>·</span>
+              <span>{siteConfig.rating.count}+ reviews</span>
+              <span>·</span>
+              <a href="https://booksy.com/en-us/1434403_studio-salon_hair-salon_119583_berkeley#reviews-section" target="_blank" rel="noopener noreferrer" className="text-[#B86A7E] hover:text-[#9E4F63] underline underline-offset-2">
+                Read all on Booksy
+              </a>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {REVIEWS.map((r, i) => (
+              <figure
+                key={i}
+                className="bg-white rounded-3xl p-7 shadow-sm border border-[#F0D4DB] flex flex-col"
+              >
+                <div className="flex items-center justify-between mb-3" style={{ fontFamily: "var(--font-sans)" }}>
+                  <span className="inline-flex gap-0.5">
+                    {[...Array(r.rating)].map((_, j) => <Star key={j} />)}
+                  </span>
+                  <span className="text-xs text-[#5A5A5A]">{r.date}</span>
+                </div>
+                <blockquote className="text-[#2C2C2C] text-base leading-relaxed mb-5 flex-1"
+                  style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}>
+                  &ldquo;{r.text}&rdquo;
+                </blockquote>
+                <figcaption className="flex items-center justify-between gap-3 pt-4 border-t border-[#F0D4DB]"
                   style={{ fontFamily: "var(--font-sans)" }}>
-                  {svc.blurb}
-                </p>
-                <Link
-                  href={`/services/${svc.slug}`}
-                  className="font-[family-name:var(--font-sans)] font-bold text-[#B86A7E] hover:text-[#9E4F63] text-sm inline-flex items-center gap-1 group"
-                >
-                  Learn more
-                  <span className="transition-transform group-hover:translate-x-1">→</span>
-                </Link>
-              </article>
+                  <div>
+                    <span className="block font-bold text-[#2C2C2C] text-sm">{r.author}</span>
+                    <span className="block text-xs text-[#5A5A5A] mt-0.5">{r.service}</span>
+                  </div>
+                  <a
+                    href="https://booksy.com/en-us/1434403_studio-salon_hair-salon_119583_berkeley#reviews-section"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-[#B86A7E] hover:text-[#9E4F63] font-semibold uppercase tracking-wider flex-shrink-0 transition-colors"
+                  >
+                    Booksy ✓
+                  </a>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
       </section>
+
+
 
       {/* ── 3. FULL MENU — services with times + prices (nilooo style) ── */}
       <section
@@ -313,7 +442,7 @@ export default function HomePage() {
       >
         <div className="container-xl">
           <div className="text-center mb-10 max-w-2xl mx-auto">
-            <span className="section-eyebrow">Full Menu</span>
+            <span className="section-eyebrow">Services &amp; Pricing</span>
             <div className="blush-divider mx-auto mb-6" />
             <h2 id="services-heading" className="section-heading mb-4">
               Services &amp; pricing
@@ -323,37 +452,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 max-w-5xl mx-auto">
-            {MENU.map((cat) => (
-              <div key={cat.category}>
-                <h3 className="font-[family-name:var(--font-serif)] text-[1.35rem] font-bold text-[#2C2C2C] mb-4 pb-2 border-b-2 border-[#E8A1B3]">
-                  {cat.category}
-                </h3>
-                <ul className="space-y-3" style={{ fontFamily: "var(--font-sans)" }}>
-                  {cat.items.map((item, idx) => (
-                    <li key={idx}>
-                      <Link
-                        href={`/services/${item.slug}`}
-                        className="group flex items-baseline justify-between gap-3 py-2 px-3 -mx-3 rounded-lg hover:bg-[#FCE8EC] transition-colors"
-                      >
-                        <span className="flex-1 min-w-0">
-                          <span className="block font-semibold text-[#2C2C2C] group-hover:text-[#9E4F63] transition-colors">
-                            {item.name}
-                          </span>
-                          <span className="block text-xs text-[#5A5A5A] mt-0.5">
-                            {item.duration}
-                          </span>
-                        </span>
-                        <span className="flex-shrink-0 font-bold text-[#B86A7E] group-hover:text-[#9E4F63] transition-colors">
-                          {item.price}
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <ServiceMenu menu={MENU} />
 
           <div className="text-center mt-10">
             <Link
@@ -395,131 +494,9 @@ export default function HomePage() {
       </section>
 
       {/* ── 5. REVIEWS — Google/Booksy pulled-in vibe (worldofbraids) ── */}
-      <section
-        aria-labelledby="reviews-heading"
-        className="bg-[#FFF9F9] section-pad"
-      >
-        <div className="container-xl">
-          <div className="text-center mb-12 max-w-2xl mx-auto">
-            <span className="section-eyebrow">What Clients Say</span>
-            <div className="blush-divider mx-auto mb-6" />
-            <h2 id="reviews-heading" className="section-heading mb-4">
-              {siteConfig.rating.value.toFixed(1)} stars from real Booksy reviews
-            </h2>
-            <div className="flex items-center justify-center gap-2 text-[#5A5A5A]" style={{ fontFamily: "var(--font-sans)" }}>
-              <span className="inline-flex gap-0.5">
-                {[...Array(5)].map((_, i) => <Star key={i} />)}
-              </span>
-              <span className="font-bold text-[#2C2C2C]">{siteConfig.rating.value.toFixed(1)}</span>
-              <span>·</span>
-              <span>{siteConfig.rating.count}+ reviews</span>
-              <span>·</span>
-              <a href={siteConfig.booking.booksyUrl} target="_blank" rel="noopener noreferrer" className="text-[#B86A7E] hover:text-[#9E4F63] underline underline-offset-2">
-                Read all on Booksy
-              </a>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {REVIEWS.map((r) => (
-              <figure
-                key={r.author}
-                className="bg-white rounded-3xl p-7 shadow-sm border border-[#F0D4DB] flex flex-col"
-              >
-                <span className="inline-flex gap-0.5 mb-4">
-                  {[...Array(r.rating)].map((_, i) => <Star key={i} />)}
-                </span>
-                <blockquote className="text-[#2C2C2C] text-base leading-relaxed mb-5 flex-1"
-                  style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}>
-                  &ldquo;{r.text}&rdquo;
-                </blockquote>
-                <figcaption className="flex items-center justify-between gap-3 pt-4 border-t border-[#F0D4DB]"
-                  style={{ fontFamily: "var(--font-sans)" }}>
-                  <span className="font-bold text-[#2C2C2C] text-sm">{r.author}</span>
-                  <span className="text-xs text-[#B86A7E] font-semibold uppercase tracking-wider">
-                    via {r.source}
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── 6. GALLERY — placeholder cards ready to swap for real photos ── */}
-      <section
-        aria-labelledby="gallery-heading"
-        className="bg-[#FCE8EC] section-pad"
-      >
-        <div className="container-xl">
-          <div className="text-center mb-10 max-w-2xl mx-auto">
-            <span className="section-eyebrow">The Work</span>
-            <div className="blush-divider mx-auto mb-6" />
-            <h2 id="gallery-heading" className="section-heading mb-4">
-              Real clients, real work
-            </h2>
-            <p className="text-[#5A5A5A]" style={{ fontFamily: "var(--font-sans)" }}>
-              Follow{" "}
-              <a
-                href={siteConfig.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#B86A7E] hover:text-[#9E4F63] underline underline-offset-2 font-semibold"
-              >
-                @studiosalonberkeley
-              </a>{" "}
-              for fresh work from the chair.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {[
-              "Starter locs",
-              "Knotless braids",
-              "Silk press",
-              "Feed-in braids",
-              "Loc retwist",
-              "Hair color",
-              "Sew-in weave",
-              "Two-strand twist",
-            ].map((caption, idx) => (
-              <div
-                key={caption}
-                className="relative aspect-square rounded-2xl overflow-hidden blush-gradient group cursor-pointer"
-                aria-label={`Gallery placeholder — ${caption}`}
-              >
-                {/* Gradient tone-shift so cards look different */}
-                <div
-                  className="absolute inset-0 mix-blend-overlay"
-                  aria-hidden="true"
-                  style={{
-                    background:
-                      idx % 2
-                        ? "linear-gradient(135deg, rgba(184,106,126,0.25), transparent)"
-                        : "linear-gradient(315deg, rgba(250,218,221,0.45), transparent)",
-                  }}
-                />
-                <div className="absolute inset-0 flex items-end p-4">
-                  <span className="text-white font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
-                    style={{ fontFamily: "var(--font-sans)" }}>
-                    {caption}
-                  </span>
-                </div>
-                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-center text-xs text-[#5A5A5A]/70 mt-6 italic"
-            style={{ fontFamily: "var(--font-sans)" }}>
-            Photo gallery coming soon — replace these tiles with real salon work.
-          </p>
-        </div>
-      </section>
 
       {/* ── 7. HOURS + MAP — worldofbraids style with directions ── */}
       <section
@@ -651,6 +628,68 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── 8b. FROM THE CHAIR — blog preview ─────────────────── */}
+      {(() => {
+        const posts = getAllPosts().slice(0, 3);
+        return (
+          <section
+            aria-labelledby="blog-preview-heading"
+            className="bg-[#FFF9F9] section-pad border-t border-[#F0D4DB]"
+          >
+            <div className="container-xl">
+              <div className="text-center mb-10 max-w-2xl mx-auto">
+                <span className="section-eyebrow">From the Chair</span>
+                <div className="blush-divider mx-auto mb-6" />
+                <h2 id="blog-preview-heading" className="section-heading mb-4">
+                  From the Chair
+                </h2>
+                <p className="text-[#5A5A5A]" style={{ fontFamily: "var(--font-sans)" }}>
+                  Hair care tips, style guides, and notes from Britnee&rsquo;s chair.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {posts.map((post) => (
+                  <article
+                    key={post.slug}
+                    className="bg-white rounded-3xl p-7 shadow-sm hover:shadow-lg transition-shadow border border-[#F0D4DB] flex flex-col"
+                  >
+                    <h3 className="font-[family-name:var(--font-serif)] text-[1.15rem] font-bold text-[#2C2C2C] mb-3 leading-tight">
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="hover:text-[#9E4F63] transition-colors"
+                      >
+                        {post.title}
+                      </Link>
+                    </h3>
+                    <p
+                      className="text-[#5A5A5A] text-sm leading-relaxed mb-5 flex-1"
+                      style={{ fontFamily: "var(--font-sans)" }}
+                    >
+                      {post.excerpt}
+                    </p>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="font-[family-name:var(--font-sans)] font-bold text-[#B86A7E] hover:text-[#9E4F63] text-sm inline-flex items-center gap-1 group"
+                      aria-label={`Read ${post.title}`}
+                    >
+                      Read
+                      <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                    </Link>
+                  </article>
+                ))}
+              </div>
+
+              <div className="text-center mt-10">
+                <Link href="/blog" className="btn-secondary">
+                  View all posts →
+                </Link>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* ── 9. FINAL CTA ───────────────────────────────────────── */}
       <CTABlock

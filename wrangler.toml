@@ -19,7 +19,7 @@ binding = "ASSETS"
 
 [vars]
 NEXT_PUBLIC_SITE_URL = "https://studiosalonberkeley.com"
-NEXT_PUBLIC_GA_MEASUREMENT_ID = ""
+NEXT_PUBLIC_GA_MEASUREMENT_ID = "G-5X4PNNP00L"
 
 # Secrets (set via: wrangler secret put SECRET_NAME)
 #   RESEND_API_KEY

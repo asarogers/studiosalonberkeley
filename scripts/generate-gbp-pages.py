@@ -331,11 +331,57 @@ def patch_main_data() -> None:
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
+def load_keyword_tier_priority() -> tuple[set, set]:
+    """Query customer.keyword_tiers for this client's tier data.
+
+    Returns (priority_slugs, skip_slugs). Empty sets if unavailable.
+    See /Users/atlas/repo/important/KEYWORD-LADDER.md for methodology.
+    """
+    try:
+        import os as _os
+        import re as _re
+        try:
+            import psycopg2
+        except ImportError:
+            return set(), set()
+
+        project = Path(_os.getcwd()).name
+        conn = psycopg2.connect(_os.getenv("DATABASE_URL", "postgresql://atlas@localhost/pipeline"))
+        cur = conn.cursor()
+        cur.execute(
+            """
+            SELECT keyword, recommended_action FROM customer.keyword_tiers
+            WHERE project = %s
+              AND scored_date = (SELECT MAX(scored_date) FROM customer.keyword_tiers WHERE project = %s)
+            """,
+            (project, project),
+        )
+        rows = cur.fetchall()
+        cur.close(); conn.close()
+
+        def _slug(kw: str) -> str:
+            s = kw.lower()
+            s = _re.sub(r"\b(near me|oklahoma|oklahoma city|ok|ca|tx|ny|us|usa)\b", "", s)
+            s = _re.sub(r"[^a-z0-9\s-]", "", s)
+            s = _re.sub(r"\s+", "-", s).strip("-")
+            s = _re.sub(r"-+", "-", s)
+            return s[:80]
+
+        priority = {_slug(kw) for kw, action in rows if action == "target_now"}
+        skip     = {_slug(kw) for kw, action in rows if action in ("skip", "reframe")}
+        return priority, skip
+    except Exception as e:
+        print(f"[warn] could not load keyword tiers — {e}; falling back to default order")
+        return set(), set()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate GBP service pages with Atlas (qwen3:32b)")
     parser.add_argument("--dry-run", action="store_true", help="Print generated TS without writing files")
     parser.add_argument("--slug", help="Generate only one service by slug")
     parser.add_argument("--model", default=GENERATE_MODEL, help=f"Ollama model (default: {GENERATE_MODEL})")
+    parser.add_argument("--ignore-tiers", action="store_true",
+                        help="Skip keyword_tiers prioritisation (generate all isNew in original order)")
     args = parser.parse_args()
 
     target_services = NEW_SERVICES
@@ -344,6 +390,20 @@ def main() -> None:
         if not target_services:
             print(f"[ERROR] Unknown slug: {args.slug}. Valid slugs: {[s['slug'] for s in NEW_SERVICES]}")
             sys.exit(1)
+
+    # Apply keyword-tier prioritisation: target_now first, skip/reframe excluded.
+    if not args.slug and not args.ignore_tiers:
+        priority_slugs, skip_slugs = load_keyword_tier_priority()
+        if skip_slugs:
+            before = len(target_services)
+            target_services = [s for s in target_services if s["slug"] not in skip_slugs]
+            removed = before - len(target_services)
+            if removed:
+                print(f"[tiers] removed {removed} slug(s) marked skip/reframe — won't generate")
+        if priority_slugs:
+            target_services.sort(key=lambda s: 0 if s["slug"] in priority_slugs else 1)
+            n_priority = sum(1 for s in target_services if s["slug"] in priority_slugs)
+            print(f"[tiers] {n_priority}/{len(target_services)} slug(s) flagged target_now — generating those first")
 
     print(f"[Atlas] Generating {len(target_services)} service page(s) using {args.model}...")
 

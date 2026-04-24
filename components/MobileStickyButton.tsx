@@ -30,7 +30,7 @@ export default function MobileStickyButton() {
       aria-label="Quick booking button"
       className={[
         "mobile-sticky-cta",
-        "fixed bottom-5 right-4 z-50",
+        "fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] right-4 z-50",
         "md:hidden", // hidden on desktop
         "transition-all duration-300 ease-out",
         visible

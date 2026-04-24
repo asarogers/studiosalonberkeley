@@ -1,4 +1,16 @@
 {
-  "services": {},
+  "services": {
+    "braids": ".webp",
+    "chemical-relaxer": ".webp",
+    "crochet-braids": ".webp",
+    "hair-color": ".webp",
+    "loc-maintenance": ".webp",
+    "mens-hair-barbering": ".webp",
+    "natural-hair-styling": ".webp",
+    "quick-weave": ".webp",
+    "sew-in-weave": ".webp",
+    "two-strand-twist": ".webp",
+    "womens-haircut": ".webp"
+  },
   "blog": {}
 }

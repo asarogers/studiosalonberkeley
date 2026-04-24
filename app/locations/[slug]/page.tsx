@@ -12,7 +12,12 @@ import {
 import { getAllServices } from "@/lib/services-data";
 import { getAllPosts } from "@/lib/blog";
 import { LOCATION_FAQS, resolveFAQ } from "@/lib/common-faqs";
+import { loadSitePlan, noindexSlugs } from "@/lib/site-plan";
+import { locationEnrichment } from "@/lib/locations-enrichment";
 import LocationHeroImage from "./LocationHeroImage";
+
+/** Slugs the SEO pipeline marked exclude/orphan — emit noindex per page. */
+const NOINDEX_SLUGS = noindexSlugs(loadSitePlan());
 
 /* ============================================================
    STATIC PARAMS — pre-render every location page
@@ -33,10 +38,15 @@ export async function generateMetadata({
   const location = getLocationBySlug(slug);
   if (!location) return {};
 
+  const isNoindex = NOINDEX_SLUGS.has(slug);
+
   return {
     title: location.title,
     description: location.metaDescription,
     alternates: { canonical: `/locations/${slug}` },
+    ...(isNoindex
+      ? { robots: { index: false, follow: true, googleBot: { index: false, follow: true } } }
+      : {}),
     openGraph: {
       title: location.title,
       description: location.metaDescription,
@@ -477,6 +487,65 @@ export default async function LocationPage({
           </div>
         </div>
       </section>
+
+      {/* ── Hyperlocal Enrichment ────────────────────────────── */}
+      {(() => {
+        const enrichment = locationEnrichment[location.slug];
+        if (!enrichment) return null;
+        return (
+          <section
+            className="bg-[#F0D4DB] section-pad"
+            aria-labelledby={`local-context-${location.slug}`}
+          >
+            <div className="container-xl max-w-3xl">
+              <div className="blush-divider mb-6" />
+              <h2
+                id={`local-context-${location.slug}`}
+                className="section-heading mb-5"
+              >
+                About {location.city} Clients
+              </h2>
+              <p className="font-[family-name:var(--font-sans)] text-[#5A5A5A] text-lg leading-[1.85] mb-10">
+                {enrichment.localContext}
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="font-[family-name:var(--font-serif)] text-lg font-bold text-[#2C2C2C] mb-4">
+                    Transit Access
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {enrichment.transitAccess.map((item) => (
+                      <span
+                        key={item}
+                        className="inline-flex items-center bg-[#FCE8EC] text-[#9E4F63] text-sm font-semibold font-[family-name:var(--font-sans)] px-3 py-1.5 rounded-full"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="font-[family-name:var(--font-serif)] text-lg font-bold text-[#2C2C2C] mb-4">
+                    Nearby Landmarks
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {enrichment.nearbyLandmarks.map((item) => (
+                      <span
+                        key={item}
+                        className="inline-flex items-center bg-white text-[#B86A7E] text-sm font-semibold font-[family-name:var(--font-sans)] px-3 py-1.5 rounded-full border border-[#F0D4DB]"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* ── FAQ ──────────────────────────────────────────────── */}
       <FAQSection

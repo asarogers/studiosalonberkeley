@@ -1,0 +1,196 @@
+{
+  "project": "studiosalonberkeley",
+  "generated": "2026-04-21T05:01:37.491593Z",
+  "scored_date": "2026-04-20",
+  "total_keywords": 8,
+  "sitemaps": {
+    "priority": {
+      "filename": "sitemap-priority.xml",
+      "description": "Target-now + target-soon URLs. Include with recent <lastmod>. Link prominently from homepage + hub pages.",
+      "urls": [
+        {
+          "url": "/services/hair-extensions-berkeley",
+          "keyword": "hair extensions berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.64,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/haircut-berkeley",
+          "keyword": "haircut berkeley ca",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.64,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/keratin-treatment-berkeley",
+          "keyword": "keratin treatment berkeley",
+          "tier": "E",
+          "archetype": "local_pack_dominated",
+          "opportunity": 0.63,
+          "action": "gbp_only",
+          "reason": "organic is competitive; focus on GBP/local pack for this query"
+        },
+        {
+          "url": "/services/balayage-berkeley",
+          "keyword": "balayage berkeley",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.63,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/hair-salon-berkeley",
+          "keyword": "hair salon berkeley",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.6,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/hair-stylist-berkeley",
+          "keyword": "hair stylist berkeley",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.59,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/highlights-berkeley",
+          "keyword": "highlights berkeley",
+          "tier": "E",
+          "archetype": "wiki_locked",
+          "opportunity": 0.47,
+          "action": "reframe",
+          "reason": "informational intent \u2014 commercial pages won't rank; reframe with commercial modifier"
+        }
+      ]
+    },
+    "longtail": {
+      "filename": "sitemap-longtail.xml",
+      "description": "Lower-tier pages. Include but don't promote in internal linking yet.",
+      "urls": [
+        {
+          "url": "/services/hair-color-berkeley",
+          "keyword": "hair color berkeley",
+          "tier": "D",
+          "archetype": "mixed_strong",
+          "opportunity": 0.53,
+          "action": "target_later",
+          "reason": "tier D \u2014 build authority via lower tiers first"
+        }
+      ]
+    }
+  },
+  "orphans": {
+    "description": "Built pages that should NOT yet appear in internal links. Still indexable (in sitemap) but no link equity flow. Revisit monthly.",
+    "urls": []
+  },
+  "exclude": {
+    "description": "Do NOT build these as dedicated pages. Either unwinnable (S-tier) or need a reframed keyword target.",
+    "urls": []
+  },
+  "internal_linking": {
+    "homepage": {
+      "description": "Prominent blocks on the homepage. Top 5 target-now opportunities \u2014 the pages we're actively pushing up this month.",
+      "links": [
+        {
+          "url": "/services/hair-extensions-berkeley",
+          "keyword": "hair extensions berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.64,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/haircut-berkeley",
+          "keyword": "haircut berkeley ca",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.64,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/balayage-berkeley",
+          "keyword": "balayage berkeley",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.63,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/hair-salon-berkeley",
+          "keyword": "hair salon berkeley",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.6,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/hair-stylist-berkeley",
+          "keyword": "hair stylist berkeley",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.59,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        }
+      ]
+    },
+    "hub": {
+      "description": "Services hub / category pages. Next 15 priority URLs after homepage picks.",
+      "links": [
+        {
+          "url": "/services/keratin-treatment-berkeley",
+          "keyword": "keratin treatment berkeley",
+          "tier": "E",
+          "archetype": "local_pack_dominated",
+          "opportunity": 0.63,
+          "action": "gbp_only",
+          "reason": "organic is competitive; focus on GBP/local pack for this query"
+        },
+        {
+          "url": "/services/highlights-berkeley",
+          "keyword": "highlights berkeley",
+          "tier": "E",
+          "archetype": "wiki_locked",
+          "opportunity": 0.47,
+          "action": "reframe",
+          "reason": "informational intent \u2014 commercial pages won't rank; reframe with commercial modifier"
+        }
+      ]
+    },
+    "footer": {
+      "description": "Footer reinforcement for GBP-only queries \u2014 helps local pack signals without taking homepage real estate.",
+      "links": []
+    }
+  },
+  "clusters": {},
+  "lastmod_schedule": [
+    {
+      "week": 0,
+      "target_date": "2026-04-20",
+      "count": 7,
+      "urls": [
+        "/services/hair-extensions-berkeley",
+        "/services/haircut-berkeley",
+        "/services/keratin-treatment-berkeley",
+        "/services/balayage-berkeley",
+        "/services/hair-salon-berkeley",
+        "/services/hair-stylist-berkeley",
+        "/services/highlights-berkeley"
+      ]
+    }
+  ]
+}

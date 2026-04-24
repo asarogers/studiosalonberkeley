@@ -11,6 +11,11 @@ import {
 } from "@/lib/services-data";
 import { getLocationBySlug } from "@/lib/locations-data";
 import { SERVICE_FAQS } from "@/lib/common-faqs";
+import { getServiceFAQs } from "@/lib/service-faqs";
+import { loadSitePlan, noindexSlugs } from "@/lib/site-plan";
+
+/** Slugs the SEO pipeline marked exclude/orphan — emit noindex per page. */
+const NOINDEX_SLUGS = noindexSlugs(loadSitePlan());
 
 /** Convert a slug like "san-jose" to a label like "San Jose". */
 function slugToLabel(slug: string): string {
@@ -39,10 +44,15 @@ export async function generateMetadata({
   const service = getServiceBySlug(slug);
   if (!service) return {};
 
+  const isNoindex = NOINDEX_SLUGS.has(slug);
+
   return {
     title: service.title,
     description: service.metaDescription,
     alternates: { canonical: `/services/${slug}` },
+    ...(isNoindex
+      ? { robots: { index: false, follow: true, googleBot: { index: false, follow: true } } }
+      : {}),
     openGraph: {
       title: service.title,
       description: service.metaDescription,
@@ -305,7 +315,7 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────── */}
-      <FAQSection faqs={SERVICE_FAQS} headingId={`faq-${service.slug}`} />
+      <FAQSection faqs={getServiceFAQs(service.slug) ?? SERVICE_FAQS} headingId={`faq-${service.slug}`} />
 
       {/* ── Final CTA ────────────────────────────────────────── */}
       <CTABlock

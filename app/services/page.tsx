@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTABlock from "@/components/CTABlock";
+import ServicesMenuList from "@/components/ServicesMenuList";
 import { getAllGBPCategories } from "@/lib/gbp-categories-data";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -25,81 +26,162 @@ export const metadata: Metadata = {
   },
 };
 
-/* ── Service menu (derived from Booksy) ────────────────────── */
+/* ── Service menu (from Booksy) ────────────────────────────── */
 const FULL_MENU = [
   {
-    category: "Locs & Natural Hair",
-    blurb: "Retwists, interlocks, repair, natural styling, and silk press — the foundation of what we do.",
+    category: "Locs & Dreadlocks",
+    blurb: "Retwists, interlocking, starter dreads, instant locs, barrel twists, and loc repair — Britnee&apos;s specialty.",
     items: [
-      { name: "Loc Retwist",              price: "$85",    duration: "85 min",        slug: "loc-maintenance" },
-      { name: "Loc Maintenance (long)",   price: "$100+",  duration: "95 min",        slug: "loc-maintenance" },
-      { name: "Senegalese Twist",         price: "$25+",   duration: "40 min",        slug: "loc-maintenance" },
-      { name: "Hair Care Package",        price: "$300+",  duration: "8 hr",          slug: "loc-maintenance" },
-      { name: "Silk Press",               price: "$135",   duration: "70 min",        slug: "silk-press" },
-      { name: "Natural Hair Styling",     price: "$125",   duration: "60 min",        slug: "natural-hair-styling" },
-      { name: "Natural Hair Stylists (long)", price: "$200+", duration: "3 hr 30 min", slug: "natural-hair-styling" },
-      { name: "Hair Styling",             price: "$85",    duration: "2 hr 30 min",   slug: "natural-hair-styling" },
-      { name: "Two-Strand Twist Style",   price: "$225+",  duration: "4 hr 25 min",   slug: "two-strand-twist" },
-      { name: "Root Touch-up (Style)",    price: "$45+",   duration: "95 min",        slug: "natural-hair-styling" },
+      { name: "Retwist",                           price: "$100",  duration: "2 hr",          slug: "loc-maintenance", video: "/videos/menu/loc-retwist.mp4" },
+      { name: "Loc Maintenance / Touch Up",        price: "$165+", duration: "2 hr 45 min",   slug: "loc-maintenance", video: "/videos/menu/loc-retwist.mp4" },
+      { name: "Locs w/ Tool",                      price: "$200+", duration: "3 hr 30 min",   slug: "loc-maintenance", video: "/videos/menu/loc-retwist.mp4" },
+      { name: "Starter Dreads",                    price: "$120+", duration: "2 hr 30 min",   slug: "loc-maintenance", video: "/videos/menu/starter-locs.mp4" },
+      { name: "Instant Locs",                      price: "$300+", duration: "8 hr",          slug: "loc-maintenance", video: "/videos/menu/instant-locs.mp4" },
+      { name: "Retwist (Kids 4–12)",               price: "$85",   duration: "1 hr 45 min",   slug: "loc-maintenance", video: "/videos/menu/kids-braids.mp4" },
+      { name: "Dread Detox",                       price: "$65",   duration: "1 hr",          slug: "loc-maintenance", video: "/videos/menu/dread-detox.mp4" },
+      { name: "Barrel Twist Style on Locs",        price: "$25+",  duration: "40 min",        slug: "loc-maintenance", video: "/videos/menu/two-strand-twist.mp4" },
+    ],
+  },
+  {
+    category: "Natural Hair",
+    blurb: "Silk press, wash &amp; style, curl setting, and two-strand twists — for every texture from 3a to 4c.",
+    items: [
+      { name: "Silk Press",                        price: "$135",  duration: "1 hr 10 min",   slug: "silk-press",            video: "/videos/menu/silk-press.mp4" },
+      { name: "Silk Press (Kids 4–10)",            price: "$85",   duration: "2 hr 30 min",   slug: "silk-press",            video: "/videos/menu/kids-silk-press.mp4" },
+      { name: "Natural Curl Setting",              price: "$125",  duration: "1 hr",          slug: "natural-hair-styling" },
+      { name: "Natural Hair Singles",              price: "$200+", duration: "3 hr 30 min",   slug: "natural-hair-styling", video: "/videos/menu/natural-singles.mp4" },
+      { name: "Natural Bun",                       price: "$85",   duration: "1 hr 45 min",   slug: "natural-hair-styling" },
+      { name: "Curls Only",                        price: "$25+",  duration: "1 hr 45 min",   slug: "natural-hair-styling", video: "/videos/menu/two-strand-twist.mp4" },
+      { name: "Touch Up Natural Hairstyles",       price: "$45+",  duration: "1 hr 35 min",   slug: "natural-hair-styling", video: "/videos/menu/two-strand-twist.mp4" },
+      { name: "Wash, Blow Dry & Trim",             price: "$60",   duration: "45 min",        slug: "natural-hair-styling" },
+      { name: "Two Strand Twist w/ Hair Added",    price: "$225+", duration: "4 hr 25 min",   slug: "two-strand-twist",      video: "/videos/menu/two-strand-twist.mp4" },
+      { name: "Two Strand Twist (Natural Hair)",   price: "$125",  duration: "2 hr 30 min",   slug: "two-strand-twist",      video: "/videos/menu/two-strand-twist.mp4" },
+      { name: "Two Strand Twist with Design",      price: "$135+", duration: "3 hr",          slug: "two-strand-twist", video: "/videos/menu/two-strand-twist.mp4" },
     ],
   },
   {
     category: "Braids",
-    blurb: "Knotless, cornrows, feed-in, tribal — protective styles that don&apos;t punish your edges.",
+    blurb: "Knotless, cornrows, stitch, tribal, and Fulani — protective styles that don&apos;t punish your edges.",
     items: [
-      { name: "Cornrows",                 price: "$80",    duration: "1 hr 40 min",   slug: "braids" },
-      { name: "Cornrows (knotless)",      price: "$200+",  duration: "4 hr",          slug: "braids" },
-      { name: "Hair Braids (small)",      price: "$100",   duration: "1 hr 10 min",   slug: "braids" },
-      { name: "Hair Braids (medium)",     price: "$150",   duration: "2 hr",          slug: "braids" },
-      { name: "Kids Braids (4–12)",       price: "$100+",  duration: "90 min",        slug: "braids" },
-      { name: "Feed-In Braids",           price: "$325",   duration: "6 hr 30 min",   slug: "braids" },
-      { name: "Feed-In Braids (shorter)", price: "$185",   duration: "5 hr 30 min",   slug: "braids" },
-      { name: "Tribal Braids (medium)",   price: "$200",   duration: "6 hr 30 min",   slug: "braids" },
-      { name: "Tribal Braids (large)",    price: "$225",   duration: "6 hr 30 min",   slug: "braids" },
-      { name: "Hair Design / Parts",      price: "$45",    duration: "50 min",        slug: "braids" },
-      { name: "Hair Design (detailed)",   price: "$85",    duration: "60 min",        slug: "braids" },
+      { name: "Large Knotless Braids",             price: "$125",  duration: "2 hr 30 min",   slug: "braids", video: "/videos/menu/large-knotless.mp4" },
+      { name: "Medium Knotless",                   price: "$185",  duration: "6 hr 30 min",   slug: "braids", video: "/videos/menu/knotless-braids.mp4" },
+      { name: "Small Knotless Singles",            price: "$225",  duration: "8 hr 30 min",   slug: "braids", video: "/videos/menu/small-knotless.mp4" },
+      { name: "Cornrows with Half Braids Singles", price: "$200+", duration: "4 hr",          slug: "braids", video: "/videos/menu/small-knotless.mp4" },
+      { name: "4 Straight Back (Stitch)",          price: "$85",   duration: "2 hr 30 min",   slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "5 Straight Back (Stitch)",          price: "$110",  duration: "2 hr 30 min",   slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "6 Straight Back (Stitch)",          price: "$120",  duration: "3 hr",          slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "8 Straight Back (Stitch)",          price: "$130",  duration: "3 hr 15 min",   slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "10–12 Straight Back (Stitch)",      price: "$145",  duration: "3 hr 15 min",   slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "2 Stitch Braids",                   price: "$50",   duration: "50 min",        slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "4 Stitches (Crisscrossed)",         price: "$85",   duration: "1 hr 30 min",   slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "XSmall Tribal Braids w/ Designs",  price: "$325",  duration: "6 hr 30 min",   slug: "braids", video: "/videos/menu/small-knotless.mp4" },
+      { name: "Small Tribal Braids",               price: "$200",  duration: "6 hr 30 min",   slug: "braids", video: "/videos/menu/small-knotless.mp4" },
+      { name: "Small Tribal Braids w/ Designs",   price: "$225",  duration: "6 hr 30 min",   slug: "braids", video: "/videos/menu/small-knotless.mp4" },
+      { name: "Medium Tribal Braids",              price: "$185",  duration: "5 hr 30 min",   slug: "braids", video: "/videos/menu/knotless-braids.mp4" },
+      { name: "Fulani (Small/Med Knotless)",       price: "$280",  duration: "5 hr 30 min",   slug: "braids", video: "/videos/menu/small-knotless.mp4" },
+      { name: "Fulani Medium Knotless",            price: "$225",  duration: "5 hr 20 min",   slug: "braids", video: "/videos/menu/knotless-braids.mp4" },
+      { name: "Fulani Versatile + Small/Med",      price: "$310",  duration: "6 hr 30 min",   slug: "braids", video: "/videos/menu/small-knotless.mp4" },
+      { name: "Fulani Versatile + Medium Knotless",price: "$250",  duration: "5 hr 30 min",   slug: "braids", video: "/videos/menu/knotless-braids.mp4" },
+      { name: "4 Cornrows",                        price: "$45",   duration: "50 min",        slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "6 Cornrows",                        price: "$65",   duration: "1 hr",          slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "8 Cornrows",                        price: "$85",   duration: "1 hr",          slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "12–20 Straight Back Braids",        price: "$145+", duration: "3 hr 30 min",   slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "2 Braids with Hair Added",          price: "$80",   duration: "1 hr 40 min",   slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "French Braids for Kids",            price: "$100+", duration: "1 hr 30 min",   slug: "braids", video: "/videos/menu/french-braids-kids.mp4" },
+    ],
+  },
+  {
+    category: "Bob Style Knotless",
+    blurb: "Knotless bob styles — smedium, medium, and large with optional Bohemian texture.",
+    items: [
+      { name: "Bob (Smedium + Bohemian)",          price: "$275",  duration: "5 hr 30 min",   slug: "braids", video: "/videos/menu/bob-smedium.mp4" },
+      { name: "Bob (Medium + Bohemian)",           price: "$225",  duration: "5 hr 30 min",   slug: "braids", video: "/videos/menu/bob-medium.mp4" },
+      { name: "Bob (Smedium Knotless)",            price: "$220",  duration: "5 hr 30 min",   slug: "braids", video: "/videos/menu/bob-smedium.mp4" },
+      { name: "Bob (Medium Knotless)",             price: "$180",  duration: "4 hr 35 min",   slug: "braids", video: "/videos/menu/bob-medium.mp4" },
+      { name: "Bob (Large Size)",                  price: "$125",  duration: "3 hr 30 min",   slug: "braids", video: "/videos/menu/bob-medium.mp4" },
     ],
   },
   {
     category: "Weaves & Extensions",
-    blurb: "Clean sew-ins, breathable crochet, and quick-install styles for when you want a change tomorrow.",
+    blurb: "Sew-in, crochet, quick weave, and combo styles. Hair not provided — bring your bundles.",
     items: [
-      { name: "Sew-In Weave",             price: "$180",   duration: "3 hr 15 min",   slug: "sew-in-weave" },
-      { name: "Quick Weave (standard)",   price: "$125",   duration: "2 hr",          slug: "quick-weave" },
-      { name: "Quick Weave (extended)",   price: "$135+",  duration: "2 hr 15 min",   slug: "quick-weave" },
-      { name: "Crochet Braids",           price: "$165",   duration: "2 hr 30 min",   slug: "crochet-braids" },
-      { name: "Updo (standard)",          price: "$125",   duration: "2 hr 30 min",   slug: "quick-weave" },
-      { name: "Updo (special occasion)",  price: "$130",   duration: "2 hr 30 min",   slug: "quick-weave" },
-      { name: "Updo (premium)",           price: "$165+",  duration: "3 hr 30 min",   slug: "quick-weave" },
+      { name: "Sew In Weave",                      price: "$180",  duration: "3 hr 15 min",   slug: "sew-in-weave",   video: "/videos/menu/sew-in-weave.mp4" },
+      { name: "Crochet Sew In",                    price: "$165",  duration: "2 hr 30 min",   slug: "crochet-braids", video: "/videos/menu/crochet-braids.mp4" },
+      { name: "Full Quick Weave",                  price: "$125",  duration: "2 hr",          slug: "quick-weave",    video: "/videos/menu/quick-weave.mp4" },
+      { name: "Quick Weave w/ Style",              price: "$135+", duration: "2 hr 15 min",   slug: "quick-weave",    video: "/videos/menu/quick-weave.mp4" },
+      { name: "Half Up Half Down Style Sew In",    price: "$160",  duration: "2 hr 45 min",   slug: "sew-in-weave",   video: "/videos/menu/half-up-half-down.mp4" },
+      { name: "Half Up Half Down with Swoop",      price: "$175",  duration: "2 hr 55 min",   slug: "sew-in-weave",   video: "/videos/menu/half-up-half-down.mp4" },
+      { name: "Half Up Half Down Quick Weave",     price: "$180",  duration: "3 hr 20 min",   slug: "quick-weave",    video: "/videos/menu/half-up-half-down.mp4" },
+      { name: "Creative Style Quick Weave",        price: "$160",  duration: "3 hr 30 min",   slug: "quick-weave",    video: "/videos/menu/quick-weave.mp4" },
+      { name: "2 Braids x Quick Weave",            price: "$145",  duration: "2 hr 30 min",   slug: "quick-weave",    video: "/videos/menu/quick-weave.mp4" },
+      { name: "Braids in Front + Quick Weave",     price: "$220",  duration: "4 hr 30 min",   slug: "quick-weave",    video: "/videos/menu/quick-weave.mp4" },
     ],
   },
   {
-    category: "Color",
-    blurb: "Single-process, highlights, balayage, bleach &amp; tone, and root touch-ups. Text a reference photo.",
+    category: "Ponytail Styles",
+    blurb: "Sleek ponytails, braided styles, swoop, and knot bun — wash &amp; blow dry included on most.",
     items: [
-      { name: "Bleach & Tone",            price: "$40+",   duration: "45 min",        slug: "hair-color" },
-      { name: "Single-Process Color",     price: "$85",    duration: "90 min",        slug: "hair-color" },
-      { name: "Highlights",               price: "$85+",   duration: "2 hr 35 min",   slug: "hair-color" },
-      { name: "Balayage / Ends",          price: "Custom", duration: "by quote",      slug: "hair-color" },
+      { name: "Sleek Ponytail",                    price: "$125",  duration: "2 hr",          slug: "natural-hair-styling", video: "/videos/menu/sleek-ponytail.mp4" },
+      { name: "Swoop Ponytail",                    price: "$125",  duration: "2 hr 30 min",   slug: "natural-hair-styling", video: "/videos/menu/swoop-ponytail.mp4" },
+      { name: "Knot Bun",                          price: "$130",  duration: "2 hr 30 min",   slug: "natural-hair-styling" },
+      { name: "3 Part Pony",                       price: "$130",  duration: "2 hr 30 min",   slug: "natural-hair-styling", video: "/videos/menu/braided-ponytail.mp4" },
+      { name: "Bundle Pony",                       price: "$130",  duration: "2 hr 30 min",   slug: "natural-hair-styling", video: "/videos/menu/bundle-pony.mp4" },
+      { name: "Braided Ponytail (Women)",          price: "$165+", duration: "3 hr 30 min",   slug: "braids",               video: "/videos/menu/braided-ponytail.mp4" },
+    ],
+  },
+  {
+    category: "Hair Color",
+    blurb: "Highlights, dye, color &amp; style, and dye tips — blonde/black provided; custom colors available.",
+    items: [
+      { name: "Highlights",                        price: "$85+",  duration: "2 hr 35 min",   slug: "hair-color", video: "/videos/menu/highlights.mp4" },
+      { name: "Hair Dye",                          price: "$85",   duration: "1 hr 30 min",   slug: "hair-color", video: "/videos/menu/hair-dye.mp4" },
+      { name: "Hair Color & Style",                price: "$185",  duration: "3 hr",          slug: "hair-color", video: "/videos/menu/hair-dye.mp4" },
+      { name: "Dye Tips / Ends",                   price: "$40+",  duration: "45 min",        slug: "hair-color", video: "/videos/menu/dye-tips.mp4" },
     ],
   },
   {
     category: "Cuts & Barbering",
-    blurb: "Women&rsquo;s cuts, men&rsquo;s braids, buzz cuts, line-ups. Walk-ins welcome for quick services.",
+    blurb: "Women&rsquo;s cuts, pixie, line-up, and men&rsquo;s haircuts — student pricing available.",
     items: [
-      { name: "Women's Haircut",          price: "$30+",   duration: "40 min",        slug: "womens-haircut" },
-      { name: "Buzz Cut",                 price: "$100",   duration: "90 min",        slug: "womens-haircut" },
-      { name: "Men's Braids (small)",     price: "$100",   duration: "70 min",        slug: "mens-hair-barbering" },
-      { name: "Men's Braids (medium)",    price: "$150",   duration: "2 hr",          slug: "mens-hair-barbering" },
-      { name: "Men's Natural Hair Style", price: "$135",   duration: "3 hr 15 min",   slug: "mens-hair-barbering" },
+      { name: "Women's Haircut",                   price: "$30+",  duration: "40 min",        slug: "womens-haircut",       video: "/videos/menu/pixie-cut.mp4" },
+      { name: "Trim (½ inch ends)",                price: "$30",   duration: "30 min",        slug: "womens-haircut" },
+      { name: "Pixie Haircut",                     price: "$100",  duration: "1 hr 30 min",   slug: "womens-haircut",       video: "/videos/menu/pixie-cut.mp4" },
+      { name: "Women Line Up w/ Fade (Back)",      price: "$45+",  duration: "30 min",        slug: "womens-haircut", video: "/videos/menu/pixie-cut.mp4" },
+      { name: "Beard Line Up",                     price: "$25",   duration: "30 min",        slug: "mens-hair-barbering" },
+      { name: "Men Haircut + Beard Line Up",       price: "$50",   duration: "1 hr",          slug: "mens-hair-barbering" },
+      { name: "Taper & Line Up",                   price: "$45",   duration: "45 min",        slug: "mens-hair-barbering" },
+      { name: "Line Up Only",                      price: "$25+",  duration: "30 min",        slug: "mens-hair-barbering" },
+      { name: "Haircut / Razor Line Up",           price: "$100",  duration: "1 hr 10 min",   slug: "mens-hair-barbering" },
+      { name: "Kid Haircuts",                      price: "$30",   duration: "45 min",        slug: "mens-hair-barbering", video: "/videos/menu/kids-braids.mp4" },
+      { name: "Student Haircuts",                  price: "$25",   duration: "45 min",        slug: "mens-hair-barbering" },
+    ],
+  },
+  {
+    category: "Men's Braids",
+    blurb: "Singles, freestyle designs, straight backs, and creative braid styles for men.",
+    items: [
+      { name: "Natural Hair Singles (Men)",        price: "$135",  duration: "3 hr 15 min",   slug: "mens-hair-barbering", video: "/videos/menu/natural-singles.mp4" },
+      { name: "Designed Freestyle Braids",         price: "$100",  duration: "2 hr 30 min",   slug: "mens-hair-barbering", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "Straight Backs (Men)",              price: "$100",  duration: "1 hr 10 min",   slug: "mens-hair-barbering", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "Men Design Braids",                 price: "$150",  duration: "2 hr",          slug: "mens-hair-barbering", video: "/videos/menu/feed-in-braids.mp4" },
     ],
   },
   {
     category: "Chemical & Add-ons",
-    blurb: "Relaxer services and quick add-ons to round out your visit.",
+    blurb: "Relaxer, facials, waxing, braid takedown, wash &amp; blow dry, and consultation.",
     items: [
-      { name: "Chemical Relaxer",         price: "$140",   duration: "2 hr 15 min",   slug: "chemical-relaxer" },
-      { name: "Eyebrow Wax",              price: "$20",    duration: "30 min",        slug: "eyebrow-waxing" },
+      { name: "Women Short Style with Relaxer",    price: "$140",  duration: "2 hr 15 min",   slug: "chemical-relaxer" },
+      { name: "Eyebrow Wax",                       price: "$20",   duration: "30 min",        slug: "eyebrow-waxing",  video: "/videos/menu/eyebrow-wax.mp4" },
+      { name: "Facials",                           price: "$60",   duration: "50 min",        slug: "eyebrow-waxing" },
+      { name: "Black Mask",                        price: "$10",   duration: "30 min",        slug: "eyebrow-waxing" },
+      { name: "Waxing (legs, underarms, brows)",   price: "$15+",  duration: "1 hr",          slug: "eyebrow-waxing", video: "/videos/menu/eyebrow-wax.mp4" },
+      { name: "Wash & Blow Dry Only",              price: "$35+",  duration: "40 min",        slug: "natural-hair-styling" },
+      { name: "Wash Steam Treatment",              price: "$100+", duration: "2 hr",          slug: "natural-hair-styling" },
+      { name: "Braid Down for Wig",               price: "$45",   duration: "1 hr",          slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "Braid Take Down",                  price: "$50+",  duration: "45 min",        slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "Braid Touch Up (Entire Perimeter)", price: "$85+",  duration: "1 hr 40 min",   slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "Need Help Parting",                 price: "$70+",  duration: "1 hr 10 min",   slug: "braids", video: "/videos/menu/feed-in-braids.mp4" },
+      { name: "Consultation",                      price: "$25+",  duration: "35 min",        slug: "natural-hair-styling" },
     ],
   },
 ];
@@ -136,14 +218,17 @@ export default function ServicesPage() {
         className="sticky top-16 md:top-20 z-30 bg-[#FFF9F9]/95 backdrop-blur-md border-b border-[#F0D4DB]"
       >
         <div className="container-xl">
-          <ul className="flex flex-wrap gap-2 py-3 justify-center" style={{ fontFamily: "var(--font-sans)" }}>
+          <ul
+            className="flex md:flex-wrap gap-2 py-3 md:justify-center overflow-x-auto scrollbar-none"
+            style={{ fontFamily: "var(--font-sans)", scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
             {FULL_MENU.map((c) => {
               const anchor = c.category.toLowerCase().replace(/\s+&\s+/g, "-").replace(/\s+/g, "-");
               return (
-                <li key={c.category}>
+                <li key={c.category} className="flex-shrink-0">
                   <a
                     href={`#${anchor}`}
-                    className="px-3 py-1.5 text-sm font-semibold text-[#5A5A5A] hover:text-[#9E4F63] hover:bg-[#FCE8EC] rounded-full transition-colors"
+                    className="block px-3 py-1.5 text-sm font-semibold text-[#5A5A5A] hover:text-[#9E4F63] hover:bg-[#FCE8EC] rounded-full transition-colors whitespace-nowrap"
                   >
                     {c.category}
                   </a>
@@ -157,51 +242,7 @@ export default function ServicesPage() {
       {/* ── Category sections ───────────────────────────── */}
       <section className="bg-[#FFF9F9] section-pad" aria-label="Services by category">
         <div className="container-xl">
-          <div className="space-y-16 max-w-5xl mx-auto">
-            {FULL_MENU.map((cat) => {
-              const anchor = cat.category.toLowerCase().replace(/\s+&\s+/g, "-").replace(/\s+/g, "-");
-              return (
-                <div key={cat.category} id={anchor} className="scroll-mt-32">
-                  <div className="flex items-baseline justify-between gap-4 mb-2 pb-2 border-b-2 border-[#E8A1B3]">
-                    <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.5rem,2.5vw+0.5rem,2rem)] font-bold text-[#2C2C2C]">
-                      {cat.category}
-                    </h2>
-                    <span className="text-xs text-[#5A5A5A] uppercase tracking-wider font-semibold flex-shrink-0"
-                      style={{ fontFamily: "var(--font-sans)" }}>
-                      {cat.items.length} services
-                    </span>
-                  </div>
-                  <p className="text-[#5A5A5A] mb-6 max-w-2xl"
-                    style={{ fontFamily: "var(--font-sans)" }}
-                    dangerouslySetInnerHTML={{ __html: cat.blurb }} />
-
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1"
-                    style={{ fontFamily: "var(--font-sans)" }}>
-                    {cat.items.map((item, idx) => (
-                      <li key={`${item.slug}-${idx}`}>
-                        <Link
-                          href={`/services/${item.slug}`}
-                          className="group flex items-baseline justify-between gap-3 py-3 px-3 -mx-3 rounded-lg hover:bg-[#FCE8EC] transition-colors border-b border-[#F0D4DB]/50"
-                        >
-                          <span className="flex-1 min-w-0">
-                            <span className="block font-semibold text-[#2C2C2C] group-hover:text-[#9E4F63] transition-colors">
-                              {item.name}
-                            </span>
-                            <span className="block text-xs text-[#5A5A5A] mt-0.5">
-                              {item.duration}
-                            </span>
-                          </span>
-                          <span className="flex-shrink-0 font-bold text-[#B86A7E] group-hover:text-[#9E4F63] transition-colors">
-                            {item.price}
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
+          <ServicesMenuList menu={FULL_MENU} />
         </div>
       </section>
 

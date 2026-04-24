@@ -78,7 +78,7 @@ export default function HeroVideo() {
               className="block text-white/95 font-bold drop-shadow-[0_2px_12px_rgba(184,106,126,0.45)]"
               style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(2.4rem, 6vw, 4rem)',
+                fontSize: 'clamp(1.8rem, 10vw, 4rem)',
                 lineHeight: 1,
                 letterSpacing: '0.08em',
               }}
@@ -89,7 +89,7 @@ export default function HeroVideo() {
               className="block text-white/95 font-bold drop-shadow-[0_2px_12px_rgba(184,106,126,0.45)] mt-1"
               style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(2.4rem, 6vw, 4rem)',
+                fontSize: 'clamp(1.8rem, 10vw, 4rem)',
                 lineHeight: 1,
                 letterSpacing: '0.08em',
               }}
@@ -97,7 +97,7 @@ export default function HeroVideo() {
               SALON
             </span>
             <span
-              className="mt-5 text-white/90 text-sm max-w-[240px]"
+              className="mt-5 text-white/90 text-sm max-w-[min(240px,80vw)]"
               style={{ fontFamily: 'var(--font-sans)' }}
             >
               Berkeley&rsquo;s loc &amp; natural hair specialists

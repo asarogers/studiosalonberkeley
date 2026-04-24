@@ -1,10 +1,10 @@
 /**
  * ============================================================
- *  WELL PREPPED LIFE — Custom SVG Icon Set
- *  Same technique as LogoConcepts: pure geometric SVG, no deps.
+ *  STUDIO SALON — Custom SVG Icon Set
+ *  Pure geometric SVG, no deps.
  *
- *  Dual-tone: `color` = primary (default currentColor/sage),
- *             terracotta (#B86A7E) used for accent details.
+ *  Dual-tone: `color` = primary (default currentColor),
+ *             accent tone for detail strokes.
  *
  *  Usage:  <IconCheck size={20} />
  *          <IconStar size={16} />

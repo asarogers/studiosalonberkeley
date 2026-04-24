@@ -237,7 +237,7 @@ export default function Navigation() {
                 "hover:text-[#9E4F63] transition-colors",
                 "focus-visible:outline-none focus-visible:ring-2",
                 "focus-visible:ring-[#B86A7E] focus-visible:ring-offset-1",
-                "rounded-sm px-0.5",
+                "rounded-sm px-2 py-3",
               ].join(" ")}
               style={{ fontFamily: "var(--font-sans)" }}
             >
@@ -348,7 +348,7 @@ export default function Navigation() {
               hamburgerRef.current?.focus();
             }}
             className={[
-              "w-9 h-9 flex items-center justify-center",
+              "w-11 h-11 flex items-center justify-center",
               "rounded-md text-[#5A5A5A]",
               "hover:bg-[#FCE8EC] hover:text-[#2C2C2C]",
               "transition-colors",
