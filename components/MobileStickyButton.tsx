@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import { siteConfig } from "@/lib/siteConfig";
 
 /* ============================================================
    MobileStickyButton
@@ -38,9 +38,11 @@ export default function MobileStickyButton() {
           : "opacity-0 translate-y-4 pointer-events-none",
       ].join(" ")}
     >
-      <Link
-        href="/book"
-        aria-label="Book an appointment"
+      <a
+        href={siteConfig.booking.freshaUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Book an appointment on Fresha (opens in a new tab)"
         className={[
           "flex items-center gap-2",
           "pl-4 pr-5 py-3.5",
@@ -77,7 +79,7 @@ export default function MobileStickyButton() {
           <line x1="3" y1="10" x2="21" y2="10" />
         </svg>
         Book Now
-      </Link>
+      </a>
     </div>
   );
 }

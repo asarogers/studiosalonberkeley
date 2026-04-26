@@ -247,7 +247,7 @@ export default async function CategoryPage({ params }: PageProps) {
           </h2>
           <ul className="space-y-5">
             {[
-              { label: "Every texture, every time", text: "4A to 4C, locs to silk press, braids to color — Britnee works with every hair type in the chair." },
+              { label: "Every texture, every time", text: "4A to 4C, locs to silk press, braids to color — we work with every hair type in the chair." },
               { label: "Healthy hair first", text: "Scalp health, edge protection, and proper tension. Pretty is a given; your hair still being healthy in 6 months is the goal." },
               { label: "Honest time quotes", text: "If we tell you 3 hours, you&rsquo;re out in about 3 hours. We respect your day." },
               { label: "Book this week", text: "Walk-ins welcome for quick services. Loc and braid bookings fill 2&ndash;3 weeks ahead &mdash; call or text to reserve." },
@@ -310,7 +310,7 @@ export default async function CategoryPage({ params }: PageProps) {
       {/* ── Final CTA ──────────────────────────────────────────── */}
       <CTABlock
         headline={`Ready for ${category.name} Services?`}
-        subtext={`Book your appointment today. Call or text Britnee at ${siteConfig.phone.display} to reserve your spot.`}
+        subtext={`Book your appointment today. Call or text us at ${siteConfig.phone.display} to reserve your spot.`}
         showPhone={true}
         headingId={`${slug}-cta`}
       />

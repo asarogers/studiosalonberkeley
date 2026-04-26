@@ -5,7 +5,7 @@ date: "2026-03-17"
 category: "Salon Tips"
 excerpt: "A warm walk-through of your first visit to Studio Salon in Berkeley — booking, consultation, what to bring, parking tips, and what to expect in the chair."
 featured: false
-author: "Britnee Lott"
+author: "Studio Salon Berkeley"
 readTime: "6 min read"
 ---
 

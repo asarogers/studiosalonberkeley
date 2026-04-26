@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     const to = process.env.CONTACT_FORM_TO_EMAIL || 'studiosalonberkeley@gmail.com';
     const firstName = name.split(' ')[0];
 
-    // ── 1. Notification to Britnee (critical) ──────────────────
+    // ── 1. Notification to salon inbox (critical) ──────────────
     const { error: notifyError } = await resend.emails.send({
       from,
       to,
@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
             </p>
             <hr style="border: none; border-top: 1px solid #F0D4DB; margin: 32px 0;" />
             <p style="font-size: 13px; color: #888; margin: 0; font-family: sans-serif;">
-              — Britnee Lott<br />
+              — Studio Salon Berkeley<br />
               Studio Salon &middot; 2902 Sacramento St, Berkeley, CA<br />
               <a href="https://studiosalonberkeley.com" style="color: #B86A7E;">studiosalonberkeley.com</a>
             </p>

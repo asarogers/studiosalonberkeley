@@ -16,13 +16,13 @@ interface Props {
 
 export default function BookingShell({ service, step, date, time, children }: Props) {
   return (
-    <section className="bg-[#FFF9F9] section-pad min-h-[calc(100vh-5rem)]">
+    <section className="bg-[#FFF9F9] pt-6 sm:pt-8 md:pt-2 pb-6 sm:pb-8 md:pb-8">
       <div className="container-xl">
-        <div className="mb-10">
+        <div className="mb-4 md:mb-6">
           <StepHeader current={step} />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_22rem] gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_22rem] gap-6 lg:gap-10 items-start">
           <div className="min-w-0">{children}</div>
           <OrderSummary service={service} date={date} time={time} />
         </div>

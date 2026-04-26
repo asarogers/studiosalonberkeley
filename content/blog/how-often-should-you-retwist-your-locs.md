@@ -5,7 +5,7 @@ date: "2026-01-28"
 category: "Locs"
 excerpt: "A Berkeley loctician breaks down the 4 to 8 week retwist rule, what over-retwisting does to your roots, and how to stretch time between salon visits."
 featured: false
-author: "Britnee Lott"
+author: "Studio Salon Berkeley"
 readTime: "6 min read"
 ---
 

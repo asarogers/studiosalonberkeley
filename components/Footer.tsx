@@ -56,7 +56,7 @@ const SOCIAL_LINKS: SocialLink[] = [
 
 const QUICK_LINKS = [
   { label: "Home", href: "/" },
-  { label: "About Britnee", href: "/about" },
+  { label: "About Us", href: "/about" },
   { label: "Services & Pricing", href: "/services" },
   { label: "Service Area", href: "/locations/berkeley" },
   { label: "Blog", href: "/blog" },

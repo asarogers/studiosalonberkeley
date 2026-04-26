@@ -26,11 +26,11 @@ export const LOCATION_FAQS: FAQ[] = [
   },
   {
     q: "What services are Studio Salon known for?",
-    a: "Loc maintenance and retwists, natural hair styling, knotless braids, feed-in braids, sew-in weaves, crochet braids, silk presses, color, and men's cuts. Britnee has built a reputation in {city} and the East Bay for loc cultivation and protective styles that protect your edges.",
+    a: "Loc maintenance and retwists, natural hair styling, knotless braids, feed-in braids, sew-in weaves, crochet braids, silk presses, color, and men's cuts. Studio Salon has built a reputation in {city} and the East Bay for loc cultivation and protective styles that protect your edges.",
   },
   {
     q: "How do I book from {city}?",
-    a: "The fastest path is a call or text to (510) 690-5274 — Britnee responds the same day with availability. Online booking is being set up soon. For loc or braid work, please send a reference photo when you text so we can quote time and price accurately.",
+    a: "The fastest path is a call or text to (510) 690-5274 — we respond the same day with availability. Online booking is being set up soon. For loc or braid work, please send a reference photo when you text so we can quote time and price accurately.",
   },
   {
     q: "How much do services cost?",

@@ -94,7 +94,7 @@ export default function YourInfoStep({ contact, onChange, onBack, onContinue }: 
             autoComplete="name"
             value={contact.fullName}
             onChange={(e) => update("fullName", e.target.value)}
-            placeholder="Britnee Lott"
+            placeholder="Jane Doe"
             className="w-full rounded-xl border border-[#F0D4DB] bg-white px-4 py-3 text-[#2C2C2C] placeholder:text-[#5A5A5A]/50 focus:outline-none focus:border-[#B86A7E] focus:ring-2 focus:ring-[#FCE8EC] transition-colors"
           />
         </Field>

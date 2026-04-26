@@ -21,8 +21,8 @@ export async function generateMetadata({ searchParams }: BlogPageProps): Promise
     ? `${activeCategory} — Studio Salon Blog`
     : 'Hair tips, loc care & salon stories';
   const description = isFiltered
-    ? `${activeCategory} articles from Britnee Lott at Studio Salon in Berkeley.`
-    : 'Loc care, protective style guides, natural hair tips, and salon stories from Britnee Lott at Studio Salon in Berkeley.';
+    ? `${activeCategory} articles from Studio Salon Berkeley.`
+    : 'Loc care, protective style guides, natural hair tips, and salon stories from Studio Salon Berkeley.';
   return {
     title,
     description,
@@ -134,7 +134,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                 Loc care, protective styles &amp; salon stories
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-white/80">
-                Honest advice from Britnee Lott on locs, natural hair, braids, color, and
+                Honest advice from Studio Salon Berkeley on locs, natural hair, braids, color, and
                 everything that happens between salon visits.
               </p>
             </div>

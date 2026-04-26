@@ -641,7 +641,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* ── Full-width CTA Block ─────────────────────────────────── */}
       <CTABlock
         headline="Researching this for someone in the Bay Area?"
-        subtext="Britnee Lott is available for a free 15-minute call this week — no form to fill, no commitment. She can tell you exactly how she handles this situation and whether she can help."
+        subtext="Studio Salon Berkeley is available for a free 15-minute call this week — no form to fill, no commitment. We can tell you exactly how we handle this situation and whether we can help."
         showPhone={true}
       />
     </>

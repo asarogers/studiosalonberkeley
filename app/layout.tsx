@@ -177,13 +177,6 @@ const localBusinessSchema = {
     bestRating: "5",
     worstRating: "1",
   },
-  employee: [
-    {
-      "@type": "Person",
-      name: siteConfig.founder,
-      jobTitle: "Hair Stylist & Loctician",
-    },
-  ],
   sameAs: [siteConfig.social.instagram].filter(Boolean),
 };
 

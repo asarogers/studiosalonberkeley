@@ -39,7 +39,7 @@ export const gbpCategories: GBPCategory[] = [
     gbpName: "Hair salon",
     tagline: "Berkeley's loc and natural hair specialists",
     description:
-      "Studio Salon is a full-service hair salon in Berkeley, California, specializing in locs, natural hair, braids, color, and cuts. Britnee Lott works with every texture — from starter locs to tailored silk presses — right here on Sacramento Street. Walk-ins welcome; appointments strongly recommended for loc services and multi-hour installs.",
+      "Studio Salon is a full-service hair salon in Berkeley, California, specializing in locs, natural hair, braids, color, and cuts. We work with every texture — from starter locs to tailored silk presses — right here on Sacramento Street. Walk-ins welcome; appointments strongly recommended for loc services and multi-hour installs.",
     isPrimary: true,
     services: [
       { name: "Loc maintenance & retwist",    slug: "loc-maintenance" },
@@ -62,7 +62,7 @@ export const gbpCategories: GBPCategory[] = [
     gbpName: "Braids & Locs",
     tagline: "Loc cultivation, retwists, and protective braid styles",
     description:
-      "Studio Salon is known across the East Bay for loc work and protective braid styles. Whether you're starting your loc journey, maintaining mature locs, or looking for knotless, cornrows, feed-in, or tribal braids, Britnee installs styles that protect your edges and last.",
+      "Studio Salon is known across the East Bay for loc work and protective braid styles. Whether you're starting your loc journey, maintaining mature locs, or looking for knotless, cornrows, feed-in, or tribal braids, we install styles that protect your edges and last.",
     services: [
       { name: "Loc maintenance & retwist",       slug: "loc-maintenance" },
       { name: "Knotless, cornrows, feed-in, tribal braids", slug: "braids" },

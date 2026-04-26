@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import BookingFlow from "@/components/booking/BookingFlow";
+import { notFound, redirect } from "next/navigation";
 import { findServiceByBookingSlug } from "@/lib/services-menu";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -23,11 +22,11 @@ export async function generateMetadata({
   }
   return {
     title: `Book ${service.name}`,
-    description: `Schedule ${service.name} (${service.duration}, from ${service.price}) with Britnee at Studio Salon in Berkeley, CA.`,
+    description: `Schedule ${service.name} (${service.duration}, from ${service.price}) at Studio Salon in Berkeley, CA.`,
     alternates: { canonical: `/book/${service.bookingSlug}` },
     openGraph: {
       title: `Book ${service.name} | Studio Salon`,
-      description: `Schedule ${service.name} with Britnee Lott in Berkeley.`,
+      description: `Schedule ${service.name} at Studio Salon Berkeley.`,
       url: `${siteConfig.url}/book/${service.bookingSlug}`,
       siteName: siteConfig.name,
       type: "website",
@@ -45,5 +44,5 @@ export default async function BookServicePage({
   const service = findServiceByBookingSlug(serviceSlug);
   if (!service) notFound();
 
-  return <BookingFlow service={service} />;
+  redirect(siteConfig.booking.freshaUrl);
 }

@@ -180,35 +180,104 @@ export default async function ServiceDetailPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
 
-      {/* ── Hero Image ──────────────────────────────────────── */}
-      <div className="w-full overflow-hidden" style={{ maxHeight: '320px' }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={serviceImagePath(service.slug)}
-          alt={service.h1}
-          width={1200}
-          height={560}
-          className="w-full h-auto object-cover" loading="lazy" />
-      </div>
-
-      {/* ── Hero / Intro ─────────────────────────────────────── */}
+      {/* ── Atelier Hero ─────────────────────────────────────── */}
       <section
-        className="bg-[#B86A7E] section-pad"
+        className="atelier-service-hero"
         aria-labelledby="service-hero-heading"
       >
-        <div className="container-xl max-w-3xl text-center">
-          <p className="font-[family-name:var(--font-sans)] text-[#FCE8EC] font-semibold text-sm uppercase tracking-widest mb-4">
-            {siteConfig.name} &mdash; Service
-          </p>
-          <h1
-            id="service-hero-heading"
-            className="font-[family-name:var(--font-serif)] text-[clamp(1.75rem,4vw+0.5rem,3.25rem)] font-bold text-white leading-tight mb-6"
-          >
-            {service.h1}
-          </h1>
-          <p className="font-[family-name:var(--font-sans)] text-[#FCE8EC] text-base sm:text-xl leading-relaxed max-w-2xl mx-auto">
-            {service.intro}
-          </p>
+        <span aria-hidden="true" className="atelier-orb atelier-orb--tr" />
+        <span aria-hidden="true" className="atelier-orb atelier-orb--bl" />
+        <span aria-hidden="true" className="atelier-grain" />
+        <span aria-hidden="true" className="atelier-rule-top" />
+
+        <div className="container-xl atelier-service-hero-inner">
+          <div className="atelier-service-grid">
+            {/* Image plate */}
+            <figure className="atelier-plate">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={serviceImagePath(service.slug)}
+                alt={service.h1}
+                width={1200}
+                height={1500}
+                className="atelier-plate-img"
+                loading="eager"
+              />
+              <span className="atelier-plate-vignette" aria-hidden="true" />
+              <figcaption className="atelier-plate-caption">
+                <span className="atelier-plate-caption-dot" aria-hidden="true" />
+                <span>2902 Sacramento St · Studio Salon Berkeley</span>
+              </figcaption>
+              <span className="atelier-plate-frame atelier-plate-frame--tl" aria-hidden="true" />
+              <span className="atelier-plate-frame atelier-plate-frame--br" aria-hidden="true" />
+            </figure>
+
+            {/* Text column */}
+            <div className="atelier-service-text">
+              <p
+                className="atelier-prelude"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                <em>The Service</em>
+                <span className="atelier-prelude-rule" aria-hidden="true" />
+                <span className="atelier-numeral">Studio Salon</span>
+              </p>
+
+              <h1
+                id="service-hero-heading"
+                className="atelier-display atelier-display--service"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                {service.h1}
+                <span aria-hidden="true" className="atelier-period">.</span>
+              </h1>
+
+              <p
+                className="atelier-lede atelier-lede--clamped"
+                style={{ fontFamily: "var(--font-sans)" }}
+              >
+                {service.intro}
+              </p>
+
+              <div className="atelier-cta-row">
+                <Link
+                  href={`/book/${service.slug}`}
+                  className="atelier-cta-primary"
+                >
+                  <span>Reserve the Chair</span>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </Link>
+                <a
+                  href={`#section-0-heading`}
+                  className="atelier-cta-ghost"
+                >
+                  Read the brief
+                </a>
+              </div>
+
+              <p
+                className="atelier-signature"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                <span className="atelier-signature-line" aria-hidden="true" />
+                <em>by appointment, by hand —</em>
+                <span className="atelier-signature-name">Studio Salon Berkeley</span>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -320,7 +389,7 @@ export default async function ServiceDetailPage({
       {/* ── Final CTA ────────────────────────────────────────── */}
       <CTABlock
         headline="Ready for the chair?"
-        subtext={`Book your ${service.h1.toLowerCase()} appointment today. Call or text Britnee at ${siteConfig.phone.display} to reserve your spot.`}
+        subtext={`Book your ${service.h1.toLowerCase()} appointment today. Call or text us at ${siteConfig.phone.display} to reserve your spot.`}
         showPhone={true}
         headingId="service-detail-cta"
       />

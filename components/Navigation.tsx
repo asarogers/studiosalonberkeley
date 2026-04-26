@@ -207,10 +207,12 @@ export default function Navigation() {
             </ul>
 
             {/* Desktop CTA Button */}
-            <Link
-              href="/book"
+            <a
+              href={siteConfig.booking.freshaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => Events.bookClick()}
-              aria-label="Book an appointment"
+              aria-label="Book an appointment on Fresha (opens in a new tab)"
               className={[
                 "btn-primary text-sm md:text-base",
                 "transition-all duration-200",
@@ -223,7 +225,7 @@ export default function Navigation() {
               ].join(" ")}
             >
               Book Now
-            </Link>
+            </a>
           </div>
 
           {/* ---- Mobile: phone number + hamburger ---- */}
@@ -424,14 +426,16 @@ export default function Navigation() {
             "flex flex-col gap-3",
           ].join(" ")}
         >
-          <Link
-            href="/book"
+          <a
+            href={siteConfig.booking.freshaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => { setMobileOpen(false); Events.bookClick(); }}
-            aria-label="Book an appointment"
+            aria-label="Book an appointment on Fresha (opens in a new tab)"
             className="btn-primary w-full justify-center text-base"
           >
             Book Now
-          </Link>
+          </a>
           <a
             href={PHONE_HREF}
             onClick={() => Events.phoneClick()}

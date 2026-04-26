@@ -210,7 +210,7 @@ export const SERVICE_FAQ_MAP: Record<string, FAQ[]> = {
     },
     {
       q: "Can men start locs at Studio Salon?",
-      a: "Yes — Britnee does loc starter sets for men as part of the natural hair and loc work at Studio Salon. Starter options include two-strand twists, comb coils, interlocked starts, and freeform. The right start method depends on your texture, your density, and how hands-on you want to be with early-stage maintenance. A brief consult by phone or in person at 2902 Sacramento St is the best first step so we can look at the hair and map the starter method.",
+      a: "Yes — Studio Salon does loc starter sets for men as part of the natural hair and loc work in the chair. Starter options include two-strand twists, comb coils, interlocked starts, and freeform. The right start method depends on your texture, your density, and how hands-on you want to be with early-stage maintenance. A brief consult by phone or in person at 2902 Sacramento St is the best first step so we can look at the hair and map the starter method.",
     },
     {
       q: "What should I tell the stylist about my beard when I come in?",
@@ -275,7 +275,7 @@ export const SERVICE_FAQ_MAP: Record<string, FAQ[]> = {
     },
     {
       q: "Can two-strand twists be used to start locs?",
-      a: "Yes — two-strand twists are one of the most common loc starter methods, especially for clients with 4a through 4c textures. The twist begins to coil and tighten on itself over weeks and months as the hair locks. The advantage of twist starters over comb coils is that they hold more length and can be maintained without a loctician for longer between visits. The disadvantage is that the early stages can look fuzzy or unravel if not maintained carefully. Britnee can walk through starter method options in a consult at 2902 Sacramento St.",
+      a: "Yes — two-strand twists are one of the most common loc starter methods, especially for clients with 4a through 4c textures. The twist begins to coil and tighten on itself over weeks and months as the hair locks. The advantage of twist starters over comb coils is that they hold more length and can be maintained without a loctician for longer between visits. The disadvantage is that the early stages can look fuzzy or unravel if not maintained carefully. We can walk through starter method options in a consult at 2902 Sacramento St.",
     },
     {
       q: "How often do two-strand twists need to be retwisted?",

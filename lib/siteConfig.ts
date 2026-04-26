@@ -10,7 +10,6 @@ export const siteConfig = {
   // ── Brand ─────────────────────────────────────────────────
   name: "Studio Salon",
   tagline: "Berkeley's loc & natural hair specialists.",
-  founder: "Britnee Lott",
   url: "https://studiosalonberkeley.com",
 
   // ── Contact ───────────────────────────────────────────────
@@ -49,17 +48,18 @@ export const siteConfig = {
   ],
 
   // ── Booking ───────────────────────────────────────────────
-  // Link to the existing Booksy profile; /book renders a
-  // "coming soon" placeholder until we swap in a real widget.
+  // Bookings are handled by Fresha. /book and /book/[slug] redirect
+  // server-side to this URL; primary CTAs link to it directly with
+  // target="_blank" so users don't lose the site.
   booking: {
-    // Public-facing Booksy URL — kept for reference, not clickable
-    // from the site yet (per brief: "button that doesn't do anything").
+    freshaUrl:
+      "https://www.fresha.com/book-now/studio-salon-berkeley-dy3ug037/all-offer?share=true&pId=2861607",
+    // Legacy Booksy reference — kept so existing copy can still cite it
+    // until removed.
     booksyUrl:
       "https://booksy.com/en-us/1434403_studio-salon_hair-salon_119583_berkeley",
     businessId: "1434403",
-    // When true, the /book page shows a pink "Coming Soon" card
-    // and all Book buttons route to /book (not directly to Booksy).
-    placeholder: true,
+    placeholder: false,
   },
 
   // ── Social Media ──────────────────────────────────────────
@@ -72,7 +72,7 @@ export const siteConfig = {
 
   // ── SEO defaults ──────────────────────────────────────────
   description:
-    "Studio Salon in Berkeley, CA. Loc maintenance, braids, natural hair styling, color, weaves, and cuts with Britnee Lott. Book your appointment today.",
+    "Studio Salon in Berkeley, CA. Loc maintenance, braids, natural hair styling, color, weaves, and cuts. Book your appointment today.",
   keywords: [
     "hair salon Berkeley",
     "loc salon Berkeley",
@@ -82,7 +82,6 @@ export const siteConfig = {
     "sew in Berkeley",
     "crochet braids Berkeley",
     "silk press Berkeley",
-    "Britnee Lott hair stylist",
     "East Bay hair salon",
     "barbershop Berkeley",
   ],

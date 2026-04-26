@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { siteConfig } from "@/lib/siteConfig";
 
 interface CTABlockProps {
@@ -17,7 +16,7 @@ const PHONE_HREF = siteConfig.phone.href;
 
 export default function CTABlock({
   headline = "Ready for the chair?",
-  subtext = "Call or text to reserve your spot. Loc retwists, braids, weaves, silk press, color, cuts — whatever you need, Britnee's got you.",
+  subtext = "Call or text to reserve your spot. Loc retwists, braids, weaves, silk press, color, cuts — whatever you need, we've got you.",
   ctaText = "Book Your Appointment",
   headingId = "cta-block-heading",
   showPhone = true,
@@ -47,9 +46,11 @@ export default function CTABlock({
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <Link
-              href="/book"
-              aria-label={ctaText}
+            <a
+              href={siteConfig.booking.freshaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${ctaText} (opens Fresha in a new tab)`}
               className={[
                 "inline-flex items-center justify-center gap-2",
                 "px-8 py-4 rounded-full",
@@ -80,7 +81,7 @@ export default function CTABlock({
                 <line x1="3" y1="10" x2="21" y2="10" />
               </svg>
               {ctaText}
-            </Link>
+            </a>
 
             {showPhone && (
               <a

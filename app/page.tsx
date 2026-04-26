@@ -18,7 +18,7 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: "Studio Salon | Hair Salon & Loc Specialists in Berkeley, CA",
   description:
-    "Studio Salon in Berkeley — loc maintenance, braids, natural hair styling, sew-in weaves, silk press, color, and cuts with Britnee Lott. Call (510) 690-5274.",
+    "Studio Salon in Berkeley — loc maintenance, braids, natural hair styling, sew-in weaves, silk press, color, and cuts. Call (510) 690-5274.",
   alternates: { canonical: "/" },
 };
 
@@ -45,7 +45,7 @@ const REVIEWS = [
     service: "Men's Haircut + Beard Line Up",
     date: "Aug 2025",
     rating: 5,
-    text: "Yo, Britnee's work is straight-up top-notch, and she brings such a dope vibe to the table! Her services are legit amazing, and I'd totally recommend her to anyone.",
+    text: "Yo, the work is straight-up top-notch, and the vibe at Studio Salon is dope! The services are legit amazing, and I'd totally recommend this place to anyone.",
   },
   {
     author: "Chris",
@@ -66,7 +66,7 @@ const REVIEWS = [
     service: "Hair Color & Style",
     date: "Jul 2025",
     rating: 5,
-    text: "Did a really great job on my hair. The wash was very relaxing and refreshing. Will be returning. Thank you Britnee.",
+    text: "Did a really great job on my hair. The wash was very relaxing and refreshing. Will be returning. Thank you Studio Salon.",
   },
 ];
 
@@ -74,7 +74,7 @@ const REVIEWS = [
 const homepageFAQs = [
   {
     q: "Do you take walk-ins or do I need to book?",
-    a: "We welcome walk-ins for quick services like brow waxing, root touch-ups, and buzz cuts. For locs, braids, weaves, color, and anything multi-hour, please book in advance — call or text (510) 690-5274. Loc appointments with Britnee can fill 2–3 weeks out.",
+    a: "We welcome walk-ins for quick services like brow waxing, root touch-ups, and buzz cuts. For locs, braids, weaves, color, and anything multi-hour, please book in advance — call or text (510) 690-5274. Loc appointments can fill 2–3 weeks out.",
   },
   {
     q: "How long does a loc retwist take?",
@@ -98,7 +98,7 @@ const homepageFAQs = [
   },
   {
     q: "Can I book online?",
-    a: "Online booking is being set up now. In the meantime, the fastest way to book is a quick call or text to (510) 690-5274 — Britnee responds same-day with availability.",
+    a: "Online booking is being set up now. In the meantime, the fastest way to book is a quick call or text to (510) 690-5274 — we respond same-day with availability.",
   },
 ];
 
@@ -162,7 +162,7 @@ export default function HomePage() {
               </h1>
 
               <p className="font-[family-name:var(--font-sans)] text-base sm:text-[1.1rem] lg:text-[1.2rem] text-[#5A5A5A] leading-relaxed mb-4 max-w-xl">
-                Studio Salon is Britnee Lott&rsquo;s chair on Sacramento Street — where locs get cultivated, braids go in without the tension, and silk press is still an art. Every texture, every style, done with care.
+                Studio Salon is the chair on Sacramento Street where locs get cultivated, braids go in without the tension, and silk press is still an art. Every texture, every style, done with care.
               </p>
               <p className="font-[family-name:var(--font-sans)] text-sm sm:text-base text-[#9E4F63] font-medium leading-relaxed mb-7 max-w-xl">
                 Walk-ins welcome for quick services. Loc &amp; braid appointments fill 2&ndash;3 weeks in advance &mdash; book early.
@@ -267,7 +267,7 @@ export default function HomePage() {
                   loop
                   playsInline
                   preload="metadata"
-                  aria-label={`${caption} by Britnee at Studio Salon Berkeley`}
+                  aria-label={`${caption} at Studio Salon Berkeley`}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {/* Caption overlay */}
@@ -415,11 +415,11 @@ export default function HomePage() {
             </h2>
             <p className="text-white/90 text-lg leading-relaxed mb-6"
               style={{ fontFamily: "var(--font-sans)" }}>
-              Britnee has been cultivating locs, installing protective styles, and styling natural hair in Berkeley for years. The work speaks for itself — but so do the returning clients.
+              Studio Salon Berkeley has been cultivating locs, installing protective styles, and styling natural hair in Berkeley for years. The work speaks for itself — but so do the returning clients.
             </p>
             <p className="text-white/70 text-sm italic"
               style={{ fontFamily: "var(--font-sans)" }}>
-              — Britnee Lott, owner &amp; stylist
+              — Studio Salon Berkeley
             </p>
           </div>
         </div>
@@ -577,7 +577,7 @@ export default function HomePage() {
                   From the Chair
                 </h2>
                 <p className="text-[#5A5A5A]" style={{ fontFamily: "var(--font-sans)" }}>
-                  Hair care tips, style guides, and notes from Britnee&rsquo;s chair.
+                  Hair care tips, style guides, and notes from the chair at Studio Salon.
                 </p>
               </div>
 
@@ -626,7 +626,7 @@ export default function HomePage() {
       {/* ── 9. FINAL CTA ───────────────────────────────────────── */}
       <CTABlock
         headline="Ready for the chair?"
-        subtext="Call or text Britnee to reserve your spot. Locs, braids, weaves, color, cuts — we&rsquo;ve got you."
+        subtext="Call or text us to reserve your spot. Locs, braids, weaves, color, cuts — we&rsquo;ve got you."
         ctaText="Book Your Appointment"
       />
 

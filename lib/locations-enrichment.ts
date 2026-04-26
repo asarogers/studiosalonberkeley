@@ -19,7 +19,7 @@ export const locationEnrichment: Record<string, LocationEnrichment> = {
       "AC Transit 18 (Downtown Berkeley BART connection)",
     ],
     localContext:
-      "Berkeley's mix of long-time residents, UC students, and East Bay professionals means demand for skilled natural hair care is high — and expectations are even higher. Clients here range from graduate students starting their first set of locs before a semester abroad to Elmwood families who have been seeing Britnee for years. Berkeley clients tend to research carefully, ask detailed questions, and keep coming back once they find a stylist they trust.",
+      "Berkeley's mix of long-time residents, UC students, and East Bay professionals means demand for skilled natural hair care is high — and expectations are even higher. Clients here range from graduate students starting their first set of locs before a semester abroad to Elmwood families who have been coming to Studio Salon for years. Berkeley clients tend to research carefully, ask detailed questions, and keep coming back once they find a stylist they trust.",
   },
 
   oakland: {
@@ -36,7 +36,7 @@ export const locationEnrichment: Record<string, LocationEnrichment> = {
       "AC Transit 51B (College Ave → Telegraph)",
     ],
     localContext:
-      "Oakland is one of the most culturally significant cities in the Bay Area for Black hair care, yet finding a skilled loc specialist in North Oakland remains harder than it should be. Clients from Rockridge, Temescal, and Lake Merritt cross the city line to Studio Salon because Britnee's expertise in locs and textured hair is exactly what the neighborhood lacks. Uptown and Downtown Oakland clients often fit appointments between lunch or evening plans, making the short drive up Telegraph or San Pablo a practical choice.",
+      "Oakland is one of the most culturally significant cities in the Bay Area for Black hair care, yet finding a skilled loc specialist in North Oakland remains harder than it should be. Clients from Rockridge, Temescal, and Lake Merritt cross the city line to Studio Salon because our expertise in locs and textured hair is exactly what the neighborhood lacks. Uptown and Downtown Oakland clients often fit appointments between lunch or evening plans, making the short drive up Telegraph or San Pablo a practical choice.",
   },
 
   albany: {
@@ -53,7 +53,7 @@ export const locationEnrichment: Record<string, LocationEnrichment> = {
       "AC Transit 18 (San Pablo Ave local)",
     ],
     localContext:
-      "Albany is a tight-knit community where word-of-mouth runs faster than any ad — if a Solano Ave parent finds a great stylist, their block knows within the week. Britnee has built a loyal Albany following largely through referrals from existing clients, with many Albany Hill and San Pablo corridor families booking multiple household members at the same visit. The short drive down San Pablo makes Studio Salon feel like a neighborhood option rather than a trek, which keeps Albany clients coming back on a regular maintenance schedule.",
+      "Albany is a tight-knit community where word-of-mouth runs faster than any ad — if a Solano Ave parent finds a great stylist, their block knows within the week. Studio Salon has built a loyal Albany following largely through referrals from existing clients, with many Albany Hill and San Pablo corridor families booking multiple household members at the same visit. The short drive down San Pablo makes Studio Salon feel like a neighborhood option rather than a trek, which keeps Albany clients coming back on a regular maintenance schedule.",
   },
 
   emeryville: {
@@ -87,7 +87,7 @@ export const locationEnrichment: Record<string, LocationEnrichment> = {
       "AC Transit 18 (San Pablo Ave local southbound)",
     ],
     localContext:
-      "El Cerrito clients have typically done their homework before booking — they have asked neighbors, checked reviews, and decided the 15-minute drive down San Pablo is worth it for a stylist who actually knows what she is doing with locs and natural hair. The city straddles a social and geographic edge between the more urban Richmond and the more residential Albany, and its clients reflect that range: long-term homeowners who have been loyal for years, younger residents who moved in for the housing and are building new routines, and Richmond Annex families for whom Studio Salon is practically the neighborhood salon. Once El Cerrito clients book once, they tend to stay.",
+      "El Cerrito clients have typically done their homework before booking — they have asked neighbors, checked reviews, and decided the 15-minute drive down San Pablo is worth it for a salon that actually knows what it is doing with locs and natural hair. The city straddles a social and geographic edge between the more urban Richmond and the more residential Albany, and its clients reflect that range: long-term homeowners who have been loyal for years, younger residents who moved in for the housing and are building new routines, and Richmond Annex families for whom Studio Salon is practically the neighborhood salon. Once El Cerrito clients book once, they tend to stay.",
   },
 
   richmond: {
@@ -104,7 +104,7 @@ export const locationEnrichment: Record<string, LocationEnrichment> = {
       "I-80 south to Ashby Ave exit (driving — ~25 min)",
     ],
     localContext:
-      "Richmond has historically been underserved for Black hair care — specifically the kind of specialty work that locs, textured natural hair, and protective styles require — which is precisely why Richmond clients are willing to make the longer drive to Studio Salon. For many Richmond clients, Britnee is not a convenient option but the right one: the only stylist they have found who handles their hair the way it needs to be handled. That trust turns the 20-to-25-minute commute into a non-issue, and Richmond clients tend to book their appointments well in advance and keep them consistently.",
+      "Richmond has historically been underserved for Black hair care — specifically the kind of specialty work that locs, textured natural hair, and protective styles require — which is precisely why Richmond clients are willing to make the longer drive to Studio Salon. For many Richmond clients, Studio Salon is not a convenient option but the right one: the only place they have found that handles their hair the way it needs to be handled. That trust turns the 20-to-25-minute commute into a non-issue, and Richmond clients tend to book their appointments well in advance and keep them consistently.",
   },
 
   kensington: {

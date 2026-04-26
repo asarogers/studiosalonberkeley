@@ -7,7 +7,6 @@
 ## Client Quick Reference
 
 - **Business:** Studio Salon (Studio Salon Berkeley)
-- **Founder:** Britnee Lott
 - **Phone:** (510) 690-5274
 - **Address:** 2902 Sacramento St, Berkeley, CA 94702
 - **Hours:** Tue–Sat 9am–7pm (Thu opens 8:30am), Sun–Mon closed
@@ -275,7 +274,7 @@ Phone:   (510) 690-5274
     loc-maintenance, braids, sew-in weave, silk press, crochet braids,
     quick weave, hair color, women's haircut, men's haircut/barbering,
     two-strand twist, chemical relaxer, eyebrow waxing
-[ ] Photos — minimum 10 (interior, chair, Britnee at work, before/after styles)
+[ ] Photos — minimum 10 (interior, chair, stylist at work, before/after styles)
     → update monthly, geotag if possible
 [ ] Hours — verify match siteConfig.ts (Tue–Sat 9–7, Thu 8:30–7)
 [ ] Phone/website — exact NAP, must match site + all citations
@@ -391,7 +390,7 @@ These are the human-judgment parts of onboarding that `run-onboard.sh` couldn't 
 
 [ ] studiosalonberkeley PG schema — gbp_profile, gbp_hours, gbp_categories, gbp_media
     → Tue-Sat hours, HairSalon primary + Loc extensions/Braiding shop/Natural hair additional,
-      photos once Britnee provides them
+      photos once the salon provides them
 
 [ ] D1 gbp_locations row — id, name, primary_category, services JSON
     → needed for GBP sync skill to work
@@ -432,14 +431,14 @@ Site is live. Remaining items roughly in priority order:
 [ ] Core Web Vitals pass (PageSpeed Insights)
 [ ] LeadSnap citation campaign start
 [ ] GBP: add all 13 services with descriptions
-[ ] GBP: upload 10+ photos (before/after styles, salon interior, Britnee at work)
+[ ] GBP: upload 10+ photos (before/after styles, salon interior, stylist at work)
 [ ] GBP: set up post cadence (1-2×/week, Arnold automation)
 [ ] Review request system — SMS template after each appointment
 [ ] Chamber of Commerce Berkeley membership (body backlink)
 [ ] Yelp claim + NAP verify
 [ ] Article schema audit on all /blog/* posts
 [ ] Schema validation at schema.org/validator
-[ ] E-E-A-T signals — Britnee's credentials + certifications on About/service pages
+[ ] E-E-A-T signals — stylist credentials + certifications on About/service pages
 [ ] TikTok / Instagram embed on homepage or blog (social proof signal)
 [ ] Set up google-indexing-key.json for automatic per-URL IndexNow submission
 ```

@@ -5,7 +5,7 @@ date: "2026-02-24"
 category: "Natural Hair"
 excerpt: "Knotless, feed-in, and crochet protective styles compared — tension, install time, lifespan, pricing, and how to pick the right one for your natural hair."
 featured: false
-author: "Britnee Lott"
+author: "Studio Salon Berkeley"
 readTime: "6 min read"
 ---
 

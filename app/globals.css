@@ -325,6 +325,438 @@ img, video, svg {
 }
 
 /* ============================================================
+   SERVICE MENU — editorial spread reveal + reserve-arrow nudge
+   ============================================================ */
+.service-spread {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: service-spread-in 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@keyframes service-spread-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reserve-pill:hover .reserve-arrow {
+  transform: translateX(2px);
+}
+.service-row {
+  transition: background-color 250ms ease;
+  border-radius: 6px;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.service-row:hover {
+  background-color: rgba(252, 232, 236, 0.55);
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-spread {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .reserve-pill:hover .reserve-arrow {
+    transform: none;
+  }
+  .service-row {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   ATELIER — shared editorial hero primitives
+   Used by /services/[slug] (and reusable for other surfaces)
+   ============================================================ */
+.atelier-service-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 55% at 85% 0%, rgba(232, 161, 179, 0.45), transparent 60%),
+    radial-gradient(ellipse 75% 60% at 10% 100%, rgba(250, 218, 221, 0.85), transparent 65%),
+    linear-gradient(180deg, #FCE8EC 0%, #F9DCE2 55%, #FCE8EC 100%);
+  border-top: 1px solid rgba(184, 106, 126, 0.18);
+  border-bottom: 1px solid rgba(184, 106, 126, 0.22);
+}
+
+.atelier-service-hero-inner {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .atelier-service-hero-inner {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .atelier-service-hero-inner {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.atelier-service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .atelier-service-grid {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    gap: 4.5rem;
+  }
+}
+
+/* ---- Image plate ---- */
+.atelier-plate {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  background: #B86A7E;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow:
+    0 30px 60px -30px rgba(46, 14, 22, 0.45),
+    0 12px 24px -12px rgba(184, 106, 126, 0.35);
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  animation: atelier-rise 1000ms cubic-bezier(0.2, 0.8, 0.2, 1) 60ms forwards;
+}
+@media (min-width: 1024px) {
+  .atelier-plate {
+    aspect-ratio: 5 / 6;
+  }
+}
+
+.atelier-plate-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.atelier-plate-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 55%, rgba(31, 26, 27, 0.55) 100%),
+    radial-gradient(ellipse at center, transparent 60%, rgba(31, 26, 27, 0.18) 100%);
+}
+
+.atelier-plate-caption {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.1rem;
+  right: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: rgba(255, 249, 249, 0.92);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.atelier-plate-caption-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #FCE8EC;
+  box-shadow: 0 0 0 3px rgba(252, 232, 236, 0.25);
+}
+
+.atelier-plate-frame {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255, 249, 249, 0.85);
+  pointer-events: none;
+}
+.atelier-plate-frame--tl {
+  top: 12px;
+  left: 12px;
+  border-right: none;
+  border-bottom: none;
+}
+.atelier-plate-frame--br {
+  bottom: 12px;
+  right: 12px;
+  border-left: none;
+  border-top: none;
+}
+
+/* ---- Text column ---- */
+.atelier-service-text {
+  position: relative;
+  min-width: 0;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: atelier-rise 850ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms forwards;
+}
+
+.atelier-rule-top {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent 5%, rgba(184, 106, 126, 0.65) 30%, rgba(184, 106, 126, 0.65) 70%, transparent 95%);
+}
+
+.atelier-orb {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(70px);
+  z-index: -1;
+}
+.atelier-orb--tr {
+  top: -8rem;
+  right: -6rem;
+  width: 32rem;
+  height: 32rem;
+  background: radial-gradient(circle, rgba(232, 161, 179, 0.85), rgba(232, 161, 179, 0.15) 55%, transparent 75%);
+}
+.atelier-orb--bl {
+  bottom: -10rem;
+  left: -6rem;
+  width: 36rem;
+  height: 36rem;
+  background: radial-gradient(circle, rgba(255, 249, 249, 0.9), rgba(252, 232, 236, 0.4) 50%, transparent 75%);
+}
+
+.atelier-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.085;
+  mix-blend-mode: multiply;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- Prelude line ---- */
+.atelier-prelude {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  color: #9E4F63;
+  font-size: 1.2rem;
+  margin: 0 0 1.75rem;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: atelier-rise 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 80ms forwards;
+}
+@media (min-width: 768px) {
+  .atelier-prelude {
+    font-size: 1.4rem;
+  }
+}
+.atelier-prelude em {
+  font-style: italic;
+  font-weight: 500;
+}
+.atelier-prelude-rule {
+  display: inline-block;
+  width: 36px;
+  height: 1px;
+  background: #B86A7E;
+}
+.atelier-numeral {
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  color: #9E4F63;
+}
+
+/* ---- Massive serif display title ---- */
+.atelier-display {
+  font-size: clamp(3rem, 10vw + 0.5rem, 8.5rem);
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  color: #1F1A1B;
+  margin: 0;
+  word-break: break-word;
+  hyphens: auto;
+  opacity: 0;
+  transform: translateY(22px);
+  animation: atelier-rise 850ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms forwards;
+}
+/* services-page modifier — long h1s need a smaller ceiling */
+.atelier-display--service {
+  font-size: clamp(2.4rem, 5.5vw + 0.5rem, 5rem);
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+}
+.atelier-period {
+  color: #B86A7E;
+  display: inline-block;
+  margin-left: 0.04em;
+}
+
+/* ---- Lede ---- */
+.atelier-lede {
+  margin: 2.5rem 0 0;
+  max-width: 38rem;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #4A3F42;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: atelier-rise 850ms cubic-bezier(0.2, 0.8, 0.2, 1) 340ms forwards;
+}
+@media (min-width: 768px) {
+  .atelier-lede {
+    font-size: 1.25rem;
+  }
+}
+/* services-page modifier — clamp the long intro paragraph */
+.atelier-lede--clamped {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .atelier-lede--clamped {
+    font-size: 1.08rem;
+    -webkit-line-clamp: 5;
+  }
+}
+
+/* ---- CTA row (services hero) ---- */
+.atelier-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-top: 2.25rem;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: atelier-rise 850ms cubic-bezier(0.2, 0.8, 0.2, 1) 420ms forwards;
+}
+
+.atelier-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.6rem;
+  background: #2C2C2C;
+  color: #FFF9F9;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 14px 28px -14px rgba(31, 26, 27, 0.5);
+}
+.atelier-cta-primary:hover {
+  background: #1F1A1B;
+  transform: translateY(-1px);
+  box-shadow: 0 20px 36px -14px rgba(31, 26, 27, 0.55);
+}
+.atelier-cta-primary svg {
+  transition: transform 200ms ease;
+}
+.atelier-cta-primary:hover svg {
+  transform: translateX(3px);
+}
+.atelier-cta-primary:focus-visible {
+  outline: 2px solid #2C2C2C;
+  outline-offset: 4px;
+}
+
+.atelier-cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9E4F63;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(184, 106, 126, 0.45);
+  padding-bottom: 4px;
+  transition: color 200ms ease, border-color 200ms ease;
+}
+.atelier-cta-ghost:hover {
+  color: #B86A7E;
+  border-color: #B86A7E;
+}
+
+/* ---- Hand-set signature ---- */
+.atelier-signature {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 2rem 0 0;
+  font-size: 1rem;
+  color: #9E4F63;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: atelier-rise 850ms cubic-bezier(0.2, 0.8, 0.2, 1) 440ms forwards;
+}
+.atelier-signature em {
+  font-style: italic;
+}
+.atelier-signature-line {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+.atelier-signature-name {
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #2C2C2C;
+  border-bottom: 1px dotted rgba(184, 106, 126, 0.6);
+  padding-bottom: 1px;
+}
+
+@keyframes atelier-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes atelier-fade {
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atelier-plate,
+  .atelier-service-text,
+  .atelier-prelude,
+  .atelier-display,
+  .atelier-lede,
+  .atelier-cta-row,
+  .atelier-signature {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* ============================================================
    SCROLLBAR (subtle, on-brand)
    ============================================================ */
 @media (pointer: fine) {
