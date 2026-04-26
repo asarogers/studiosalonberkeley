@@ -1,21 +1,8 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Link from "next/link";
-
-interface MenuItem {
-  name: string;
-  price: string;
-  duration: string;
-  slug: string;
-  image: string | null;
-  video?: string | null;
-}
-
-interface MenuCategory {
-  category: string;
-  items: MenuItem[];
-}
+import type { MenuCategory } from "@/lib/services-menu";
+import ServiceActions from "@/components/service/ServiceActions";
 
 interface Props {
   menu: MenuCategory[];
@@ -48,24 +35,20 @@ export default function ServiceMenu({ menu }: Props) {
               <h3 className="font-[family-name:var(--font-serif)] text-[1.2rem] font-bold text-[#2C2C2C] mb-3 pb-2 border-b border-[#F0D4DB]">
                 {cat.category}
               </h3>
-              <ul className="space-y-1" style={{ fontFamily: "var(--font-sans)" }}>
-                {cat.items.map((item, idx) => {
-                  const thumbStyle = { width: "40px", height: "40px" } as const;
+              <ul className="divide-y divide-[#F0D4DB]/60" style={{ fontFamily: "var(--font-sans)" }}>
+                {cat.items.map((item) => {
+                  const thumbStyle = { width: "44px", height: "44px" } as const;
                   const hasMedia = Boolean(item.video || item.image);
 
                   return (
-                    <li key={idx}>
-                      <Link
-                        href={`/services/${item.slug}`}
-                        className="group flex items-center gap-3 py-1.5 px-2 -mx-2 rounded-lg hover:bg-[#FCE8EC] transition-colors"
-                      >
+                    <li key={item.bookingSlug} className="py-3 first:pt-0 last:pb-0">
+                      <div className="flex items-center gap-3">
                         {hasMedia ? (
                           <button
                             type="button"
                             aria-label={`View ${item.video ? "video" : "photo"} for ${item.name}`}
                             className="flex-shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B86A7E] rounded-md"
-                            onClick={(e) => {
-                              e.preventDefault();
+                            onClick={() => {
                               if (item.video) {
                                 setLightbox({ kind: "video", src: item.video, poster: item.image ?? undefined, alt: item.name });
                               } else if (item.image) {
@@ -105,18 +88,26 @@ export default function ServiceMenu({ menu }: Props) {
                             style={thumbStyle}
                           />
                         )}
-                        <span className="flex-1 min-w-0">
-                          <span className="block text-sm font-semibold text-[#2C2C2C] group-hover:text-[#9E4F63] transition-colors">
+                        <div className="flex-1 min-w-0">
+                          <div className="text-sm font-semibold text-[#2C2C2C] leading-snug">
                             {item.name}
-                          </span>
-                          <span className="block text-xs text-[#5A5A5A] mt-0.5">
+                          </div>
+                          <div className="text-xs text-[#5A5A5A] mt-0.5">
                             {item.duration}
-                          </span>
-                        </span>
-                        <span className="flex-shrink-0 text-sm font-bold text-[#B86A7E] group-hover:text-[#9E4F63] transition-colors">
+                          </div>
+                        </div>
+                        <div className="flex-shrink-0 text-sm font-bold text-[#B86A7E]">
                           {item.price}
-                        </span>
-                      </Link>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-end gap-2 mt-2 pl-[56px]">
+                        <ServiceActions
+                          bookingSlug={item.bookingSlug}
+                          detailSlug={item.detailSlug}
+                          serviceName={item.name}
+                          variant="compact"
+                        />
+                      </div>
                     </li>
                   );
                 })}
@@ -126,7 +117,6 @@ export default function ServiceMenu({ menu }: Props) {
         ))}
       </div>
 
-      {/* Lightbox */}
       {lightbox && (
         <div
           role="dialog"

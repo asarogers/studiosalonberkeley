@@ -1,21 +1,8 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Link from "next/link";
-
-interface MenuItem {
-  name: string;
-  price: string;
-  duration: string;
-  slug: string;
-  video?: string;
-}
-
-interface MenuCategory {
-  category: string;
-  blurb: string;
-  items: MenuItem[];
-}
+import type { MenuCategory } from "@/lib/services-menu";
+import ServiceActions from "@/components/service/ServiceActions";
 
 interface Props {
   menu: MenuCategory[];
@@ -54,56 +41,74 @@ export default function ServicesMenuList({ menu }: Props) {
                   {cat.items.length} services
                 </span>
               </div>
-              <p className="text-[#5A5A5A] mb-6 max-w-2xl"
-                style={{ fontFamily: "var(--font-sans)" }}
-                dangerouslySetInnerHTML={{ __html: cat.blurb }} />
+              {cat.blurb && (
+                <p className="text-[#5A5A5A] mb-6 max-w-2xl"
+                  style={{ fontFamily: "var(--font-sans)" }}
+                  dangerouslySetInnerHTML={{ __html: cat.blurb }} />
+              )}
 
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1"
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4"
                 style={{ fontFamily: "var(--font-sans)" }}>
-                {cat.items.map((item, idx) => (
-                  <li key={`${item.slug}-${idx}`} className="flex items-center gap-3">
-                    {item.video ? (
-                      <button
-                        type="button"
-                        aria-label={`Watch ${item.name} video`}
-                        className="flex-shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B86A7E] rounded-md"
-                        onClick={() => setLightbox({ src: item.video!, label: item.name })}
-                      >
-                        <video
-                          src={item.video}
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          preload="metadata"
+                {cat.items.map((item) => (
+                  <li key={item.bookingSlug} className="border-b border-[#F0D4DB]/60 pb-3">
+                    <div className="flex items-center gap-3">
+                      {item.video ? (
+                        <button
+                          type="button"
+                          aria-label={`Watch ${item.name} video`}
+                          className="flex-shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B86A7E] rounded-md"
+                          onClick={() => setLightbox({ src: item.video!, label: item.name })}
+                        >
+                          <video
+                            src={item.video}
+                            poster={item.image ?? undefined}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            preload="metadata"
+                            aria-hidden="true"
+                            className="rounded-md object-cover hover:opacity-80 transition-opacity cursor-zoom-in"
+                            style={{ width: "44px", height: "44px", flexShrink: 0 }}
+                          />
+                        </button>
+                      ) : item.image ? (
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img
+                          src={item.image}
+                          alt=""
                           aria-hidden="true"
-                          className="rounded-md object-cover hover:opacity-80 transition-opacity cursor-zoom-in"
-                          style={{ width: "40px", height: "40px", flexShrink: 0 }}
+                          className="flex-shrink-0 rounded-md object-cover"
+                          style={{ width: "44px", height: "44px" }}
+                          loading="lazy"
                         />
-                      </button>
-                    ) : (
-                      <span
-                        aria-hidden="true"
-                        className="flex-shrink-0 rounded-md bg-[#FCE8EC]"
-                        style={{ width: "40px", height: "40px" }}
-                      />
-                    )}
-                    <Link
-                      href={`/services/${item.slug}`}
-                      className="group flex flex-1 items-baseline justify-between gap-3 py-3 px-3 -mx-3 rounded-lg hover:bg-[#FCE8EC] transition-colors border-b border-[#F0D4DB]/50"
-                    >
-                      <span className="flex-1 min-w-0">
-                        <span className="block font-semibold text-[#2C2C2C] group-hover:text-[#9E4F63] transition-colors">
+                      ) : (
+                        <span
+                          aria-hidden="true"
+                          className="flex-shrink-0 rounded-md bg-[#FCE8EC]"
+                          style={{ width: "44px", height: "44px" }}
+                        />
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <div className="text-sm font-semibold text-[#2C2C2C] leading-snug">
                           {item.name}
-                        </span>
-                        <span className="block text-xs text-[#5A5A5A] mt-0.5">
+                        </div>
+                        <div className="text-xs text-[#5A5A5A] mt-0.5">
                           {item.duration}
-                        </span>
-                      </span>
-                      <span className="flex-shrink-0 font-bold text-[#B86A7E] group-hover:text-[#9E4F63] transition-colors">
+                        </div>
+                      </div>
+                      <div className="flex-shrink-0 text-sm font-bold text-[#B86A7E]">
                         {item.price}
-                      </span>
-                    </Link>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-end gap-2 mt-2 pl-[56px]">
+                      <ServiceActions
+                        bookingSlug={item.bookingSlug}
+                        detailSlug={item.detailSlug}
+                        serviceName={item.name}
+                        variant="compact"
+                      />
+                    </div>
                   </li>
                 ))}
               </ul>

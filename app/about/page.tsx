@@ -6,17 +6,17 @@ import { siteConfig } from "@/lib/siteConfig";
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: "About Britnee Lott",
+  title: "About Studio Salon",
   description:
-    "Meet Britnee Lott, owner and stylist at Studio Salon in Berkeley, CA. A loctician and natural hair specialist serving the East Bay.",
+    "Studio Salon is a Berkeley hair studio specializing in locs, natural hair, braids, weaves, color, and barbering on Sacramento Street.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Britnee Lott | Studio Salon",
+    title: "About Studio Salon | Berkeley, CA",
     description:
-      "Meet Britnee Lott, owner and stylist at Studio Salon in Berkeley, CA.",
+      "Studio Salon is a Berkeley hair studio specializing in locs, natural hair, braids, weaves, color, and barbering.",
     url: `${siteConfig.url}/about`,
     siteName: siteConfig.name,
-    type: "profile",
+    type: "website",
   },
 };
 
@@ -43,6 +43,25 @@ const VALUES = [
   },
 ];
 
+const SPECIALTIES = [
+  {
+    title: "Loc cultivation",
+    body: "Starter sets, retwists, interlocks, repair work, and long-haul maintenance. We treat locs like the multi-year project they are — tracking your grid visit to visit so the work compounds.",
+  },
+  {
+    title: "Protective styles",
+    body: "Knotless braids, feed-ins, crochet installs, and sew-ins done with edge-protecting tension. Built to last the full life of the style without paying for it later in breakage.",
+  },
+  {
+    title: "Natural hair styling",
+    body: "Silk presses that swing, twist-outs with definition, wash-and-go finishing on every porosity. We meet the hair where it is instead of forcing a uniform look.",
+  },
+  {
+    title: "Color, cuts &amp; barbering",
+    body: "Single-process, highlights, balayage, and bleach &amp; tone alongside women&apos;s cuts, buzz cuts, and beard line-ups. One chair, the full menu.",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -55,23 +74,23 @@ export default function AboutPage() {
               id="about-hero"
               className="section-heading mb-6 text-[#2C2C2C]"
             >
-              Meet Britnee Lott
+              A Berkeley studio for locs, natural hair, and the styles in between
             </h1>
             <p
               className="text-[#5A5A5A] text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto"
               style={{ fontFamily: "var(--font-sans)" }}
             >
-              Hair stylist, loctician, and owner of Studio Salon on Sacramento Street in Berkeley.
+              Studio Salon sits at 2902 Sacramento Street &mdash; a one-chair studio built around healthy hair, honest timing, and the textures the East Bay actually wears.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── Bio ─────────────────────────────────────────── */}
+      {/* ── Story ────────────────────────────────────────── */}
       <section className="bg-[#FFF9F9] section-pad" aria-labelledby="bio">
         <div className="container-xl">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start max-w-5xl mx-auto">
-            {/* Portrait placeholder */}
+            {/* Studio card */}
             <div className="lg:col-span-2">
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden blush-gradient shadow-xl">
                 <div className="absolute inset-0 bg-[#2C2C2C]/5" aria-hidden="true" />
@@ -81,7 +100,7 @@ export default function AboutPage() {
                       className="block text-xs font-bold tracking-[0.2em] uppercase text-white/90 mb-2"
                       style={{ fontFamily: "var(--font-sans)" }}
                     >
-                      Owner &amp; Stylist
+                      Studio &amp; Chair
                     </span>
                     <span
                       className="block text-white font-bold drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
@@ -91,7 +110,13 @@ export default function AboutPage() {
                         lineHeight: 1.1,
                       }}
                     >
-                      Britnee Lott
+                      Studio Salon
+                    </span>
+                    <span
+                      className="block text-white/85 text-sm mt-2"
+                      style={{ fontFamily: "var(--font-sans)" }}
+                    >
+                      2902 Sacramento St &middot; Berkeley, CA
                     </span>
                   </div>
                 </div>
@@ -109,7 +134,7 @@ export default function AboutPage() {
                 className="text-xs text-[#5A5A5A]/70 mt-3 italic text-center"
                 style={{ fontFamily: "var(--font-sans)" }}
               >
-                Headshot coming soon.
+                Studio photos coming soon.
               </p>
             </div>
 
@@ -121,10 +146,10 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-5 text-[#2C2C2C] text-[1.05rem] leading-relaxed">
                 <p>
-                  Studio Salon sits at 2902 Sacramento Street because that&apos;s where Britnee set up to do the work she loves in the neighborhood she&apos;s from. What started as a chair turned into a studio — one with room for locs mid-cultivation, braids running six hours, silk presses finished in time for a dinner downtown, and buzz cuts done on a Saturday morning lunch break.
+                  Studio Salon is a one-chair studio on Sacramento Street built around the idea that hair work should be technical, honest, and personal &mdash; without the chaos of a ten-station floor. There is room for locs mid-cultivation, braids running six hours, silk presses finished in time for a dinner downtown, and buzz cuts done on a Saturday morning lunch break.
                 </p>
                 <p>
-                  Britnee&apos;s specialty is natural hair: locs (starter through mature, interlocks, repair, retwists), knotless braids and feed-ins that don&apos;t pull edges, crochet installs that breathe, and silk presses that actually swing. She works with every texture and every kind of client — regulars who&apos;ve been coming for years, first-timers who weren&apos;t sure what to expect, men getting a clean line-up before a meeting, kids sitting for their first braids.
+                  Our specialty is natural hair in all of its forms: locs (starter through mature, interlocks, repair, retwists), knotless braids and feed-ins that don&apos;t pull edges, crochet installs that breathe, and silk presses that actually swing. We work with every texture and every kind of client &mdash; regulars who&apos;ve been coming for years, first-timers who weren&apos;t sure what to expect, men getting a clean line-up before a meeting, kids sitting for their first braids.
                 </p>
                 <p>
                   The work is technical. The vibe is not. Studio Salon is where you come in stressed about your hair and leave laughing about something else entirely.
@@ -169,6 +194,37 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── Specialties ─────────────────────────────────── */}
+      <section className="bg-[#FFF9F9] section-pad border-t border-[#F0D4DB]" aria-labelledby="specialties">
+        <div className="container-xl">
+          <div className="text-center mb-10 max-w-2xl mx-auto">
+            <span className="section-eyebrow">What We Do</span>
+            <div className="blush-divider mx-auto mb-6" />
+            <h2 id="specialties" className="section-heading">
+              The chair&rsquo;s specialties
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {SPECIALTIES.map((s) => (
+              <article
+                key={s.title}
+                className="bg-white rounded-2xl p-7 border border-[#F0D4DB] shadow-sm"
+              >
+                <h3
+                  className="font-[family-name:var(--font-serif)] text-[1.25rem] font-bold text-[#2C2C2C] mb-3"
+                  dangerouslySetInnerHTML={{ __html: s.title }}
+                />
+                <p
+                  className="text-[#5A5A5A] text-base leading-relaxed"
+                  style={{ fontFamily: "var(--font-sans)" }}
+                  dangerouslySetInnerHTML={{ __html: s.body }}
+                />
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Values ─────────────────────────────────────── */}
       <section className="bg-[#FCE8EC] section-pad" aria-labelledby="values">
         <div className="container-xl">
@@ -202,7 +258,7 @@ export default function AboutPage() {
 
       {/* ── CTA ─────────────────────────────────────────── */}
       <CTABlock
-        headline="Want Britnee in your corner?"
+        headline="Ready for the chair?"
         subtext="Booking a consultation is the fastest way to figure out what&rsquo;s right for your hair. Call or text (510) 690-5274."
         ctaText="Book Your Appointment"
       />
