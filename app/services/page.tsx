@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTABlock from "@/components/CTABlock";
-import ServicesMenuList from "@/components/ServicesMenuList";
+import ServiceMenu from "@/components/ServiceMenu";
 import { getAllGBPCategories } from "@/lib/gbp-categories-data";
 import { FULL_MENU } from "@/lib/services-menu";
 import { siteConfig } from "@/lib/siteConfig";
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     url: `${siteConfig.url}/services`,
     siteName: siteConfig.name,
     type: "website",
+    images: [{ url: `${siteConfig.url}/opengraph-image.png`, width: 1200, height: 630, alt: "Studio Salon services" }],
   },
 };
 
@@ -32,8 +33,56 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   const categories = getAllGBPCategories();
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Studio Salon services & pricing",
+    description:
+      "Full service menu at Studio Salon in Berkeley: loc maintenance, braids, weaves, color, silk press, cuts, and more.",
+    serviceType: "Hair salon services",
+    url: `${siteConfig.url}/services`,
+    provider: {
+      "@type": "LocalBusiness",
+      name: siteConfig.name,
+      telephone: siteConfig.phone.schema,
+      url: siteConfig.url,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: siteConfig.address.street,
+        addressLocality: siteConfig.address.city,
+        addressRegion: siteConfig.address.state,
+        postalCode: siteConfig.address.zip,
+        addressCountry: "US",
+      },
+    },
+    areaServed: [
+      { "@type": "City", name: "Berkeley" },
+      { "@type": "City", name: "Oakland" },
+      { "@type": "City", name: "Albany" },
+      { "@type": "City", name: "El Cerrito" },
+      { "@type": "City", name: "Emeryville" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Studio Salon service categories",
+      itemListElement: categories.map((c, i) => ({
+        "@type": "Offer",
+        position: i + 1,
+        itemOffered: {
+          "@type": "Service",
+          name: c.name,
+          url: `${siteConfig.url}/services/categories/${c.slug}`,
+        },
+      })),
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       {/* ── Hero ────────────────────────────────────────── */}
       <section className="blush-gradient section-pad" aria-labelledby="services-hero">
         <div className="container-xl">
@@ -85,7 +134,7 @@ export default function ServicesPage() {
       {/* ── Category sections ───────────────────────────── */}
       <section className="bg-[#FFF9F9] section-pad" aria-label="Services by category">
         <div className="container-xl">
-          <ServicesMenuList menu={FULL_MENU} />
+          <ServiceMenu menu={FULL_MENU} />
         </div>
       </section>
 

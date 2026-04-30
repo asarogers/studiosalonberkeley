@@ -17,10 +17,9 @@ interface Props {
   onOpenMedia: (request: MediaLightboxRequest) => void;
 }
 
-export default function ServiceMenuItem({ item, index, onOpenMedia }: Props) {
+export default function ServiceMenuItem({ item, onOpenMedia }: Props) {
   const router = useRouter();
   const hasMedia = Boolean(item.video || item.image);
-  const indexLabel = String(index + 1).padStart(2, "0");
   const bookHref = `/book/${item.bookingSlug}`;
 
   return (
@@ -70,13 +69,6 @@ export default function ServiceMenuItem({ item, index, onOpenMedia }: Props) {
               aria-hidden="true"
               className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/45 to-transparent opacity-90"
             />
-            <span
-              aria-hidden="true"
-              className="absolute bottom-1.5 left-2 text-[0.58rem] tracking-[0.24em] text-white/95 font-bold"
-              style={{ fontFamily: "var(--font-sans)" }}
-            >
-              {indexLabel}
-            </span>
             {item.video && (
               <span
                 aria-hidden="true"
@@ -98,15 +90,8 @@ export default function ServiceMenuItem({ item, index, onOpenMedia }: Props) {
         ) : (
           <span
             aria-hidden="true"
-            className="flex-shrink-0 w-[96px] sm:w-[112px] aspect-[3/4] rounded-[3px] bg-gradient-to-br from-[#FCE8EC] to-[#FADADD] flex items-end p-2"
-          >
-            <span
-              className="text-[0.6rem] tracking-[0.24em] text-[#B86A7E] font-bold"
-              style={{ fontFamily: "var(--font-sans)" }}
-            >
-              {indexLabel}
-            </span>
-          </span>
+            className="flex-shrink-0 w-[96px] sm:w-[112px] aspect-[3/4] rounded-[3px] bg-gradient-to-br from-[#FCE8EC] to-[#FADADD]"
+          />
         )}
 
         <div

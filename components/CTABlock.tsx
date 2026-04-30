@@ -47,10 +47,10 @@ export default function CTABlock({
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <a
-              href={siteConfig.booking.freshaUrl}
+              href={siteConfig.booking.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${ctaText} (opens Fresha in a new tab)`}
+              aria-label={`${ctaText} (opens in a new tab)`}
               className={[
                 "inline-flex items-center justify-center gap-2",
                 "px-8 py-4 rounded-full",

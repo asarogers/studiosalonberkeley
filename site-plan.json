@@ -1,17 +1,62 @@
 {
   "project": "studiosalonberkeley",
-  "generated": "2026-04-21T05:01:37.491593Z",
-  "scored_date": "2026-04-20",
-  "total_keywords": 8,
+  "generated": "2026-04-30T03:50:18.752825Z",
+  "scored_date": "2026-04-29",
+  "total_keywords": 83,
   "sitemaps": {
     "priority": {
       "filename": "sitemap-priority.xml",
       "description": "Target-now + target-soon URLs. Include with recent <lastmod>. Link prominently from homepage + hub pages.",
       "urls": [
         {
-          "url": "/services/hair-extensions-berkeley",
-          "keyword": "hair extensions berkeley",
+          "url": "/services/cost-of-starter-locs-bay-area",
+          "keyword": "cost of starter locs bay area",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.7,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/natural-hair-stylist-oakland",
+          "keyword": "natural hair stylist oakland",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.68,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/faux-locs-oakland",
+          "keyword": "faux locs oakland",
+          "tier": "G",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.67,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/kids-braids-salon-berkeley",
+          "keyword": "kids braids salon berkeley",
+          "tier": "G",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.64,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/black-hair-salon-east-bay",
+          "keyword": "black hair salon east bay",
           "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.64,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/knotless-braids-berkeley",
+          "keyword": "knotless braids berkeley",
+          "tier": "G",
           "archetype": "aggregator_fortress",
           "opportunity": 0.64,
           "action": "target_now",
@@ -27,13 +72,40 @@
           "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
         },
         {
-          "url": "/services/keratin-treatment-berkeley",
-          "keyword": "keratin treatment berkeley",
-          "tier": "E",
-          "archetype": "local_pack_dominated",
+          "url": "/services/hair-extensions-berkeley",
+          "keyword": "hair extensions berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.64,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/feed-in-braids-bay-area",
+          "keyword": "feed-in braids bay area",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.64,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/wedding-hair-for-black-women-bay-area",
+          "keyword": "wedding hair for black women bay area",
+          "tier": "F",
+          "archetype": "forum_fallback",
           "opportunity": 0.63,
-          "action": "gbp_only",
-          "reason": "organic is competitive; focus on GBP/local pack for this query"
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/senegalese-twists-oakland",
+          "keyword": "senegalese twists oakland",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.63,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
         },
         {
           "url": "/services/balayage-berkeley",
@@ -45,6 +117,123 @@
           "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
         },
         {
+          "url": "/services/keratin-treatment-berkeley",
+          "keyword": "keratin treatment berkeley",
+          "tier": "E",
+          "archetype": "local_pack_dominated",
+          "opportunity": 0.63,
+          "action": "gbp_only",
+          "reason": "organic is competitive; focus on GBP/local pack for this query"
+        },
+        {
+          "url": "/services/bridal-hair-stylist-berkeley",
+          "keyword": "bridal hair stylist berkeley",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.63,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/gray-coverage-natural-hair",
+          "keyword": "gray coverage natural hair near me",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.63,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/stitch-braids-berkeley",
+          "keyword": "stitch braids berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.63,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/lace-frontal-install-bay-area",
+          "keyword": "lace frontal install bay area",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.62,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/what-are-microlocs-vs-sisterlocks",
+          "keyword": "what are microlocs vs sisterlocks",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.62,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/two-strand-twist-styling",
+          "keyword": "two strand twist styling near me",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.62,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/eyebrow-wax-berkeley",
+          "keyword": "eyebrow wax berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.61,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/how-often-should-i-retwist-my-locs",
+          "keyword": "how often should i retwist my locs",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.61,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/butterfly-locs-berkeley",
+          "keyword": "butterfly locs berkeley",
+          "tier": "G",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.61,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/barber-for-black-men-berkeley",
+          "keyword": "barber for black men berkeley",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.6,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/how-long-do-knotless-braids-last",
+          "keyword": "how long do knotless braids last",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.6,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/prom-updo-oakland",
+          "keyword": "prom updo oakland",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.6,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
           "url": "/services/hair-salon-berkeley",
           "keyword": "hair salon berkeley",
           "tier": "F",
@@ -52,6 +241,33 @@
           "opportunity": 0.6,
           "action": "target_now",
           "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/best-black-hair-salon-emeryville",
+          "keyword": "best black hair salon emeryville",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.6,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/color-correction-salon-berkeley",
+          "keyword": "color correction salon berkeley",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.59,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/loc-detox",
+          "keyword": "loc detox near me",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.59,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
         },
         {
           "url": "/services/hair-stylist-berkeley",
@@ -63,6 +279,357 @@
           "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
         },
         {
+          "url": "/services/emeryville-braider",
+          "keyword": "emeryville braider",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.59,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/goddess-locs",
+          "keyword": "goddess locs near me",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.59,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/chemical-relaxer-salon-berkeley",
+          "keyword": "chemical relaxer salon berkeley",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.59,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/loc-repair-berkeley",
+          "keyword": "loc repair berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.59,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/starter-locs-berkeley",
+          "keyword": "starter locs berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.58,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/loctician-oakland",
+          "keyword": "loctician near me oakland",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.57,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/how-much-does-it-cost-to-start-locs",
+          "keyword": "how much does it cost to start locs",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.56,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/what-is-a-silk-press-vs-blowout",
+          "keyword": "what is a silk press vs blowout",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.56,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/passion-twists",
+          "keyword": "passion twists near me",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.56,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/salon-for-4c-hair-oakland",
+          "keyword": "salon for 4c hair oakland",
+          "tier": "E",
+          "archetype": "forum_fallback",
+          "opportunity": 0.56,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/el-cerrito-natural-hair-salon",
+          "keyword": "el cerrito natural hair salon",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.56,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/knotless-braids-price-bay-area",
+          "keyword": "knotless braids price bay area",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.56,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/appointment-hair-salon-sacramento-st-berkeley",
+          "keyword": "appointment hair salon sacramento st berkeley",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.55,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/best-knotless-braider-east-bay",
+          "keyword": "best knotless braider east bay",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.55,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/hair-stylist-albany",
+          "keyword": "hair stylist albany ca",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.55,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/massage-therapist-berkeley-salon",
+          "keyword": "massage therapist berkeley salon",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.55,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/sew-in-weave-berkeley",
+          "keyword": "sew in weave berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.55,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/wig-customization",
+          "keyword": "wig customization near me",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.55,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/quick-weave-oakland",
+          "keyword": "quick weave near me oakland",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.54,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/mens-beard-line-up-oakland",
+          "keyword": "men's beard line up oakland",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.54,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/wig-install-berkeley",
+          "keyword": "wig install berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.54,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/keratin-treatment-oakland",
+          "keyword": "keratin treatment oakland",
+          "tier": "E",
+          "archetype": "local_pack_dominated",
+          "opportunity": 0.54,
+          "action": "gbp_only",
+          "reason": "organic is competitive; focus on GBP/local pack for this query"
+        },
+        {
+          "url": "/services/hair-color-for-natural-hair-berkeley",
+          "keyword": "hair color for natural hair berkeley",
+          "tier": "E",
+          "archetype": "local_pack_dominated",
+          "opportunity": 0.54,
+          "action": "gbp_only",
+          "reason": "organic is competitive; focus on GBP/local pack for this query"
+        },
+        {
+          "url": "/services/knotless-braids-oakland",
+          "keyword": "knotless braids oakland",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.54,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/salon-that-does-locs-and-braids-berkeley",
+          "keyword": "salon that does locs and braids berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.54,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/balayage-on-black-hair-oakland",
+          "keyword": "balayage on black hair oakland",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.54,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/facial-el-cerrito",
+          "keyword": "facial near me el cerrito",
+          "tier": "E",
+          "archetype": "mixed_strong",
+          "opportunity": 0.53,
+          "action": "target_soon",
+          "reason": "achievable within 2-3 months once lower tiers win"
+        },
+        {
+          "url": "/services/tape-in-extensions-oakland",
+          "keyword": "tape in extensions oakland",
+          "tier": "E",
+          "archetype": "local_pack_dominated",
+          "opportunity": 0.52,
+          "action": "gbp_only",
+          "reason": "organic is competitive; focus on GBP/local pack for this query"
+        },
+        {
+          "url": "/services/loc-retwist-berkeley",
+          "keyword": "loc retwist berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.52,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/black-owned-hair-salon-berkeley",
+          "keyword": "black owned hair salon berkeley",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.52,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/tribal-braids",
+          "keyword": "tribal braids near me",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.5,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/lemonade-braids-oakland",
+          "keyword": "lemonade braids oakland",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.5,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/scalp-treatment-berkeley",
+          "keyword": "scalp treatment berkeley",
+          "tier": "E",
+          "archetype": "mixed_strong",
+          "opportunity": 0.49,
+          "action": "target_soon",
+          "reason": "achievable within 2-3 months once lower tiers win"
+        },
+        {
+          "url": "/services/hair-salon-north-berkeley",
+          "keyword": "hair salon north berkeley",
+          "tier": "E",
+          "archetype": "mixed_strong",
+          "opportunity": 0.49,
+          "action": "target_soon",
+          "reason": "achievable within 2-3 months once lower tiers win"
+        },
+        {
+          "url": "/services/ponytail-style-salon",
+          "keyword": "ponytail style salon near me",
+          "tier": "E",
+          "archetype": "forum_fallback",
+          "opportunity": 0.49,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/twist-out-salon-oakland",
+          "keyword": "twist out salon oakland",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.49,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/box-braids-berkeley",
+          "keyword": "box braids berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.49,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/how-to-maintain-knotless-braids",
+          "keyword": "how to maintain knotless braids",
+          "tier": "E",
+          "archetype": "wiki_locked",
+          "opportunity": 0.48,
+          "action": "reframe",
+          "reason": "informational intent \u2014 commercial pages won't rank; reframe with commercial modifier"
+        },
+        {
+          "url": "/services/mens-braids-berkeley",
+          "keyword": "men's braids berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.48,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
           "url": "/services/highlights-berkeley",
           "keyword": "highlights berkeley",
           "tier": "E",
@@ -70,6 +637,87 @@
           "opportunity": 0.47,
           "action": "reframe",
           "reason": "informational intent \u2014 commercial pages won't rank; reframe with commercial modifier"
+        },
+        {
+          "url": "/services/fade-haircut-albany",
+          "keyword": "fade haircut albany ca",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.47,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/transition-to-natural-hair-stylist-berkeley",
+          "keyword": "transition to natural hair stylist berkeley",
+          "tier": "E",
+          "archetype": "mixed_strong",
+          "opportunity": 0.47,
+          "action": "target_soon",
+          "reason": "achievable within 2-3 months once lower tiers win"
+        },
+        {
+          "url": "/services/silk-press-on-natural-hair",
+          "keyword": "silk press on natural hair near me",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.46,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/deep-conditioning-treatment",
+          "keyword": "deep conditioning treatment near me",
+          "tier": "E",
+          "archetype": "wiki_locked",
+          "opportunity": 0.43,
+          "action": "reframe",
+          "reason": "informational intent \u2014 commercial pages won't rank; reframe with commercial modifier"
+        },
+        {
+          "url": "/services/how-much-is-a-silk-press",
+          "keyword": "how much is a silk press",
+          "tier": "F",
+          "archetype": "wiki_locked",
+          "opportunity": 0.42,
+          "action": "reframe",
+          "reason": "informational intent \u2014 commercial pages won't rank; reframe with commercial modifier"
+        },
+        {
+          "url": "/services/silk-press-berkeley",
+          "keyword": "silk press berkeley",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.42,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/cornrow-braids",
+          "keyword": "cornrow braids near me",
+          "tier": "E",
+          "archetype": "wiki_locked",
+          "opportunity": 0.41,
+          "action": "reframe",
+          "reason": "informational intent \u2014 commercial pages won't rank; reframe with commercial modifier"
+        },
+        {
+          "url": "/services/trim-split-ends-natural-hair",
+          "keyword": "trim split ends natural hair",
+          "tier": "E",
+          "archetype": "forum_fallback",
+          "opportunity": 0.41,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/instant-locs",
+          "keyword": "instant locs near me",
+          "tier": "E",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.37,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
         }
       ]
     },
@@ -83,6 +731,33 @@
           "tier": "D",
           "archetype": "mixed_strong",
           "opportunity": 0.53,
+          "action": "target_later",
+          "reason": "tier D \u2014 build authority via lower tiers first"
+        },
+        {
+          "url": "/services/natural-hair-salon-berkeley",
+          "keyword": "natural hair salon berkeley",
+          "tier": "D",
+          "archetype": "mixed_strong",
+          "opportunity": 0.5,
+          "action": "target_later",
+          "reason": "tier D \u2014 build authority via lower tiers first"
+        },
+        {
+          "url": "/services/salon-near-uc-berkeley",
+          "keyword": "salon near uc berkeley",
+          "tier": "D",
+          "archetype": "mixed_strong",
+          "opportunity": 0.5,
+          "action": "target_later",
+          "reason": "tier D \u2014 build authority via lower tiers first"
+        },
+        {
+          "url": "/services/big-chop-salon-oakland",
+          "keyword": "big chop salon oakland",
+          "tier": "D",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.42,
           "action": "target_later",
           "reason": "tier D \u2014 build authority via lower tiers first"
         }
@@ -102,9 +777,59 @@
       "description": "Prominent blocks on the homepage. Top 5 target-now opportunities \u2014 the pages we're actively pushing up this month.",
       "links": [
         {
-          "url": "/services/hair-extensions-berkeley",
-          "keyword": "hair extensions berkeley",
+          "url": "/services/cost-of-starter-locs-bay-area",
+          "keyword": "cost of starter locs bay area",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.7,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/natural-hair-stylist-oakland",
+          "keyword": "natural hair stylist oakland",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.68,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/faux-locs-oakland",
+          "keyword": "faux locs oakland",
+          "tier": "G",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.67,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/kids-braids-salon-berkeley",
+          "keyword": "kids braids salon berkeley",
+          "tier": "G",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.64,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/black-hair-salon-east-bay",
+          "keyword": "black hair salon east bay",
           "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.64,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        }
+      ]
+    },
+    "hub": {
+      "description": "Services hub / category pages. Next 15 priority URLs after homepage picks.",
+      "links": [
+        {
+          "url": "/services/knotless-braids-berkeley",
+          "keyword": "knotless braids berkeley",
+          "tier": "G",
           "archetype": "aggregator_fortress",
           "opportunity": 0.64,
           "action": "target_now",
@@ -120,6 +845,42 @@
           "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
         },
         {
+          "url": "/services/hair-extensions-berkeley",
+          "keyword": "hair extensions berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.64,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/feed-in-braids-bay-area",
+          "keyword": "feed-in braids bay area",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.64,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/wedding-hair-for-black-women-bay-area",
+          "keyword": "wedding hair for black women bay area",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.63,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/senegalese-twists-oakland",
+          "keyword": "senegalese twists oakland",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.63,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
           "url": "/services/balayage-berkeley",
           "keyword": "balayage berkeley",
           "tier": "G",
@@ -128,29 +889,6 @@
           "action": "target_now",
           "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
         },
-        {
-          "url": "/services/hair-salon-berkeley",
-          "keyword": "hair salon berkeley",
-          "tier": "F",
-          "archetype": "forum_fallback",
-          "opportunity": 0.6,
-          "action": "target_now",
-          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
-        },
-        {
-          "url": "/services/hair-stylist-berkeley",
-          "keyword": "hair stylist berkeley",
-          "tier": "E",
-          "archetype": "aggregator_fortress",
-          "opportunity": 0.59,
-          "action": "target_now",
-          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
-        }
-      ]
-    },
-    "hub": {
-      "description": "Services hub / category pages. Next 15 priority URLs after homepage picks.",
-      "links": [
         {
           "url": "/services/keratin-treatment-berkeley",
           "keyword": "keratin treatment berkeley",
@@ -161,13 +899,67 @@
           "reason": "organic is competitive; focus on GBP/local pack for this query"
         },
         {
-          "url": "/services/highlights-berkeley",
-          "keyword": "highlights berkeley",
-          "tier": "E",
-          "archetype": "wiki_locked",
-          "opportunity": 0.47,
-          "action": "reframe",
-          "reason": "informational intent \u2014 commercial pages won't rank; reframe with commercial modifier"
+          "url": "/services/bridal-hair-stylist-berkeley",
+          "keyword": "bridal hair stylist berkeley",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.63,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/gray-coverage-natural-hair",
+          "keyword": "gray coverage natural hair near me",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.63,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/stitch-braids-berkeley",
+          "keyword": "stitch braids berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.63,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/lace-frontal-install-bay-area",
+          "keyword": "lace frontal install bay area",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.62,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/what-are-microlocs-vs-sisterlocks",
+          "keyword": "what are microlocs vs sisterlocks",
+          "tier": "F",
+          "archetype": "forum_fallback",
+          "opportunity": 0.62,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/two-strand-twist-styling",
+          "keyword": "two strand twist styling near me",
+          "tier": "G",
+          "archetype": "forum_fallback",
+          "opportunity": 0.62,
+          "action": "target_now",
+          "reason": "forum_fallback \u2014 weak SERP, a focused local page can break in"
+        },
+        {
+          "url": "/services/eyebrow-wax-berkeley",
+          "keyword": "eyebrow wax berkeley",
+          "tier": "F",
+          "archetype": "aggregator_fortress",
+          "opportunity": 0.61,
+          "action": "target_now",
+          "reason": "aggregator_fortress \u2014 weak SERP, a focused local page can break in"
         }
       ]
     },
@@ -180,16 +972,137 @@
   "lastmod_schedule": [
     {
       "week": 0,
-      "target_date": "2026-04-20",
-      "count": 7,
+      "target_date": "2026-04-29",
+      "count": 10,
       "urls": [
-        "/services/hair-extensions-berkeley",
+        "/services/cost-of-starter-locs-bay-area",
+        "/services/natural-hair-stylist-oakland",
+        "/services/faux-locs-oakland",
+        "/services/kids-braids-salon-berkeley",
+        "/services/black-hair-salon-east-bay",
+        "/services/knotless-braids-berkeley",
         "/services/haircut-berkeley",
-        "/services/keratin-treatment-berkeley",
+        "/services/hair-extensions-berkeley",
+        "/services/feed-in-braids-bay-area",
+        "/services/wedding-hair-for-black-women-bay-area"
+      ]
+    },
+    {
+      "week": 1,
+      "target_date": "2026-05-06",
+      "count": 10,
+      "urls": [
+        "/services/senegalese-twists-oakland",
         "/services/balayage-berkeley",
+        "/services/keratin-treatment-berkeley",
+        "/services/bridal-hair-stylist-berkeley",
+        "/services/gray-coverage-natural-hair",
+        "/services/stitch-braids-berkeley",
+        "/services/lace-frontal-install-bay-area",
+        "/services/what-are-microlocs-vs-sisterlocks",
+        "/services/two-strand-twist-styling",
+        "/services/eyebrow-wax-berkeley"
+      ]
+    },
+    {
+      "week": 2,
+      "target_date": "2026-05-13",
+      "count": 10,
+      "urls": [
+        "/services/how-often-should-i-retwist-my-locs",
+        "/services/butterfly-locs-berkeley",
+        "/services/barber-for-black-men-berkeley",
+        "/services/how-long-do-knotless-braids-last",
+        "/services/prom-updo-oakland",
         "/services/hair-salon-berkeley",
-        "/services/hair-stylist-berkeley",
+        "/services/best-black-hair-salon-emeryville",
+        "/services/color-correction-salon-berkeley",
+        "/services/loc-detox",
+        "/services/hair-stylist-berkeley"
+      ]
+    },
+    {
+      "week": 3,
+      "target_date": "2026-05-20",
+      "count": 10,
+      "urls": [
+        "/services/emeryville-braider",
+        "/services/goddess-locs",
+        "/services/chemical-relaxer-salon-berkeley",
+        "/services/loc-repair-berkeley",
+        "/services/starter-locs-berkeley",
+        "/services/loctician-oakland",
+        "/services/how-much-does-it-cost-to-start-locs",
+        "/services/what-is-a-silk-press-vs-blowout",
+        "/services/passion-twists",
+        "/services/salon-for-4c-hair-oakland"
+      ]
+    },
+    {
+      "week": 4,
+      "target_date": "2026-05-27",
+      "count": 10,
+      "urls": [
+        "/services/el-cerrito-natural-hair-salon",
+        "/services/knotless-braids-price-bay-area",
+        "/services/appointment-hair-salon-sacramento-st-berkeley",
+        "/services/best-knotless-braider-east-bay",
+        "/services/hair-stylist-albany",
+        "/services/massage-therapist-berkeley-salon",
+        "/services/sew-in-weave-berkeley",
+        "/services/wig-customization",
+        "/services/quick-weave-oakland",
+        "/services/mens-beard-line-up-oakland"
+      ]
+    },
+    {
+      "week": 5,
+      "target_date": "2026-06-03",
+      "count": 10,
+      "urls": [
+        "/services/wig-install-berkeley",
+        "/services/keratin-treatment-oakland",
+        "/services/hair-color-for-natural-hair-berkeley",
+        "/services/knotless-braids-oakland",
+        "/services/salon-that-does-locs-and-braids-berkeley",
+        "/services/balayage-on-black-hair-oakland",
+        "/services/facial-el-cerrito",
+        "/services/tape-in-extensions-oakland",
+        "/services/loc-retwist-berkeley",
+        "/services/black-owned-hair-salon-berkeley"
+      ]
+    },
+    {
+      "week": 6,
+      "target_date": "2026-06-10",
+      "count": 10,
+      "urls": [
+        "/services/tribal-braids",
+        "/services/lemonade-braids-oakland",
+        "/services/scalp-treatment-berkeley",
+        "/services/hair-salon-north-berkeley",
+        "/services/ponytail-style-salon",
+        "/services/twist-out-salon-oakland",
+        "/services/box-braids-berkeley",
+        "/services/how-to-maintain-knotless-braids",
+        "/services/mens-braids-berkeley",
         "/services/highlights-berkeley"
+      ]
+    },
+    {
+      "week": 7,
+      "target_date": "2026-06-17",
+      "count": 9,
+      "urls": [
+        "/services/fade-haircut-albany",
+        "/services/transition-to-natural-hair-stylist-berkeley",
+        "/services/silk-press-on-natural-hair",
+        "/services/deep-conditioning-treatment",
+        "/services/how-much-is-a-silk-press",
+        "/services/silk-press-berkeley",
+        "/services/cornrow-braids",
+        "/services/trim-split-ends-natural-hair",
+        "/services/instant-locs"
       ]
     }
   ]

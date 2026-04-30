@@ -10,7 +10,8 @@ export function trackEvent(name: string, params: Record<string, unknown> = {}) {
 }
 
 export const Events = {
-  phoneClick: () => trackEvent('phone_click', { event_category: 'contact' }),
-  bookClick:  () => trackEvent('book_click',  { event_category: 'conversion' }),
-  formSubmit: () => trackEvent('contact_form_submit', { event_category: 'conversion' }),
+  phoneClick:     () => trackEvent('phone_click',          { event_category: 'contact' }),
+  bookClick:      () => trackEvent('book_click',           { event_category: 'conversion' }),
+  formSubmit:     () => trackEvent('contact_form_submit',  { event_category: 'conversion' }),
+  directionClick: () => trackEvent('direction_click',      { event_category: 'contact' }),
 }

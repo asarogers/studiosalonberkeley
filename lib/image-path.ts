@@ -7,6 +7,7 @@ import manifest from '../content/image-manifest.json';
  */
 export function resolveImagePath(subdir: 'services' | 'blog' | 'locations', slug: string): string {
   const map = (manifest as Record<string, Record<string, string>>)[subdir] ?? {};
-  const ext = map[slug] ?? '.svg';
+  const ext = map[slug];
+  if (!ext) return '/opengraph-image.png';
   return `/images/${subdir}/${slug}${ext}`;
 }

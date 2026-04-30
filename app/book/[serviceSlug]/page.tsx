@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { findServiceByBookingSlug } from "@/lib/services-menu";
+import { squareUrlForServiceName } from "@/lib/squareServiceLinks";
 import { siteConfig } from "@/lib/siteConfig";
 
 interface Params {
@@ -44,5 +45,7 @@ export default async function BookServicePage({
   const service = findServiceByBookingSlug(serviceSlug);
   if (!service) notFound();
 
-  redirect(siteConfig.booking.freshaUrl);
+  // Per-service Square booking URL (uses ITEM_VARIATION id). Falls back to
+  // the location-only widget URL if the service name isn't mapped.
+  redirect(squareUrlForServiceName(service.name));
 }

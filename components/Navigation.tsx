@@ -156,7 +156,6 @@ export default function Navigation() {
                   src="/logo.jpeg"
                   alt="Studio Salon logo"
                   fill
-                  priority
                   sizes="44px"
                   className="object-cover"
                 />
@@ -208,11 +207,11 @@ export default function Navigation() {
 
             {/* Desktop CTA Button */}
             <a
-              href={siteConfig.booking.freshaUrl}
+              href={siteConfig.booking.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => Events.bookClick()}
-              aria-label="Book an appointment on Fresha (opens in a new tab)"
+              aria-label="Book an appointment (opens in a new tab)"
               className={[
                 "btn-primary text-sm md:text-base",
                 "transition-all duration-200",
@@ -427,11 +426,11 @@ export default function Navigation() {
           ].join(" ")}
         >
           <a
-            href={siteConfig.booking.freshaUrl}
+            href={siteConfig.booking.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => { setMobileOpen(false); Events.bookClick(); }}
-            aria-label="Book an appointment on Fresha (opens in a new tab)"
+            aria-label="Book an appointment (opens in a new tab)"
             className="btn-primary w-full justify-center text-base"
           >
             Book Now

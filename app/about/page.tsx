@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     url: `${siteConfig.url}/about`,
     siteName: siteConfig.name,
     type: "website",
+    images: [{ url: `${siteConfig.url}/opengraph-image.png`, width: 1200, height: 630, alt: "Studio Salon Berkeley" }],
   },
 };
 

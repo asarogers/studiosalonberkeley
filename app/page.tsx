@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import CTABlock from "@/components/CTABlock";
-import HeroVideo from "@/components/HeroVideo";
+import DirectionsLink from "@/components/DirectionsLink";
+import HeroParallaxImage from "@/components/HeroParallaxImage";
 import ServiceMenu from "@/components/ServiceMenu";
 import BookingConfirmedModal from "@/components/booking/BookingConfirmedModal";
 import { MENU } from "@/lib/services-menu";
@@ -136,82 +137,80 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* ── 1. HERO — split layout, video/placeholder on right ─────── */}
+      {/* ── 1. HERO — full-bleed storefront image with cream gradient overlay; text scales with viewport ─────── */}
       <section
         aria-labelledby="hero-heading"
-        className="bg-[#FFF9F9] section-pad border-b border-[#F0D4DB]"
+        className="relative bg-[#F2EBE2] border-b border-[#E8DFD2]"
       >
-        <div className="container-xl">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-            {/* Copy */}
-            <div className="flex-1 lg:max-w-[52%] w-full">
-              <div className="inline-flex items-center gap-2 bg-[#FCE8EC] text-[#9E4F63] text-sm font-semibold px-4 py-2 rounded-full mb-6"
-                style={{ fontFamily: "var(--font-sans)" }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span>2902 Sacramento St, Berkeley</span>
-              </div>
+        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/8] min-h-[480px] overflow-hidden">
+          {/* Storefront image — Ken Burns + scroll parallax */}
+          <HeroParallaxImage
+            src="/images/hero-storefront.png"
+            ariaLabel="Studio Salon Berkeley storefront on Sacramento Street, with the iconic pink barber pole and Studio Salon sign"
+          />
 
-              <h1
-                id="hero-heading"
-                className="font-[family-name:var(--font-serif)] text-[clamp(2rem,4vw+0.5rem,3.5rem)] font-bold text-[#2C2C2C] leading-[1.1] mb-5 tracking-tight"
-              >
-                Berkeley&rsquo;s loc &amp; natural hair specialists
-              </h1>
+          {/* Soft warm light-leak drifting diagonally across the image */}
+          <div className="hero-light-leak" aria-hidden="true" />
 
-              <p className="font-[family-name:var(--font-sans)] text-base sm:text-[1.1rem] lg:text-[1.2rem] text-[#5A5A5A] leading-relaxed mb-4 max-w-xl">
-                Studio Salon is the chair on Sacramento Street where locs get cultivated, braids go in without the tension, and silk press is still an art. Every texture, every style, done with care.
-              </p>
-              <p className="font-[family-name:var(--font-sans)] text-sm sm:text-base text-[#9E4F63] font-medium leading-relaxed mb-7 max-w-xl">
-                Walk-ins welcome for quick services. Loc &amp; braid appointments fill 2&ndash;3 weeks in advance &mdash; book early.
-              </p>
+          {/* Cream gradient overlay — solid on left, fades to transparent on right */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to right, #F2EBE2 0%, #F2EBE2 28%, rgba(242,235,226,0.7) 40%, rgba(242,235,226,0) 55%)",
+            }}
+            aria-hidden="true"
+          />
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-6">
+          {/* Text overlay */}
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full px-[6vw] sm:px-[5vw] lg:px-[6vw]">
+              <div className="max-w-[42ch]">
+                <p
+                  className="hero-fade-up hero-fade-up-1 text-[clamp(0.65rem,1.1vw,0.9rem)] font-semibold tracking-[0.22em] text-[#7A7268] uppercase mb-[clamp(1rem,2.5vw,2rem)]"
+                  style={{ fontFamily: "var(--font-sans)" }}
+                >
+                  Studio Salon Berkeley
+                </p>
+
+                <h1
+                  id="hero-heading"
+                  className="hero-fade-up hero-fade-up-2 font-[family-name:var(--font-serif)] text-[clamp(1.75rem,5.5vw,3.75rem)] font-bold text-[#1F1B16] leading-[1.05] tracking-tight uppercase mb-[clamp(1.25rem,2vw,1.75rem)]"
+                >
+                  Welcome to<br />Studio Salon<br />Berkeley
+                </h1>
+
+                <div
+                  className="hero-fade-up hero-fade-up-3 hero-divider-shimmer h-px bg-[#1F1B16]/30 mb-[clamp(1.25rem,2vw,1.75rem)]"
+                  style={{ width: "clamp(2.5rem, 4vw, 4rem)" }}
+                  aria-hidden="true"
+                />
+
+                <p className="hero-fade-up hero-fade-up-4 font-[family-name:var(--font-sans)] text-[clamp(0.85rem,1.4vw,1.125rem)] text-[#3D3833] leading-relaxed mb-[clamp(1.5rem,2.75vw,2.25rem)] max-w-[34ch]">
+                  Berkeley&rsquo;s loc &amp; natural hair specialists &mdash; cuts, color, braids, silk press, and everyday confidence.
+                </p>
+
                 <Link
                   href="/book"
-                  className="btn-primary text-center"
                   aria-label="Book an appointment at Studio Salon"
+                  className="hero-fade-up hero-fade-up-5 inline-block rounded-md bg-[#d57a95] hover:bg-[#9E5C6E] font-bold tracking-[0.18em] uppercase text-[clamp(0.7rem,1.05vw,0.875rem)] transition-colors"
+                  style={{
+                    fontFamily: "var(--font-sans)",
+                    padding: "clamp(0.75rem, 1.4vw, 1rem) clamp(1.5rem, 3vw, 2.5rem)",
+                    color: "#FFFFFF",
+                    textShadow: "0 1px 2px rgba(0,0,0,0.15)",
+                  }}
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <rect x="3" y="4" width="18" height="18" rx="2" />
-                    <line x1="16" y1="2" x2="16" y2="6" />
-                    <line x1="8" y1="2" x2="8" y2="6" />
-                    <line x1="3" y1="10" x2="21" y2="10" />
-                  </svg>
-                  Book Now
+                  Book Appointment
                 </Link>
-                <a
-                  href="#services"
-                  className="font-[family-name:var(--font-sans)] font-semibold text-[#B86A7E] hover:text-[#9E4F63] underline underline-offset-4 decoration-[#B86A7E]/40 hover:decoration-[#9E4F63] transition-colors text-base self-center"
+
+                <p
+                  className="hero-fade-up hero-fade-up-5 mt-[clamp(0.75rem,1.4vw,1.1rem)] text-[clamp(0.7rem,1vw,0.85rem)] text-[#5A4F45] italic"
+                  style={{ fontFamily: "var(--font-sans)" }}
                 >
-                  See Services &amp; Pricing ↓
-                </a>
+                  No deposit needed.
+                </p>
               </div>
-
-              {/* Social proof microcopy */}
-              <div
-                className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[#5A5A5A]"
-                style={{ fontFamily: "var(--font-sans)" }}
-              >
-                <span className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => <Star key={i} />)}
-                  <span className="ml-1 font-bold text-[#2C2C2C]">{siteConfig.rating.value.toFixed(1)}</span>
-                </span>
-                <span className="text-[#5A5A5A]/70">·</span>
-                <a href={siteConfig.booking.booksyUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#9E4F63] underline underline-offset-2">
-                  {siteConfig.rating.count}+ Booksy reviews
-                </a>
-                <span className="text-[#5A5A5A]/70">·</span>
-                <span>Tue – Sat</span>
-              </div>
-            </div>
-
-            {/* Hero media */}
-            <div className="w-full lg:max-w-[48%] aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl flex-shrink-0">
-              <HeroVideo />
             </div>
           </div>
         </div>
@@ -285,20 +284,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-
-          <p className="text-center text-xs text-[#5A5A5A]/70 mt-6 italic"
-            style={{ fontFamily: "var(--font-sans)" }}>
-            Videos from{" "}
-            <a
-              href="https://www.tiktok.com/@britneethebarber2"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#B86A7E] hover:text-[#9E4F63] underline underline-offset-2 font-semibold"
-            >
-              @britneethebarber2
-            </a>{" "}
-            on TikTok — more work posted weekly.
-          </p>
         </div>
       </section>
 
@@ -409,7 +394,7 @@ export default function HomePage() {
             <h2
               id="parallax-heading"
               className="font-[family-name:var(--font-serif)] text-white font-bold leading-tight mb-6 tracking-tight"
-              style={{ fontSize: "clamp(1.75rem, 4vw + 0.75rem, 3.25rem)" }}
+              style={{ fontSize: "clamp(1.75rem, 4vw + 0.75rem, 3.25rem)", color: "#FFFFFF" }}
             >
               &ldquo;Healthy hair is the goal. Pretty is a given.&rdquo;
             </h2>
@@ -477,17 +462,15 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <a
+                <DirectionsLink
                   href={siteConfig.address.directionsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="btn-primary justify-center"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <polygon points="3 11 22 2 13 21 11 13 3 11" />
                   </svg>
                   Get Directions
-                </a>
+                </DirectionsLink>
                 <a
                   href={siteConfig.phone.href}
                   className="btn-secondary justify-center"

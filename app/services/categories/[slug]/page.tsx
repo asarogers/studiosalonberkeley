@@ -110,6 +110,49 @@ export default async function CategoryPage({ params }: PageProps) {
     })),
   };
 
+  const topLevelServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `${category.name} — Studio Salon Berkeley`,
+    description: category.description,
+    serviceType: category.name,
+    url: `${siteConfig.url}/services/categories/${slug}`,
+    provider: {
+      "@type": "LocalBusiness",
+      name: siteConfig.name,
+      telephone: siteConfig.phone.schema,
+      url: siteConfig.url,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: siteConfig.address.street,
+        addressLocality: siteConfig.address.city,
+        addressRegion: siteConfig.address.state,
+        postalCode: siteConfig.address.zip,
+        addressCountry: "US",
+      },
+    },
+    areaServed: [
+      { "@type": "City", name: "Berkeley" },
+      { "@type": "City", name: "Oakland" },
+      { "@type": "City", name: "Albany" },
+      { "@type": "City", name: "El Cerrito" },
+      { "@type": "City", name: "Emeryville" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `${category.name} services`,
+      itemListElement: uniqueServices.map((svc, i) => ({
+        "@type": "Offer",
+        position: i + 1,
+        itemOffered: {
+          "@type": "Service",
+          name: svc.gbpName,
+          url: `${siteConfig.url}/services/${svc.slug}`,
+        },
+      })),
+    },
+  };
+
   const otherCategories = getAllGBPCategorySlugs()
     .filter((s) => s !== slug)
     .map((s) => {
@@ -129,6 +172,10 @@ export default async function CategoryPage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(topLevelServiceSchema) }}
       />
 
       {/* ── Hero ───────────────────────────────────────────────── */}

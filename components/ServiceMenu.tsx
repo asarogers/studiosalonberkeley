@@ -10,19 +10,6 @@ interface Props {
   menu: MenuCategory[];
 }
 
-const ROMAN_NUMERALS = [
-  "I",
-  "II",
-  "III",
-  "IV",
-  "V",
-  "VI",
-  "VII",
-  "VIII",
-  "IX",
-  "X",
-];
-
 export default function ServiceMenu({ menu }: Props) {
   const [lightbox, setLightbox] = useState<MediaLightboxRequest | null>(null);
   const close = useCallback(() => setLightbox(null), []);
@@ -51,14 +38,7 @@ export default function ServiceMenu({ menu }: Props) {
             aria-labelledby={`service-cat-${catIdx}`}
           >
             <header className="relative mb-7 pb-5">
-              <div className="flex items-baseline justify-between gap-4">
-                <span
-                  aria-hidden="true"
-                  className="text-[#B86A7E] tracking-[0.36em] text-[0.68rem] uppercase font-bold"
-                  style={{ fontFamily: "var(--font-sans)" }}
-                >
-                  N°&nbsp;{ROMAN_NUMERALS[catIdx] ?? catIdx + 1}
-                </span>
+              <div className="flex items-baseline justify-end gap-4">
                 <span
                   className="text-[#5A5A5A] text-[0.62rem] tracking-[0.22em] uppercase font-medium"
                   style={{ fontFamily: "var(--font-sans)" }}
@@ -144,6 +124,7 @@ export default function ServiceMenu({ menu }: Props) {
               alt={lightbox.alt}
               className="max-w-[90vw] max-h-[85vh] rounded-2xl shadow-2xl object-contain"
               onClick={(e) => e.stopPropagation()}
+              loading="lazy"
             />
           )}
           <p

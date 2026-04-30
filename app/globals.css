@@ -295,6 +295,118 @@ img, video, svg {
   }
 }
 
+/* ---- Hero animations: Ken Burns on image + staggered text reveal ---- */
+@keyframes hero-ken-burns {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+    transform-origin: 70% 50%;
+  }
+  50% {
+    transform: scale(1.12) translate3d(-3%, -1.5%, 0);
+    transform-origin: 70% 50%;
+  }
+  100% {
+    transform: scale(1) translate3d(0, 0, 0);
+    transform-origin: 70% 50%;
+  }
+}
+
+.hero-ken-burns {
+  animation: hero-ken-burns 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade-up {
+  opacity: 0;
+  animation: hero-fade-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-fade-up-1 { animation-delay: 0.10s; }
+.hero-fade-up-2 { animation-delay: 0.30s; }
+.hero-fade-up-3 { animation-delay: 0.50s; }
+.hero-fade-up-4 { animation-delay: 0.65s; }
+.hero-fade-up-5 { animation-delay: 0.85s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-ken-burns,
+  .hero-fade-up,
+  .hero-light-leak,
+  .hero-divider-shimmer::after {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Soft warm light-leak that drifts diagonally across the hero image (60s loop) */
+@keyframes hero-light-leak {
+  0% {
+    transform: translate3d(-30%, -20%, 0) rotate(-12deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(60%, 30%, 0) rotate(-12deg);
+    opacity: 0;
+  }
+}
+
+.hero-light-leak {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 45% 65% at center,
+    rgba(255, 230, 200, 0.7) 0%,
+    rgba(255, 220, 180, 0.35) 40%,
+    rgba(255, 220, 180, 0) 70%
+  );
+  mix-blend-mode: screen;
+  animation: hero-light-leak 32s linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Slow shimmer sweep on the H1 divider line (4s loop) */
+@keyframes hero-divider-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.hero-divider-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-divider-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(31, 27, 22, 0.6) 50%,
+    transparent 100%
+  );
+  animation: hero-divider-shimmer 4s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
 /* ---- Decorative divider ---- */
 .blush-divider {
   width: 3.5rem;

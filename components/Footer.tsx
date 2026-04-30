@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DirectionsLink from "@/components/DirectionsLink";
 import { siteConfig } from "@/lib/siteConfig";
 
 /* ============================================================
@@ -182,10 +183,8 @@ export default function Footer() {
               {siteConfig.address.street}<br />
               {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.zip}
             </address>
-            <a
+            <DirectionsLink
               href={siteConfig.address.directionsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className={[
                 "inline-flex items-center gap-2 text-sm font-semibold",
                 "text-[#E8A1B3] hover:text-[#FFF9F9] transition-colors",
@@ -197,7 +196,7 @@ export default function Footer() {
             >
               <IconMap />
               Get Directions →
-            </a>
+            </DirectionsLink>
           </div>
 
           {/* ---- Column 3: Hours ---- */}

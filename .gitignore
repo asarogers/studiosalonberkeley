@@ -28,8 +28,11 @@
 .DS_Store
 *.pem
 
-# Google service account key — never commit this
+# Google service account keys — never commit these
 google-indexing-key.json
+ga4-key.json
+*-service-account*.json
+studio-salon-berkeley-*.json
 well-prepped-life-*.json
 
 # Indexing cache (local deploy state)
@@ -50,3 +53,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local-only research/cache directories — never committed
+.tiktok-cache/
+replacement-candidates/

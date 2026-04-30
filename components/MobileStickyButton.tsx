@@ -39,10 +39,10 @@ export default function MobileStickyButton() {
       ].join(" ")}
     >
       <a
-        href={siteConfig.booking.freshaUrl}
+        href={siteConfig.booking.bookingUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Book an appointment on Fresha (opens in a new tab)"
+        aria-label="Book an appointment (opens in a new tab)"
         className={[
           "flex items-center gap-2",
           "pl-4 pr-5 py-3.5",

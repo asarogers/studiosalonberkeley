@@ -84,10 +84,10 @@ export const metadata: Metadata = {
     },
   },
   manifest: "/site.webmanifest",
-  icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    shortcut: "/icon.svg",
-  },
+  // Favicon files live in app/ and are auto-served by Next.js:
+  //   app/favicon.ico, app/icon.png, app/apple-icon.png
+  // We don't need to declare them here — Next.js generates the appropriate
+  // <link rel="icon" /> tags automatically.
 };
 
 export const viewport: Viewport = {

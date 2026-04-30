@@ -1,9 +1,9 @@
-"use client";
-
-import { useState } from "react";
+import manifest from "@/content/image-manifest.json";
 
 export default function LocationHeroImage({ slug, alt }: { slug: string; alt: string }) {
-  const [src, setSrc] = useState(`/images/locations/${slug}.svg`);
+  const map = (manifest as Record<string, Record<string, string>>).locations ?? {};
+  const ext = map[slug];
+  const src = ext ? `/images/locations/${slug}${ext}` : "/images/locations/_default.svg";
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
@@ -15,11 +15,6 @@ export default function LocationHeroImage({ slug, alt }: { slug: string; alt: st
       loading="eager"
       fetchPriority="high"
       decoding="async"
-      onError={() => {
-        if (!src.endsWith("_default.svg")) {
-          setSrc("/images/locations/_default.svg");
-        }
-      }}
     />
   );
 }

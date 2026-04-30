@@ -297,7 +297,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       '@type': 'Organization',
       name: 'Studio Salon',
       url: 'https://studiosalonberkeley.com',
-      logo: { '@type': 'ImageObject', url: 'https://studiosalonberkeley.com/icon.svg' },
+      logo: { '@type': 'ImageObject', url: 'https://studiosalonberkeley.com/logo.jpeg' },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': `https://studiosalonberkeley.com/blog/${post.slug}` },
   };
@@ -430,7 +430,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="mt-6 flex items-start gap-3">
             {/* Author photo */}
             <img
-              src="/headshot.webp"
+              src="/logo.jpeg"
               alt={`${post.author}, founder of Studio Salon`}
               className="h-11 w-11 shrink-0 rounded-full object-cover border-2 border-[#B86A7E]/30 mt-0.5"
               loading="lazy"
