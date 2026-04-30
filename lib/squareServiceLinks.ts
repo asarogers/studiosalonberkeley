@@ -14,7 +14,7 @@ export const SQUARE_BOOKING = {
    *  https://book.squareup.com/appointments/{merchantToken}/location/{locationId}/services/{serviceId}
    */
   bookingHost: "https://book.squareup.com/appointments",
-  fallbackUrl: `https://book.squareup.com/appointments/l99lv4a06e22rc/location/LS8CYETZA8N64/services`,
+  fallbackUrl: `https://app.squareup.com/appointments/book/l99lv4a06e22rc/LS8CYETZA8N64/start`,
 } as const;
 
 /**

@@ -54,7 +54,7 @@ export const siteConfig = {
   // deep-link to a specific service variation.
   booking: {
     bookingUrl:
-      "https://squareup.com/appointments/buyer/widget/LS8CYETZA8N64",
+      "https://app.squareup.com/appointments/book/l99lv4a06e22rc/LS8CYETZA8N64/start",
     freshaUrl:
       "https://www.fresha.com/a/studio-salon-berkeley-berkeley-2902-sacramento-street-q9acd470/booking?allOffer=true&menu=true&pId=2861607&cartId=bc7484f0-ab25-4bc5-a5cc-ae4612e79963",
     // Legacy Booksy reference — kept so existing copy can still cite it
