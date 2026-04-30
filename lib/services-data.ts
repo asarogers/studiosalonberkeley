@@ -419,6 +419,223 @@ export const serviceDetails: ServiceDetail[] = [
     relatedServices: ["mens-hair-barbering", "natural-hair-styling", "silk-press"],
     relatedLocations: ["berkeley", "albany", "kensington"],
   },
+  {
+    slug: "sisterlocks-microlocs",
+    title: "Sisterlocks & Microlocs",
+    metaDescription: "Sisterlocks and microlocs maintenance, retightening, and repair in Berkeley at Studio Salon. Call (510) 690-5274 to scope your grid.",
+    h1: "Sisterlocks and Microlocs in Berkeley",
+    intro: "Sisterlocks and microlocs are a long-game commitment — smaller than traditional locs, more precise in the grid, and built around a maintenance rhythm that runs years, not months. At Studio Salon on Sacramento Street, we work with clients already living with a sisterlocks or microlocs install, handling retightening, repair, and styling between visits. The most common question we get is what are microlocs vs sisterlocks — sisterlocks is a trademarked method with a specific tool and a certified-installer pricing structure, while microlocs is the broader umbrella for any small-diameter loc done with various techniques. The grid sizes overlap, the maintenance cadence is similar, and either way the install is a multi-day appointment that usually runs into four figures. Clients come to us as a sisterlocks consultant in Berkeley for the in-between work: monthly or six-week retightenings, repair on locs that have slipped or unraveled, and the occasional styling session for events. Call (510) 690-5274 to scope where you are in the journey before booking.",
+    sections: [
+      {
+        heading: "What a Maintenance Visit Covers",
+        content: "A sisterlocks or microlocs maintenance visit at Studio Salon opens with a real grid check. We look at every loc base individually — these are small, and what works on traditional loc maintenance does not translate cleanly. We use the interlocking pattern your installer set up, matching the rotation count and direction so the locs stay even and the parts stay clean. The retightening itself takes about two to three hours for a standard head; longer or denser grids run longer. We work loc by loc, not in big sections, and we pause every quarter to check tension and symmetry. We do not switch your method mid-stream — if you came in on the four-rotation sisterlocks pattern, we keep that pattern. Light repair on a few slipped locs is included; major reconstruction is quoted separately. We finish with a gentle cleanse and a clean part conversation. Book at (510) 690-5274."
+      },
+      {
+        heading: "Who This Service Is For",
+        content: "This chair is for clients who already have sisterlocks or microlocs installed and need a steady hand for retightening between visits with their original installer, or who are looking for an ongoing maintenance home in the East Bay. We see clients commuting from Oakland, Albany, and El Cerrito because consistent microlocs care is hard to find. We also work with clients considering microlocs who want a real conversation about cost, time, and lifestyle fit before committing to an install — sisterlocks consultations usually mean a multi-day install plus years of monthly retightenings, and that is a real budget line. We do not currently offer the full sisterlocks install at Studio Salon; we focus on maintenance, repair, and styling. If your locs are still in the budding stage, we will scope what they need without forcing a technique that does not match your grid. Stop by 2902 Sacramento St for a fit check."
+      },
+      {
+        heading: "How to Prep for Your Visit",
+        content: "Come in with dry, clean-ish locs — no fresh oil, no setting product, no wraps that have been on for days. If you washed at home in the last two days, that is fine. Skip scalp oiling the morning of so we can read root health honestly. Bring a note about who installed your locs and what method they used; if you have a maintenance card or photos from your install, even better. Mention any slipped, unraveling, or thinning locs you have noticed since your last visit so we can flag them on the grid check. Microlocs and sisterlocks are small and patient work — plan for two to three hours minimum, eat first, and bring something to read. Parking on Sacramento Street is usually fine. Call (510) 690-5274 if your appointment changes or you need to add repair time to a maintenance booking."
+      },
+      {
+        heading: "Pricing and Time in the Chair",
+        content: "Sisterlocks and microlocs maintenance at Studio Salon is priced based on density, grid size, and how long it has been since your last retightening. A standard retightening on a head that is on a four to six week schedule typically lands in the $150 to $250 range and takes two to three hours in the chair. Heads coming in past eight weeks, or with a lot of slip and unraveling to repair, run longer and cost more — we quote at consult, not on a flat menu. The first visit takes a little extra time because we are reading your grid for the first time and building notes for future appointments. Sisterlocks-certified installers typically charge $1,200 and up for the install itself; we do not currently install but we are happy to refer. Maintenance pricing is confirmed at booking with no chair-time surprises."
+      },
+      {
+        heading: "Why Studio Salon Berkeley",
+        content: "Microlocs care lives or dies on consistency — same hands, same technique, same notes between visits. Studio Salon Berkeley keeps a maintenance file for sisterlocks and microlocs clients so the next appointment picks up exactly where the last one ended, including which direction each loc rotates and where the grid has been adjusted. We do not freelance on technique. If your installer set you up with a specific pattern, we keep it. The chair on Sacramento Street has been doing loc work for years and reads small grids the way most chairs read regular locs — calmly and without rushing. If you have been driving across the Bay for retightenings and want a closer maintenance home in Berkeley or Oakland, this is a chair worth trying. Call (510) 690-5274 for a consult before booking your first appointment."
+      },
+    ],
+    relatedServices: ["loc-maintenance", "loc-repair-detox", "natural-hair-styling"],
+    relatedLocations: ["berkeley", "oakland", "albany"],
+  },
+  {
+    slug: "loc-repair-detox",
+    title: "Loc Repair & Detox",
+    metaDescription: "Loc repair, reattachment, and loc detox in Berkeley at Studio Salon. Same-week openings available. Call (510) 690-5274 to book.",
+    h1: "Loc Repair, Reattachment, and Detox in Berkeley",
+    intro: "Locs do not stay in perfect shape forever — they slip, they thin at the roots, they marry each other, and over the years they pick up product buildup that no amount of regular shampooing handles. At Studio Salon, loc repair and loc detox are real services, not afterthoughts squeezed into a retwist appointment. Loc repair covers reattaching broken locs, rebuilding thinning bases, separating locs that have merged, and reweaving the ends of locs that have unraveled past the point of palm rolling. Loc detox is a deep cleanse — a multi-step process that pulls residue out of the loc shaft so the locs feel lighter, smell cleaner, and respond to product the way they used to. Both services are heavy in our calendar because loc repair berkeley searches and loc detox near me searches usually land on us in panic mode, often the same week the client noticed the problem. Call (510) 690-5274 and we will get you in fast.",
+    sections: [
+      {
+        heading: "What Repair and Detox Look Like",
+        content: "A loc repair appointment starts with a full assessment — every loc that is concerning gets looked at individually, and we map out which ones need reattachment, which need root rebuilding, which need separation, and which need to be left alone because the existing structure is doing fine on its own. Reattachment is done with a needle-and-thread technique on broken locs that still have viable structure on both ends; root rebuilding uses small bits of matched hair to reinforce a thinning base. Loc detox runs differently: we cleanse with a clarifying shampoo, soak the locs in a clay or apple cider vinegar bath for the right amount of time for your buildup level, rinse cool, deep condition under heat, and dry the locs fully before any retwist or styling. Both services finish with a scalp check and a maintenance plan."
+      },
+      {
+        heading: "Who Books These Services",
+        content: "Loc repair is for established loc clients who have noticed something specific — a broken loc, a thinning patch at the crown, locs marrying at the base, or unraveling ends that palm rolling will not fix. We also see clients who self-maintain and want a trained eye on the grid before a problem gets worse. Loc detox is for clients with mature locs who feel buildup — heavy locs that do not respond to product, smell that lingers after a wash, or a dull look that no oil fixes. Both services see clients in their first two years of locs as well, but the heavier book is from clients five years and deeper. If you have an active scalp condition or a fresh injury, reschedule until it heals. Drop in at 2902 Sacramento St for a fit assessment if you want to scope before booking."
+      },
+      {
+        heading: "How to Prep at Home",
+        content: "For loc repair, come in with clean, dry locs and no recent retwist on the locs you want repaired. We cannot rebuild a base that is already tightened down. Skip oiling the morning of. If you have photos of how the locs looked before the damage started — a year ago, two years ago — bring them; reference helps us match technique. For loc detox, come in with locs that have not been retwisted in the last two weeks, because the soak loosens roots and a fresh retwist will not survive the bath. Skip heavy butters for at least a week before. Eat before you come — both services run two to four hours depending on how much work the locs need. Text (510) 690-5274 if your appointment shifts or you need to add a wash service."
+      },
+      {
+        heading: "Pricing and Appointment Length",
+        content: "Loc repair at Studio Salon is priced per problem because every head is different — a single broken loc reattachment is on the lower end, while rebuilding multiple thinning bases or separating a heavy patch of married locs sits higher. Most repair appointments land in the $100 to $300 range and take one to three hours in the chair. We quote at the start of the visit after the grid assessment, not on a flat menu, so you know the number before any work begins. Loc detox is typically a flat $150 to $200 service depending on length and density, and runs about two hours including the soak and dry time. Repair plus detox in the same visit can sometimes be done together; we will tell you at consult whether that is realistic for your locs. Call (510) 690-5274 for a same-week opening."
+      },
+      {
+        heading: "Why This Chair for Loc Repair",
+        content: "Loc repair and detox are services where most chairs do not have the patience or the experience — repair in particular is a craft, and the wrong technique can make a thin loc thinner. Studio Salon Berkeley has done years of loc work, which means the chair has seen most of what can go wrong on a head of locs and knows the real fixes from the cosmetic ones. We will tell you straight when a repair is worth doing and when the better call is to clip and start over on a specific loc. Detox we treat as a real chemistry process, not a marketing add-on — the soak time is read off your buildup level, not a stock recipe. Clients searching loc repair near me in panic mode tend to land here and stay. Call (510) 690-5274 for a same-week visit at 2902 Sacramento St."
+      },
+    ],
+    relatedServices: ["loc-maintenance", "sisterlocks-microlocs", "natural-hair-styling"],
+    relatedLocations: ["berkeley", "oakland", "el-cerrito"],
+  },
+  {
+    slug: "bridal-wedding-hair",
+    title: "Bridal & Wedding Hair",
+    metaDescription: "Bridal and wedding hair stylist in Berkeley — trial plus day-of at Studio Salon. Book 6-12 months out. Call (510) 690-5274.",
+    h1: "Bridal and Wedding Hair Stylist in Berkeley",
+    intro: "Wedding hair is its own service — different timing, different prep, different stress level than a regular appointment. At Studio Salon, bridal and wedding hair runs as a two-visit minimum: a trial appointment six to twelve months before the wedding date, and the day-of style on the wedding day itself. Brides searching for a bridal hair stylist berkeley or wedding hair for black women bay area are usually planning a year out, often booking the entire wedding party at once, and the appointments add up fast. We work with bridal parties of two to ten and beyond, scoping out who needs what at the trial visit so the wedding morning runs on time. Pricing for the bride starts around $250 for the trial plus $350 to $500 for the day-of look; party members price separately based on the style. We block off real time for wedding bookings — there is no rushing a bride. Call (510) 690-5274 to talk dates.",
+    sections: [
+      {
+        heading: "Trial and Day-of Process",
+        content: "The trial appointment runs about two to three hours and covers the real conversation: what dress, what veil, what setting, what photos you are after, what your hair has been doing in the months leading up. We try the actual style — pinned updo, sleek pony, half-up half-down, twist-out set, silk press finish, or a wig install if that is part of the plan — and photograph it from every angle. Notes go in your file. The day-of appointment is about the same length but runs faster because we are working from a known plan; we cleanse if needed, build the foundation, set the style, and finish with the right hold for the venue and the weather. We work alongside makeup artists when you bring one, and we coordinate timing with the photographer if there is a getting-ready window. Bring your veil, comb, and any accessories to the trial."
+      },
+      {
+        heading: "Who This Service Is For",
+        content: "This service is for brides, bridesmaids, mothers of the bride and groom, flower girls, and any wedding party member who wants their hair professionally done. We see brides on every texture — natural, locs, relaxed, with extensions, with a wig — and we have the chair experience to match the look to your hair, not force a style that fights the texture. Brides on textured hair specifically tend to land here because we read 4-type hair as the default, not a special accommodation. Bridal parties from Berkeley, Oakland, Emeryville, and the larger East Bay are regulars on our calendar; we also serve destination brides flying in for the trial visit and returning for the wedding morning. Call (510) 690-5274 to talk timing — six to twelve months out is the right window for most weddings, and peak wedding season books up fast."
+      },
+      {
+        heading: "How to Prep for Trial and Day-of",
+        content: "For the trial, come in with hair that is clean within 48 hours, detangled, and free of heavy product. Bring photos of your dress, your veil if you are wearing one, the venue and lighting if you have visuals, and reference photos for hair direction. If you are getting your hair colored, cut, or treated before the wedding, schedule those services before the trial so we are working with the real final hair. For the day-of, the prep depends on the style we agreed on — sometimes a fresh wash is part of the morning, sometimes the hair sits one or two days dirty for hold. We tell you at the trial which one applies. Eat breakfast on wedding morning. Bring water. Confirm your timing with us a week out by calling (510) 690-5274 to lock the schedule."
+      },
+      {
+        heading: "Pricing and Time Breakdown",
+        content: "Bridal hair at Studio Salon prices in two parts. The trial appointment runs about two to three hours and starts at $250 for the bride; this is a real working session, not a free consult, and the price covers the time and the photographed plan that goes in your file. The day-of style runs $350 to $500 for the bride depending on complexity — a sleek pulled-back style is at the lower end, a sculpted updo with a wig install or detailed parting moves toward the top. Bridal party members price separately at $100 to $250 per person for the day-of style depending on what they are getting. Travel to a getting-ready location is available for some bookings and quoted on top — the Berkeley/Oakland radius is straightforward, further venues need more lead time and an earlier booking conversation."
+      },
+      {
+        heading: "Why Studio Salon for Your Wedding",
+        content: "Wedding hair has to land twice — once at the trial and once on the actual day, in different lighting, different mood, different hours of wear. Studio Salon Berkeley has years of bridal experience on textured hair specifically, which matters because bridal hair on a bride who has been chasing definition and shine on her natural curls all year is not the same job as bridal hair on someone with bone-straight extensions. We do not push trends that will not photograph well. We do not overwork the hair the morning of the wedding to the point it falls apart by reception. The chair on Sacramento Street is a calm space the morning of, not a hectic salon floor. Call (510) 690-5274 to talk through your wedding date and your party — the earlier the better."
+      },
+    ],
+    relatedServices: ["natural-hair-styling", "silk-press", "sew-in-weave"],
+    relatedLocations: ["berkeley", "oakland", "emeryville"],
+  },
+  {
+    slug: "kids-braids-natural-styles",
+    title: "Kids' Braids & Natural Styles",
+    metaDescription: "Kids' braids and natural hair styling in Berkeley at Studio Salon — gentle tension, family-friendly chair. Call (510) 690-5274.",
+    h1: "Kids Braids and Natural Hair Styling in Berkeley",
+    intro: "Kids' hair is its own service. The product, the tension, the patience, the chair time — all different from an adult appointment. At Studio Salon, we book kids' braids and natural styles with that in mind. Parents searching for a kids braids salon berkeley or kids knotless braids berkeley are usually looking for a chair that will not pull on a child's hairline, will keep the appointment short enough that a child can sit through it, and will produce a style that lasts the two to four weeks parents need between visits. We see kids ages six and up regularly: cornrows, simple knotless, two-strand twists, beaded styles, twist-outs, and wash-and-style appointments. Pricing runs $60 to $200 depending on the style and age. We use gentle tension from the very first row because kids' hair is still developing and a tight install on a six-year-old can affect the hairline for life. Call (510) 690-5274 to book.",
+    sections: [
+      {
+        heading: "What a Kids' Appointment Looks Like",
+        content: "A kids' braid or natural style appointment at Studio Salon opens with a quick conversation between us, the parent, and the child. We talk about what the child wants, what the parent has in mind, and what will actually be comfortable for sitting. We cleanse and condition with a gentle shampoo, detangle in patient sections with the child holding their head however is most comfortable, and stretch the hair on low heat or air dry. Then we braid or twist with low tension — kids' edges are not a place to test how tight is too tight — using the smallest comfortable parts for the style. We finish with a light scalp oil and a wrap-for-bed conversation with the parent. Beaded styles get accent beads added at the end. Total chair time runs 60 minutes for a wash-and-style up to three hours for a small knotless set."
+      },
+      {
+        heading: "Who This Chair Welcomes",
+        content: "This chair welcomes kids ages six and up for braids and most styling. Younger children can be booked for a wash-and-style or a simple cornrow set with a parent on site and willing to help with the comfort side of the appointment. We see kids whose parents do their hair at home and want a professional reset, kids in active hair journeys (transitioning, growing out, recovering from a bad install elsewhere), and recurring family clients who book monthly or every six weeks. Texture is not a limiter — every type from loose curl to dense 4c is welcome. We do not do chemical services on kids under 16 except in unusual cases discussed at consult. If your child has a sensitivity or a recent scalp issue, mention it at booking. Studio Salon is at 2902 Sacramento St, easy from Berkeley, Oakland, Albany, and El Cerrito for a family-friendly chair."
+      },
+      {
+        heading: "How to Prep Your Child",
+        content: "Wash and detangle the night before if you can — a clean stretched base saves an hour of chair time and is gentler on the child. Skip heavy butters and gels the morning of. Bring snacks the child likes, a charged tablet or phone with a show queued up, and headphones. A small blanket for chairs that run cold is welcome. Bring a beanie or silk scarf for the ride home. Beads, hair ties, and any extension hair if the style calls for them should come with you — we will give you a count at booking. If your child has any sensitivity to product smells or sounds (clipper buzz, blow dryer), mention it; we adjust setup. Call (510) 690-5274 ahead with questions about a specific style or appointment length."
+      },
+      {
+        heading: "Pricing and Time in the Chair",
+        content: "Kids' services at Studio Salon price in the $60 to $200 range. A wash-and-style with twists or a basic cornrow set sits at the lower end, around 60 to 90 minutes. Mid-size knotless installs on kids run $120 to $180 and take two to three hours; we keep these shorter than adult installs because kids cannot reasonably sit longer. Beaded styles add a small fee for the beads and chair time to attach them. Recurring kids' clients on a four to six week cycle can book the next appointment before leaving the current one and we will hold the time. Pricing is confirmed at booking and we do not move it up at the chair. Hair for extension styles is separate. Call (510) 690-5274 to scope the right style and budget for your child's hair."
+      },
+      {
+        heading: "Why Studio Salon for Family Hair",
+        content: "Kids' hair work is patience first and skill second, in that order. The chair on Sacramento Street treats kids' appointments as real services, not throwaway add-ons — same care, same low-tension technique, same scalp-first approach we use on adults. We do not braid tight to make a style last longer at the cost of a child's edges. We do not rush a child who needs a break. We do not push styles that do not suit their age or their hair. Parents who have watched stylists be impatient with their kids elsewhere tend to come here once and stick around for the recurring book. If you are looking for a Berkeley salon that takes textured kids' hair seriously, call (510) 690-5274 to set up a first appointment at 2902 Sacramento St."
+      },
+    ],
+    relatedServices: ["braids", "natural-hair-styling", "two-strand-twist"],
+    relatedLocations: ["berkeley", "oakland", "albany"],
+  },
+  {
+    slug: "keratin-treatment",
+    title: "Keratin Treatment",
+    metaDescription: "Keratin smoothing treatments for natural and textured hair in Berkeley at Studio Salon. $200-$350. Call (510) 690-5274.",
+    h1: "Keratin Smoothing Treatments in Berkeley",
+    intro: "Keratin treatments are a real option for clients who want manageability — easier wash days, less frizz, more shine — without the long-term commitment of a chemical relaxer. At Studio Salon, we do keratin smoothing on natural hair and lightly textured hair as a managed, careful service: clarify the cuticle, apply the treatment, process under heat, and seal with a flat iron pass that is calibrated for your hair, not turned to maximum out of habit. Searches for keratin treatment oakland and keratin treatment for natural hair berkeley land here because most chairs in the area either do not offer it or do not do it with textured hair in mind. The full service runs $200 to $350 depending on length and density, and takes about three hours in the chair. Results last three to five months on most heads. We are honest at consult about whether your hair is a good candidate or whether you are better served by a different service. Call (510) 690-5274.",
+    sections: [
+      {
+        heading: "What the Keratin Service Covers",
+        content: "A keratin treatment at Studio Salon starts with a full consult — chemical history, recent color, current condition of the cuticle, and the manageability goal you are after. We clarify with a deep-cleanse shampoo to strip every bit of buildup off the strand, because keratin only bonds where the hair is genuinely clean. We blow dry partially, apply the treatment in saturated sections from root to tip, and process under controlled heat for the time the formula calls for. Then we seal with a flat iron pass at the right temperature for your hair — never higher than the chemistry needs, because keratin done at maximum heat damages the same hair the treatment is supposed to help. We rinse on the schedule the formula specifies (some are no-rinse, some need 24 to 72 hours), and we walk through aftercare. Call (510) 690-5274."
+      },
+      {
+        heading: "Who Keratin Treatments Suit",
+        content: "Keratin treatments fit clients who want their hair more manageable — easier to detangle, faster to dry, smoother in shape — without losing all of their natural curl. Looser textures (3a to 3c) get a smoother result that still keeps movement; tighter textures (4a to 4c) get a softer curl pattern with much more manageability but the natural shape is mostly preserved. Clients who silk press regularly often find a keratin treatment cuts their styling time at home in half. Color-treated clients can do keratin if the hair is in healthy enough shape; we will scope the bond strength at consult and may recommend a treatment plan first. We do not recommend keratin for clients who want their curls completely gone — that is a relaxer conversation. We also do not recommend it for clients with significant heat damage or active breakage. Stop by 2902 Sacramento St."
+      },
+      {
+        heading: "How to Prep for the Service",
+        content: "Skip washing for at least 24 hours before the appointment — the clarifying shampoo at the start of the service handles the prep wash. Avoid heavy oils, leave-ins, and butters for two to three days before so the cuticle is open and clean. Stop chemical color services for at least two weeks before a keratin treatment if possible; if you need to color and keratin in the same window, the color comes first and the keratin a couple of weeks later, never the other way around. Skip heat styling for the week leading in. Eat before you come. Plan for three hours in the chair plus the rinse-out timeline at home depending on the formula. If you have any sensitivity to formaldehyde or strong chemical smells, mention it at booking; we use lower-aldehyde formulas but we want to know."
+      },
+      {
+        heading: "Pricing and Appointment Length",
+        content: "Keratin treatments at Studio Salon price in the $200 to $350 range. Shoulder-length hair on a medium-density head sits at the lower end, around three hours of chair time. Longer or denser hair moves up the price scale and uses the full three to four hour window. The price covers the consult, clarifying wash, treatment application, processing, flat iron seal, and aftercare conversation. The aftercare schedule (when to rinse, what shampoo to use, how to sleep on it) varies by formula and we walk through it before you leave. A maintenance keratin every three to five months keeps the result fresh; clients who book on cycle get priority on the calendar. Color services scheduled in proximity to keratin are coordinated to protect both. We do not price keratin off a flat menu — every quote is built at consult. Call (510) 690-5274."
+      },
+      {
+        heading: "Why This Chair for Keratin",
+        content: "Keratin work on textured hair is a craft most chairs in the East Bay are not set up for — they either skip the service entirely or do it the same way they would on straight hair, which is the wrong call. Studio Salon Berkeley does it with textured hair as the default, which means temperature, formula, and processing time are all read off your actual cuticle, not a generic protocol. We are also honest at consult about whether keratin is the right service. If your hair is too compromised, or if you really want a relaxer-level result, we will say so before taking the booking. Clients who have had keratin done elsewhere with brittle, over-processed results tend to find the chair on Sacramento Street on the second try and stay. Call (510) 690-5274 to scope a keratin appointment."
+      },
+    ],
+    relatedServices: ["silk-press", "natural-hair-styling", "hair-color"],
+    relatedLocations: ["berkeley", "oakland", "albany"],
+  },
+  {
+    slug: "lace-frontal-install",
+    title: "Lace Frontal Install",
+    metaDescription: "Lace frontal install and customization in Berkeley at Studio Salon — bleached knots, plucked, tinted to skin. Call (510) 690-5274.",
+    h1: "Lace Frontal Install in Berkeley",
+    intro: "A lace frontal install is the difference between a sew-in that reads as natural and one that does not. Done right, the frontal sits flat against the hairline, the lace melts into the skin, the knots are bleached down so the parting reads scalp-colored, and the install is as undetectable as the client wants it to be. At Studio Salon, lace frontal installs are a specialty — we customize the frontal in chair (bleach knots, pluck the hairline, tint the lace to match your skin, install with the right adhesive or sewn-in method) and we build the underlying braid foundation to support a frontal install specifically. Searches for lace frontal install oakland and lace frontal install bay area are heavy commercial intent, and clients land here because they want the customization, not just the install. Pricing runs $250 to $400 plus the cost of the frontal, and the appointment takes about four hours. Call (510) 690-5274 to scope the look.",
+    sections: [
+      {
+        heading: "What the Install Covers",
+        content: "A lace frontal install at Studio Salon runs about four hours and covers everything from prep to finish. We open with a cleanse and deep condition of the natural hair, blow dry on tension, and braid the foundation in a frontal-supportive pattern — typically straight-back with a clean line at the front for the frontal to sit against. The frontal itself gets customized: we bleach the knots if they are not already done, pluck the hairline to a realistic density, tint the lace to your skin tone, and trim the lace to the right shape for your forehead and temple line. Install can be glue, glueless with a band, or sewn-in along the front edge — we choose the method based on your scalp sensitivity, the duration of wear, and the look. We finish with a cut-in style and any blending the look needs. Call (510) 690-5274."
+      },
+      {
+        heading: "Who This Service Fits",
+        content: "Lace frontal installs fit clients who want a fully styled look — versatile parting, full coverage, hairline included — for two to six weeks of wear. We see clients prepping for events (weddings, photoshoots, reunions, travel), clients who rotate frontals as their main protective style, and first-time frontal clients who want guidance on customization and at-home care. Clients with sensitive scalps or a history of glue reactions can book glueless or sewn-in installs instead. Clients with thinner edges should mention it at booking — we adjust the install method to keep zero tension on the perimeter. Berkeley, Oakland, Emeryville, and the larger Bay Area are regular service zones for frontal installs. We do not currently sell frontals; you bring the unit. If you need help picking a frontal, send a photo at booking and we will give you sizing and texture guidance. Call (510) 690-5274."
+      },
+      {
+        heading: "How to Prep at Home",
+        content: "Come in with hair washed within 48 hours, detangled, and free of heavy product. Bring the frontal — pre-bleached or not, we can handle either — plus any bundles or wefts the install needs. If you are going for a specific cut-in style or hairline shape, bring photos. Skip oils on the hairline the day of so the adhesive (if you are going glue) sits cleanly. If you have any history of skin reaction to lace adhesives, tell us before booking — we have glueless options. Eat a real meal. Plan for four hours in the chair. Bring a charger, headphones, and water. If you are coming from across the Bay, build in time for parking on Sacramento Street. Text (510) 690-5274 if anything shifts on appointment day."
+      },
+      {
+        heading: "Pricing and Time Breakdown",
+        content: "Lace frontal installs at Studio Salon price in the $250 to $400 range for the install itself and run about four hours in the chair. The price covers the natural hair prep, braided foundation, frontal customization (knot bleach, plucking, tint, trim), the install, and the finish style and cut-in. The frontal unit and any bundles are separate and brought by the client. If your frontal arrives uncustomized — knots not bleached, hairline not plucked — we handle the work in chair as part of the install fee for most cases; very heavy customization (full plucking from a dense unit) is sometimes quoted up at consult. Reinstall on a previously customized frontal you already own is a lower-cost service since the customization work is done. Call (510) 690-5274 with the unit you have in hand for a more specific quote."
+      },
+      {
+        heading: "Why Studio Salon for Frontals",
+        content: "Frontal work is where most install chairs in the East Bay get loose — the install itself can be done quickly, but the customization is what separates a believable frontal from one that screams wig from across the room. Studio Salon Berkeley does the customization in chair as a core part of the service, which means the frontal you walk out with is matched to your skin and your hairline, not a stock unit slapped on. We are also careful with adhesive and tension on the perimeter; thin edges are not a place to be sloppy. The chair on Sacramento Street has been doing frontal work long enough that we have an opinion on most major frontal brands and can save you the wrong purchase before the install. Call (510) 690-5274 to book or to talk through a frontal you are considering buying."
+      },
+    ],
+    relatedServices: ["sew-in-weave", "wig-install-customization", "quick-weave"],
+    relatedLocations: ["berkeley", "oakland", "emeryville"],
+  },
+  {
+    slug: "wig-install-customization",
+    title: "Wig Install & Customization",
+    metaDescription: "Wig install and customization in Berkeley at Studio Salon — chemo, alopecia, and styling clients welcome. Call (510) 690-5274.",
+    h1: "Wig Install and Customization in Berkeley",
+    intro: "Wigs are not what they were a decade ago. Lace, density, hairlines, and customization have all moved forward, and a properly installed and styled wig now reads as natural hair to most observers. At Studio Salon, wig install and customization is a real service for two big client groups: clients in active medical hair loss situations (chemo, alopecia, post-surgical) who want a wig that reads as a normal hair routine, and clients using wigs as a versatile styling option in their broader hair life. Both groups want the same thing — a unit that fits the head, sits on the right hairline, has bleached knots, plucked density, and a styling cut that suits the face. Searches for wig install berkeley and wig customization near me find us because we specialize in the customization side, not just the install. Pricing for a full customize-plus-install runs $200 to $400 depending on the unit and the install method. Call (510) 690-5274.",
+    sections: [
+      {
+        heading: "What a Wig Session Covers",
+        content: "A wig install and customization session at Studio Salon starts with the unit on a mannequin head before it goes on yours. We assess what the wig actually needs: knot bleaching, plucking the hairline to a believable density, tinting the lace to your skin tone, trimming the lace edge cleanly, and any cut-in or styling work to match your face. Customization is anywhere from one to three hours depending on the wig's starting point. The install itself runs differently depending on method — glueless wig with combs and a band, glue install for longer wear, or a sewn-down install where we braid a foundation underneath. We work with full lace, lace front, 360, U-part, and headband wigs. We finish with the styled cut and a wrap-for-bed conversation. Call (510) 690-5274 to scope a session."
+      },
+      {
+        heading: "Who Books Wig Services",
+        content: "Wig clients at Studio Salon split roughly in half. The first group is clients in medical or hair-loss situations — chemo treatment, alopecia areata, alopecia totalis, post-surgical, or significant traction damage — who need a wig that reads as their daily hair and want the chair experience to be calm and patient. We treat these appointments with the time and care they call for, and we coordinate with cap fit, scalp comfort, and any sensitivities the client mentions. The second group is clients using wigs as part of broader styling — protective style rotation, special events, or just wanting versatility week to week. Both groups get the same level of customization. We do not sell wigs at the salon; you bring the unit, or we can refer you to vendors we have worked with. Call (510) 690-5274 if you are unsure what unit fits your needs."
+      },
+      {
+        heading: "How to Prep for the Appointment",
+        content: "For an install, come in with your natural hair washed, detangled, and either braided down already or ready to be braided in chair (we can handle the foundation as part of the appointment). For customization-only sessions where the wig stays on the mannequin, just bring the unit and reference photos for the final look. If you are in active medical treatment and have a sensitive scalp, mention it at booking and we will plan for glueless install methods and adjust the chair time accordingly. Bring the wig in its original packaging if it is new, or as you store it if it is one you have worn. If you have specific styling goals — a particular cut-in, a particular hairline shape — bring images. Plan for two to four hours depending on the customization needed. Call (510) 690-5274."
+      },
+      {
+        heading: "Pricing and Time in the Chair",
+        content: "Wig install and customization at Studio Salon prices in the $200 to $400 range. A full customize-plus-install on a unit that needs significant work (heavy plucking, knot bleaching, tinting, trimming, cut-in) sits at the upper end and uses three to four hours in the chair. A reinstall on a wig you have already customized — or that came pre-customized — is at the lower end, around $150 to $200, and takes about ninety minutes to two hours. We quote on the unit you actually bring, not on a flat menu, because two wigs in the same price range can take wildly different amounts of work. Maintenance services like wig washing, restyling between installs, and re-plucking are priced separately and welcome as standalone appointments. Call (510) 690-5274 with the unit details for a specific quote."
+      },
+      {
+        heading: "Why This Chair for Wig Work",
+        content: "Wig work, especially for clients dealing with medical hair loss, is a service where chair experience matters as much as technical skill. Studio Salon Berkeley treats these appointments with patience and privacy, and we do not rush. The customization side of the work — bleach knots, pluck, tint, trim, cut — is where most chairs cut corners, and where ours does not. We have years of textured hair experience as the foundation, which translates directly into wig styling because most of the wigs we install are made of texture that needs to be read and worked, not assumed. Clients in chemo or alopecia journeys often tell us this is the first appointment in months that felt calm — that is intentional. Call (510) 690-5274 or stop by 2902 Sacramento St to scope an install or talk through a unit you are considering."
+      },
+    ],
+    relatedServices: ["lace-frontal-install", "sew-in-weave", "natural-hair-styling"],
+    relatedLocations: ["berkeley", "oakland", "el-cerrito"],
+  },
 ];
 
 export function getServiceBySlug(slug: string): ServiceDetail | undefined {
