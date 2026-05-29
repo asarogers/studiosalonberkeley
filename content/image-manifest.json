@@ -1,16 +1,33 @@
 {
   "services": {
+    "barbershop": ".png",
+    "braids-and-locs": ".png",
     "braids": ".webp",
+    "bridal-wedding-hair": ".png",
+    "brows-and-lashes": ".png",
     "chemical-relaxer": ".webp",
     "crochet-braids": ".webp",
+    "eyebrow-waxing": ".png",
     "hair-color": ".webp",
+    "hair-salon": ".png",
+    "keratin-treatment": ".png",
+    "kids-braids-natural-styles": ".png",
+    "lace-frontal-install": ".png",
     "loc-maintenance": ".webp",
+    "loc-repair-detox": ".png",
     "mens-hair-barbering": ".webp",
     "natural-hair-styling": ".webp",
     "quick-weave": ".webp",
     "sew-in-weave": ".webp",
+    "silk-press": ".png",
+    "sisterlocks-microlocs": ".png",
     "two-strand-twist": ".webp",
+    "wig-install-customization": ".png",
     "womens-haircut": ".webp"
   },
-  "blog": {}
+  "blog": {
+    "first-visit-what-to-expect-at-studio-salon": ".png",
+    "how-often-should-you-retwist-your-locs": ".png",
+    "protective-styles-guide-knotless-feed-in-crochet": ".png"
+  }
 }
